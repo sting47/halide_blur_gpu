@@ -1,0 +1,186 @@
+Layer m=1 
+=================================================
+Tile Size t=16
+root time      : 0.873095 
+tile time      : 0.848466 
+Merge Tile time: 0.850581 
+Tile Size t=32
+root time      : 0.812435 
+tile time      : 0.952030 
+Merge Tile time: 0.872841 
+Tile Size t=64
+root time      : 0.811284 
+tile time      : 0.923061 
+Merge Tile time: 0.861967 
+Tile Size t=128
+root time      : 0.835339 
+tile time      : 0.853048 
+Merge Tile time: 0.934316 
+Tile Size t=256
+root time      : 0.820951 
+tile time      : 0.852412 
+Merge Tile time: 0.947666 
+Tile Size t=512
+root time      : 0.809196 
+tile time      : 1.509405 
+Merge Tile time: 1.526088 
+Tile Size t=1024
+root time      : 0.811226 
+tile time      : 2.986844 
+Merge Tile time: 2.989445 
+=================================================
+Layer m=2 
+=================================================
+Tile Size t=16
+root time      : 1.441652 
+tile time      : 1.257753 
+Merge Tile time: 1.480834 
+Tile Size t=32
+root time      : 1.371600 
+tile time      : 1.381483 
+Merge Tile time: 1.225025 
+Tile Size t=64
+root time      : 1.433158 
+tile time      : 1.389737 
+Merge Tile time: 1.178372 
+Tile Size t=128
+root time      : 1.409805 
+tile time      : 1.605094 
+Merge Tile time: 1.134558 
+Tile Size t=256
+root time      : 1.381687 
+tile time      : 2.006078 
+Merge Tile time: 1.101261 
+Tile Size t=512
+root time      : 1.433388 
+tile time      : 2.298981 
+Merge Tile time: 2.041300 
+Tile Size t=1024
+root time      : 1.424509 
+tile time      : 4.544337 
+Merge Tile time: 3.771874 
+=================================================
+Layer m=4 
+=================================================
+Tile Size t=16
+root time      : 2.691307 
+tile time      : 2.617087 
+Merge Tile time: 2.538027 
+Tile Size t=32
+root time      : 2.621511 
+tile time      : 2.284917 
+Merge Tile time: 2.031345 
+Tile Size t=64
+root time      : 2.687905 
+tile time      : 2.294274 
+Merge Tile time: 1.665208 
+Tile Size t=128
+root time      : 2.684496 
+tile time      : 2.568746 
+Merge Tile time: 1.768728 
+Tile Size t=256
+root time      : 2.631623 
+tile time      : 3.231599 
+Merge Tile time: 1.743726 
+Tile Size t=512
+root time      : 2.683115 
+tile time      : 3.475671 
+Merge Tile time: 3.202707 
+Tile Size t=1024
+root time      : 2.634345 
+tile time      : 6.611418 
+Merge Tile time: 6.263131 
+=================================================
+Layer m=8 
+=================================================
+Tile Size t=16
+root time      : 5.231830 
+tile time      : 5.165133 
+Merge Tile time: 6.340901 
+Tile Size t=32
+root time      : 5.197001 
+tile time      : 4.271888 
+Merge Tile time: 4.080777 
+Tile Size t=64
+root time      : 5.246060 
+tile time      : 3.971346 
+Merge Tile time: 3.102337 
+Tile Size t=128
+root time      : 5.232605 
+tile time      : 4.519506 
+Merge Tile time: 3.004805 
+Tile Size t=256
+root time      : 5.244213 
+tile time      : 5.638314 
+Merge Tile time: 2.992683 
+Tile Size t=512
+root time      : 5.247475 
+tile time      : 5.954273 
+Merge Tile time: 5.374365 
+Tile Size t=1024
+root time      : 5.185592 
+tile time      : 10.829589 
+Merge Tile time: 10.040602 
+=================================================
+Layer m=16 
+=================================================
+Tile Size t=16
+root time      : 10.381779 
+tile time      : 10.386831 
+Merge Tile time: 20.702671 
+Tile Size t=32
+root time      : 10.466164 
+tile time      : 8.277489 
+Merge Tile time: 10.445233 
+Tile Size t=64
+root time      : 10.477008 
+tile time      : 7.727307 
+Merge Tile time: 6.901216 
+Tile Size t=128
+root time      : 10.351975 
+tile time      : 8.504421 
+Merge Tile time: 5.939170 
+Tile Size t=256
+root time      : 10.317909 
+tile time      : 10.322057 
+Merge Tile time: 5.297712 
+Tile Size t=512
+root time      : 10.376455 
+tile time      : 10.623821 
+Merge Tile time: 9.705273 
+Tile Size t=1024
+root time      : 10.343947 
+tile time      : 19.339928 
+Merge Tile time: 17.290188 
+=================================================
+Layer m=32 
+=================================================
+Tile Size t=16
+root time      : 20.901138 
+tile time      : 20.437624 
+Merge Tile time: 86.980667 
+Tile Size t=32
+root time      : 20.793781 
+tile time      : 16.447781 
+Merge Tile time: 35.041840 
+Tile Size t=64
+root time      : 21.023657 
+tile time      : 14.808486 
+Merge Tile time: 20.119514 
+Tile Size t=128
+root time      : 20.784828 
+tile time      : 16.642765 
+Merge Tile time: 13.874389 
+Tile Size t=256
+root time      : 20.852341 
+tile time      : 20.109272 
+Merge Tile time: 11.741956 
+Tile Size t=512
+root time      : 21.153669 
+tile time      : 20.502645 
+Merge Tile time: 19.783134 
+Tile Size t=1024
+root time      : 20.772587 
+tile time      : 36.326698 
+Merge Tile time: 33.643784 
+=================================================

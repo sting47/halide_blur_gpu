@@ -1,0 +1,120 @@
+Layer m=1 
+=================================================
+Tile Size t=16
+root time: 0.357053 
+tile time: 0.369236 
+Tile Size t=32
+root time: 0.314400 
+tile time: 0.355192 
+Tile Size t=64
+root time: 0.316451 
+tile time: 0.354147 
+Tile Size t=128
+root time: 0.315096 
+tile time: 0.321854 
+Tile Size t=256
+root time: 0.318121 
+tile time: 0.328776 
+Tile Size t=512
+root time: 0.318373 
+tile time: 0.629771 
+Tile Size t=1024
+root time: 0.359934 
+tile time: 1.098158 
+=================================================
+Layer m=2 
+=================================================
+Tile Size t=16
+root time: 0.524797 
+tile time: 0.489847 
+Tile Size t=32
+root time: 0.527565 
+tile time: 0.532332 
+Tile Size t=64
+root time: 0.570326 
+tile time: 0.454524 
+Tile Size t=128
+root time: 0.527326 
+tile time: 0.311519 
+Tile Size t=256
+root time: 0.527408 
+tile time: 0.344715 
+Tile Size t=512
+root time: 0.525677 
+tile time: 0.684559 
+Tile Size t=1024
+root time: 0.526405 
+tile time: 1.247272 
+=================================================
+Layer m=4 
+=================================================
+Tile Size t=16
+root time: 0.948939 
+tile time: 0.785824 
+Tile Size t=32
+root time: 0.936616 
+tile time: 0.641483 
+Tile Size t=64
+root time: 0.961681 
+tile time: 0.605578 
+Tile Size t=128
+root time: 0.936372 
+tile time: 0.480831 
+Tile Size t=256
+root time: 0.943784 
+tile time: 0.568739 
+Tile Size t=512
+root time: 0.944583 
+tile time: 0.971738 
+Tile Size t=1024
+root time: 0.995574 
+tile time: 1.834059 
+=================================================
+Layer m=8 
+=================================================
+Tile Size t=16
+root time: 1.843303 
+tile time: 1.603977 
+Tile Size t=32
+root time: 1.835309 
+tile time: 1.182269 
+Tile Size t=64
+root time: 1.808037 
+tile time: 1.031818 
+Tile Size t=128
+root time: 1.796042 
+tile time: 0.877068 
+Tile Size t=256
+root time: 1.841251 
+tile time: 0.875996 
+Tile Size t=512
+root time: 1.823328 
+tile time: 1.681889 
+Tile Size t=1024
+root time: 1.770301 
+tile time: 3.027108 
+=================================================
+Layer m=16 
+=================================================
+Tile Size t=16
+root time: 3.515250 
+tile time: 5.129378 
+Tile Size t=32
+root time: 3.527085 
+tile time: 2.885490 
+Tile Size t=64
+root time: 3.535788 
+tile time: 2.211606 
+Tile Size t=128
+root time: 3.501959 
+tile time: 1.768734 
+Tile Size t=256
+root time: 3.503711 
+tile time: 1.664020 
+Tile Size t=512
+root time: 3.509978 
+tile time: 3.126686 
+Tile Size t=1024
+root time: 3.528098 
+tile time: 5.488709 
+=================================================

@@ -1,0 +1,155 @@
+Layer m=1 
+=================================================
+Tile Size t=16
+root time      : 0.871091 
+tile time      : 0.845793 
+Merge Tile time: 0.845331 
+Tile Size t=32
+root time      : 0.870256 
+tile time      : 0.869930 
+Merge Tile time: 0.867514 
+Tile Size t=64
+root time      : 0.808651 
+tile time      : 0.837888 
+Merge Tile time: 4.723502 
+Tile Size t=128
+root time      : 0.805521 
+tile time      : 0.848217 
+Merge Tile time: 0.920961 
+Tile Size t=256
+root time      : 0.813938 
+tile time      : 0.819943 
+Merge Tile time: 0.953463 
+Tile Size t=512
+root time      : 0.799003 
+tile time      : 0.830054 
+Merge Tile time: 0.917379 
+Tile Size t=1024
+root time      : 0.800096 
+tile time      : 0.794873 
+Merge Tile time: 0.946327 
+=================================================
+Layer m=2 
+=================================================
+Tile Size t=16
+root time      : 1.343292 
+tile time      : 1.222459 
+Merge Tile time: 1.489150 
+Tile Size t=32
+root time      : 1.364907 
+tile time      : 1.344578 
+Merge Tile time: 1.226732 
+Tile Size t=64
+root time      : 1.272426 
+tile time      : 1.302112 
+Merge Tile time: 1.103794 
+Tile Size t=128
+root time      : 1.372344 
+tile time      : 1.316616 
+Merge Tile time: 1.104118 
+Tile Size t=256
+root time      : 1.316907 
+tile time      : 1.480567 
+Merge Tile time: 1.118135 
+Tile Size t=512
+root time      : 1.216066 
+tile time      : 3.393366 
+Merge Tile time: 1.128548 
+Tile Size t=1024
+root time      : 3.226905 
+tile time      : 2.256283 
+Merge Tile time: 1.177463 
+=================================================
+Layer m=4 
+=================================================
+Tile Size t=16
+root time      : 2.870251 
+tile time      : 2.177982 
+Merge Tile time: 2.584903 
+Tile Size t=32
+root time      : 3.080337 
+tile time      : 2.311694 
+Merge Tile time: 2.025271 
+Tile Size t=64
+root time      : 2.533060 
+tile time      : 2.193604 
+Merge Tile time: 1.750384 
+Tile Size t=128
+root time      : 2.808022 
+tile time      : 2.213538 
+Merge Tile time: 1.657620 
+Tile Size t=256
+root time      : 3.759788 
+tile time      : 2.275175 
+Merge Tile time: 1.845072 
+Tile Size t=512
+root time      : 2.503670 
+tile time      : 2.957549 
+Merge Tile time: 4.821103 
+Tile Size t=1024
+root time      : 2.360460 
+tile time      : 3.770288 
+Merge Tile time: 1.879611 
+=================================================
+Layer m=8 
+=================================================
+Tile Size t=16
+root time      : 7.284470 
+tile time      : 4.572813 
+Merge Tile time: 7.343301 
+Tile Size t=32
+root time      : 5.059054 
+tile time      : 4.068659 
+Merge Tile time: 4.011709 
+Tile Size t=64
+root time      : 7.019931 
+tile time      : 3.968465 
+Merge Tile time: 3.062587 
+Tile Size t=128
+root time      : 4.313574 
+tile time      : 4.071671 
+Merge Tile time: 5.888510 
+Tile Size t=256
+root time      : 4.505797 
+tile time      : 4.275751 
+Merge Tile time: 2.996086 
+Tile Size t=512
+root time      : 4.750763 
+tile time      : 5.299030 
+Merge Tile time: 2.892252 
+Tile Size t=1024
+root time      : 5.110999 
+tile time      : 8.418765 
+Merge Tile time: 7.804158 
+=================================================
+Layer m=16 
+=================================================
+Tile Size t=16
+root time      : 9.385593 
+tile time      : 7.023644 
+Merge Tile time: 20.801699 
+Tile Size t=32
+root time      : 8.659453 
+tile time      : 6.560893 
+Merge Tile time: 10.149986 
+Tile Size t=64
+root time      : 7.832865 
+tile time      : 6.827985 
+Merge Tile time: 6.859540 
+Tile Size t=128
+root time      : 7.400959 
+tile time      : 7.317001 
+Merge Tile time: 5.883216 
+Tile Size t=256
+root time      : 9.110629 
+tile time      : 8.156406 
+Merge Tile time: 5.359840 
+Tile Size t=512
+root time      : 8.244123 
+tile time      : 10.397102 
+Merge Tile time: 5.668205 
+Tile Size t=1024
+root time      : 12.795683 
+tile time      : 13.136275 
+Merge Tile time: 6.649926 
+=================================================

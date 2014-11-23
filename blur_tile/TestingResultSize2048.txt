@@ -1,0 +1,140 @@
+Layer m=1 
+=================================================
+Tile Size t=16
+root time      : 0.271804 
+tile time      : 0.298828 
+Merge Tile time: 0.327617 
+Tile Size t=32
+root time      : 0.268637 
+tile time      : 0.318902 
+Merge Tile time: 0.353347 
+Tile Size t=64
+root time      : 0.283491 
+tile time      : 0.309918 
+Merge Tile time: 0.437505 
+Tile Size t=128
+root time      : 0.273569 
+tile time      : 0.365114 
+Merge Tile time: 0.368579 
+Tile Size t=256
+root time      : 0.276746 
+tile time      : 0.404265 
+Merge Tile time: 0.401977 
+Tile Size t=512
+root time      : 0.305439 
+tile time      : 0.790384 
+Merge Tile time: 0.784393 
+Tile Size t=1024
+=================================================
+Layer m=2 
+=================================================
+Tile Size t=16
+root time      : 0.383060 
+tile time      : 0.425821 
+Merge Tile time: 0.639400 
+Tile Size t=32
+root time      : 0.374496 
+tile time      : 0.431084 
+Merge Tile time: 0.492024 
+Tile Size t=64
+root time      : 0.362583 
+tile time      : 0.496463 
+Merge Tile time: 0.519883 
+Tile Size t=128
+root time      : 0.402056 
+tile time      : 0.589969 
+Merge Tile time: 0.472116 
+Tile Size t=256
+root time      : 0.414524 
+tile time      : 0.635453 
+Merge Tile time: 0.539346 
+Tile Size t=512
+root time      : 0.367255 
+tile time      : 1.180121 
+Merge Tile time: 0.997621 
+Tile Size t=1024
+=================================================
+Layer m=4 
+=================================================
+Tile Size t=16
+root time      : 0.726515 
+tile time      : 0.656469 
+Merge Tile time: 1.075818 
+Tile Size t=32
+root time      : 0.703942 
+tile time      : 0.678439 
+Merge Tile time: 0.757278 
+Tile Size t=64
+root time      : 0.737652 
+tile time      : 0.729696 
+Merge Tile time: 0.644042 
+Tile Size t=128
+root time      : 0.664351 
+tile time      : 1.028157 
+Merge Tile time: 0.719125 
+Tile Size t=256
+root time      : 0.651272 
+tile time      : 1.112983 
+Merge Tile time: 0.821131 
+Tile Size t=512
+root time      : 0.726970 
+tile time      : 1.794075 
+Merge Tile time: 1.482691 
+Tile Size t=1024
+=================================================
+Layer m=8 
+=================================================
+Tile Size t=16
+root time      : 1.076268 
+tile time      : 1.223070 
+Merge Tile time: 2.192814 
+Tile Size t=32
+root time      : 1.133461 
+tile time      : 1.049685 
+Merge Tile time: 1.522328 
+Tile Size t=64
+root time      : 1.078372 
+tile time      : 1.213720 
+Merge Tile time: 1.130948 
+Tile Size t=128
+root time      : 1.167460 
+tile time      : 1.433631 
+Merge Tile time: 1.304930 
+Tile Size t=256
+root time      : 1.067469 
+tile time      : 1.620601 
+Merge Tile time: 1.381142 
+Tile Size t=512
+root time      : 1.149880 
+tile time      : 2.821835 
+Merge Tile time: 2.493673 
+Tile Size t=1024
+=================================================
+Layer m=16 
+=================================================
+Tile Size t=16
+root time      : 1.888080 
+tile time      : 1.875162 
+Merge Tile time: 7.253753 
+Tile Size t=32
+root time      : 1.868418 
+tile time      : 1.979195 
+Merge Tile time: 3.767118 
+Tile Size t=64
+root time      : 1.848133 
+tile time      : 2.015056 
+Merge Tile time: 2.569628 
+Tile Size t=128
+root time      : 1.953944 
+tile time      : 2.619228 
+Merge Tile time: 2.366803 
+Tile Size t=256
+root time      : 1.970518 
+tile time      : 2.839413 
+Merge Tile time: 2.598441 
+Tile Size t=512
+root time      : 2.001667 
+tile time      : 4.824693 
+Merge Tile time: 4.466093 
+Tile Size t=1024
+=================================================

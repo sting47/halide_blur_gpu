@@ -1,0 +1,1018 @@
+Injecting realization of sum$8
+Injecting realization of blur_root7
+Injecting realization of sum$7
+Injecting realization of blur_root6
+Injecting realization of sum$6
+Injecting realization of blur_root5
+Injecting realization of sum$5
+Injecting realization of blur_root4
+Injecting realization of sum$4
+Injecting realization of blur_root3
+Injecting realization of sum$3
+Injecting realization of blur_root2
+Injecting realization of sum$2
+Injecting realization of blur_root1
+Injecting realization of sum
+Inlining blur_root0
+Injecting tracing...
+Injecting profiling...
+Adding checks for parameters
+Computing bounds of each function's value
+Adding checks for images
+Performing computation bounds inference...
+Performing sliding window optimization...
+Performing allocation bounds inference...
+Uniquifying variable names...
+Performing storage folding optimization...
+Injecting debug_to_file calls...
+Simplifying...
+Dynamically skipping stages...
+Performing storage flattening...
+Removing code that depends on undef values...
+Simplifying...
+Unrolling...
+Vectorizing...
+Detecting vector interleavings...
+Specializing clamped ramps...
+Injecting early frees...
+Simplifying...
+Lowering after final simplification:
+let blur_root8.extent.0.required.s = (min((((((blur_root8.extent.0 + -1)/4)*4) + blur_root8.min.0) + 3), ((blur_root8.min.0 + blur_root8.extent.0) + -1)) - min(blur_root8.min.0, ((blur_root8.min.0 + blur_root8.extent.0) + -4)))
+let blur_root8.min.0.required = min(blur_root8.min.0, ((blur_root8.min.0 + blur_root8.extent.0) + -4))
+let p0.extent.0.required = (max(min(((blur_root8.min.0 + blur_root8.extent.0) + 8), p0.extent.0), 1) - max((min((blur_root8.min.0 + -7), p0.extent.0) + -1), 0))
+let p0.min.0.required = max((min((blur_root8.min.0 + -7), p0.extent.0) + -1), 0)
+let p0.extent.1.required = (max(min(((blur_root8.min.1 + blur_root8.extent.1) + 8), p0.extent.1), 1) - max((min((blur_root8.min.1 + -7), p0.extent.1) + -1), 0))
+let p0.min.1.required = max((min((blur_root8.min.1 + -7), p0.extent.1) + -1), 0)
+if (blur_root8.host_and_dev_are_null) {
+  rewrite_buffer(blur_root8.buffer, 2, blur_root8.min.0.required, (blur_root8.extent.0.required.s + 1), 1, blur_root8.min.1, blur_root8.extent.1, (blur_root8.extent.0.required.s + 1))
+}
+if (i0.host_and_dev_are_null) {
+  rewrite_buffer(i0.buffer, 2, 0, 3, 1, 0, 3, 3)
+}
+if (p0.host_and_dev_are_null) {
+  rewrite_buffer(p0.buffer, 2, p0.min.0.required, p0.extent.0.required, 1, p0.min.1.required, p0.extent.1.required, p0.extent.0.required)
+}
+if (!((blur_root8.host_and_dev_are_null || i0.host_and_dev_are_null) || p0.host_and_dev_are_null)) {
+  assert((blur_root8.elem_size == 2), stringify("Output buffer blur_root8 has type uint16, but elem_size of the buffer_t passed in is ", blur_root8.elem_size, " instead of 2"))
+  assert((i0.elem_size == 2), stringify("Input buffer i0 has type uint16, but elem_size of the buffer_t passed in is ", i0.elem_size, " instead of 2"))
+  assert((p0.elem_size == 2), stringify("Input buffer p0 has type uint16, but elem_size of the buffer_t passed in is ", p0.elem_size, " instead of 2"))
+  assert((blur_root8.min.0 <= blur_root8.min.0.required), stringify("Output buffer blur_root8 is accessed at ", min(blur_root8.min.0, ((blur_root8.min.0 + blur_root8.extent.0) + -4)), ", which is before the min (", blur_root8.min.0, ") in dimension 0"))
+  assert(((((blur_root8.min.0.required + blur_root8.extent.0.required.s) - blur_root8.extent.0) + 1) <= blur_root8.min.0), stringify("Output buffer blur_root8 is accessed at ", (blur_root8.min.0.required + blur_root8.extent.0.required.s), ", which is beyond the max (", ((blur_root8.min.0 + blur_root8.extent.0) + -1), ") in dimension 0"))
+  assert((i0.min.0 <= 0), stringify("Input buffer i0 is accessed at 0, which is before the min (", i0.min.0, ") in dimension 0"))
+  assert(((3 - i0.extent.0) <= i0.min.0), stringify("Input buffer i0 is accessed at 2, which is beyond the max (", ((i0.min.0 + i0.extent.0) + -1), ") in dimension 0"))
+  assert((i0.min.1 <= 0), stringify("Input buffer i0 is accessed at 0, which is before the min (", i0.min.1, ") in dimension 1"))
+  assert(((3 - i0.extent.1) <= i0.min.1), stringify("Input buffer i0 is accessed at 2, which is beyond the max (", ((i0.min.1 + i0.extent.1) + -1), ") in dimension 1"))
+  assert((p0.min.0 <= p0.min.0.required), stringify("Input buffer p0 is accessed at ", max((min((blur_root8.min.0 + -7), p0.extent.0) + -1), 0), ", which is before the min (", p0.min.0, ") in dimension 0"))
+  assert((((p0.min.0.required + p0.extent.0.required) - p0.extent.0) <= p0.min.0), stringify("Input buffer p0 is accessed at ", ((p0.min.0.required + p0.extent.0.required) + -1), ", which is beyond the max (", ((p0.min.0 + p0.extent.0) + -1), ") in dimension 0"))
+  assert((p0.min.1 <= p0.min.1.required), stringify("Input buffer p0 is accessed at ", max((min((blur_root8.min.1 + -7), p0.extent.1) + -1), 0), ", which is before the min (", p0.min.1, ") in dimension 1"))
+  assert((((p0.min.1.required + p0.extent.1.required) - p0.extent.1) <= p0.min.1), stringify("Input buffer p0 is accessed at ", ((p0.min.1.required + p0.extent.1.required) + -1), ", which is beyond the max (", ((p0.min.1 + p0.extent.1) + -1), ") in dimension 1"))
+  assert((blur_root8.stride.0 == 1), "Static constraint violated: blur_root8.stride.0 == 1")
+  assert((i0.stride.0 == 1), "Static constraint violated: i0.stride.0 == 1")
+  assert((i0.min.0 == 0), "Static constraint violated: i0.min.0 == 0")
+  assert((i0.extent.0 == 3), "Static constraint violated: i0.extent.0 == 3")
+  assert((i0.stride.1 == 3), "Static constraint violated: i0.stride.1 == 3")
+  assert((i0.min.1 == 0), "Static constraint violated: i0.min.1 == 0")
+  assert((i0.extent.1 == 3), "Static constraint violated: i0.extent.1 == 3")
+  assert((p0.stride.0 == 1), "Static constraint violated: p0.stride.0 == 1")
+  let blur_root8.total_extent.1 = (int64(blur_root8.extent.1)*int64(blur_root8.extent.0))
+  let p0.total_extent.1 = (int64(p0.extent.1)*int64(p0.extent.0))
+  assert((int64(blur_root8.extent.0) <= int64(2147483647)), "Total allocation for buffer blur_root8 exceeds 2^31 - 1")
+  assert(((int64(blur_root8.extent.1)*int64(blur_root8.stride.1)) <= int64(2147483647)), "Total allocation for buffer blur_root8 exceeds 2^31 - 1")
+  assert((blur_root8.total_extent.1 <= int64(2147483647)), "Product of extents for buffer blur_root8 exceeds 2^31 - 1")
+  assert((int64(3) <= int64(2147483647)), "Total allocation for buffer i0 exceeds 2^31 - 1")
+  assert(((int64(3)*int64(3)) <= int64(2147483647)), "Total allocation for buffer i0 exceeds 2^31 - 1")
+  assert(((int64(3)*int64(3)) <= int64(2147483647)), "Product of extents for buffer i0 exceeds 2^31 - 1")
+  assert((int64(p0.extent.0) <= int64(2147483647)), "Total allocation for buffer p0 exceeds 2^31 - 1")
+  assert(((int64(p0.extent.1)*int64(p0.stride.1)) <= int64(2147483647)), "Total allocation for buffer p0 exceeds 2^31 - 1")
+  assert((p0.total_extent.1 <= int64(2147483647)), "Product of extents for buffer p0 exceeds 2^31 - 1")
+  let blur_root1.x.min_realized = min(min((blur_root8.min.0 + -7), ((blur_root8.min.0 + blur_root8.extent.0) + 3)), (min((blur_root8.min.0 + -6), ((blur_root8.min.0 + blur_root8.extent.0) + 2)) + -1))
+  let blur_root1.x.extent_realized.s.s = max(min((((((blur_root8.extent.0 + 13)/4)*4) + blur_root8.min.0) + -4), ((blur_root8.min.0 + blur_root8.extent.0) + 6)), (min((((((blur_root8.extent.0 + 11)/4)*4) + blur_root8.min.0) + -3), ((blur_root8.min.0 + blur_root8.extent.0) + 5)) + 1))
+  allocate blur_root1[uint16 * ((blur_root1.x.extent_realized.s.s - blur_root1.x.min_realized) + 1) * (blur_root8.extent.1 + 14)]
+  produce blur_root1 {
+    parallel (blur_root1.s0.y, (blur_root8.min.1 + -7), (blur_root8.extent.1 + 14)) {
+      for (blur_root1.s0.x.x, 0, ((blur_root8.extent.0 + 17)/4)) {
+        let blur_root1.s0.x.v36.base = min((((blur_root1.s0.x.x*4) + blur_root8.min.0) + -7), ((blur_root8.min.0 + blur_root8.extent.0) + 3))
+        allocate sum[uint16 * 4 * 1 * 1]
+        produce sum {
+          sum[ramp(0, 1, 4)] = x4(uint16(0))
+        } update sum {
+          for (sum.s1.i0.y$r, 0, 3) {
+            for (sum.s1.i0.x$r, 0, 3) {
+              if (((((blur_root1.s0.x.v36.base + sum.s1.i0.x$r) + 3) <= p0.extent.0) && ((1 - sum.s1.i0.x$r) <= blur_root1.s0.x.v36.base))) {
+                sum[ramp(0, 1, 4)] = (sum[ramp(0, 1, 4)] + (x4(i0[(sum.s1.i0.x$r + (sum.s1.i0.y$r*3))])*p0[ramp(((((blur_root1.s0.x.v36.base + sum.s1.i0.x$r) + (max((min((blur_root1.s0.y + sum.s1.i0.y$r), p0.extent.1) + -1), 0)*p0.stride.1)) - (p0.min.0 + (p0.min.1*p0.stride.1))) + -1), 1, 4)]))
+              } else {
+                sum[ramp(0, 1, 4)] = (sum[ramp(0, 1, 4)] + (x4(i0[(sum.s1.i0.x$r + (sum.s1.i0.y$r*3))])*p0[((max((min(ramp((blur_root1.s0.x.v36.base + sum.s1.i0.x$r), 1, 4), x4(p0.extent.0)) + x4(-1)), x4(0)) + x4((max((min((blur_root1.s0.y + sum.s1.i0.y$r), p0.extent.1) + -1), 0)*p0.stride.1))) - x4((p0.min.0 + (p0.min.1*p0.stride.1))))]))
+              }
+            }
+          }
+        }
+        blur_root1[ramp(((blur_root1.s0.x.v36.base - blur_root1.x.min_realized) + (((blur_root1.s0.y - blur_root8.min.1) + 7)*((blur_root1.x.extent_realized.s.s - blur_root1.x.min_realized) + 1))), 1, 4)] = sum[ramp(0, 1, 4)]
+        free sum
+      }
+    }
+  }
+  let blur_root2.x.min_realized = min(min((blur_root8.min.0 + -6), ((blur_root8.min.0 + blur_root8.extent.0) + 2)), (min(blur_root8.extent.0, -6) + blur_root8.min.0))
+  let blur_root2.x.extent_realized.s.s = max(min((((((blur_root8.extent.0 + 11)/4)*4) + blur_root8.min.0) + -3), ((blur_root8.min.0 + blur_root8.extent.0) + 5)), (min((((((blur_root8.extent.0 + 9)/4)*4) + blur_root8.min.0) + -2), ((blur_root8.min.0 + blur_root8.extent.0) + 4)) + 1))
+  allocate blur_root2[uint16 * ((blur_root2.x.extent_realized.s.s - blur_root2.x.min_realized) + 1) * (blur_root8.extent.1 + 12)]
+  produce blur_root2 {
+    parallel (blur_root2.s0.y, (blur_root8.min.1 + -6), (blur_root8.extent.1 + 12)) {
+      for (blur_root2.s0.x.x, 0, ((blur_root8.extent.0 + 15)/4)) {
+        let blur_root2.s0.x.v37.base = min((((blur_root2.s0.x.x*4) + blur_root8.min.0) + -6), ((blur_root8.min.0 + blur_root8.extent.0) + 2))
+        allocate sum$2[uint16 * 4 * 1 * 1]
+        produce sum$2 {
+          sum$2[ramp(0, 1, 4)] = x4(uint16(0))
+        } update sum$2 {
+          for (sum$2.s1.i0.y$r, 0, 3) {
+            for (sum$2.s1.i0.x$r, 0, 3) {
+              sum$2[ramp(0, 1, 4)] = (sum$2[ramp(0, 1, 4)] + (x4(i0[(sum$2.s1.i0.x$r + (sum$2.s1.i0.y$r*3))])*blur_root1[ramp(((((blur_root2.s0.x.v37.base + sum$2.s1.i0.x$r) - blur_root1.x.min_realized) + ((((blur_root2.s0.y + sum$2.s1.i0.y$r) - blur_root8.min.1) + 6)*((blur_root1.x.extent_realized.s.s - blur_root1.x.min_realized) + 1))) + -1), 1, 4)]))
+            }
+          }
+        }
+        blur_root2[ramp(((blur_root2.s0.x.v37.base - blur_root2.x.min_realized) + (((blur_root2.s0.y - blur_root8.min.1) + 6)*((blur_root2.x.extent_realized.s.s - blur_root2.x.min_realized) + 1))), 1, 4)] = sum$2[ramp(0, 1, 4)]
+        free sum$2
+      }
+    }
+    free blur_root1
+  }
+  let blur_root3.x.min_realized = min(min((blur_root8.min.0 + -5), ((blur_root8.min.0 + blur_root8.extent.0) + 1)), ((min(blur_root8.extent.0, -4) + blur_root8.min.0) + -1))
+  let blur_root3.x.extent_realized.s.s = min(max((((((blur_root8.extent.0 + 9)/4)*4) + blur_root8.min.0) + -2), ((((blur_root8.extent.0 + 7)/4)*4) + blur_root8.min.0)), ((blur_root8.min.0 + blur_root8.extent.0) + 4))
+  allocate blur_root3[uint16 * ((blur_root3.x.extent_realized.s.s - blur_root3.x.min_realized) + 1) * (blur_root8.extent.1 + 10)]
+  produce blur_root3 {
+    parallel (blur_root3.s0.y, (blur_root8.min.1 + -5), (blur_root8.extent.1 + 10)) {
+      for (blur_root3.s0.x.x, 0, ((blur_root8.extent.0 + 13)/4)) {
+        let blur_root3.s0.x.v38.base = min((((blur_root3.s0.x.x*4) + blur_root8.min.0) + -5), ((blur_root8.min.0 + blur_root8.extent.0) + 1))
+        allocate sum$3[uint16 * 4 * 1 * 1]
+        produce sum$3 {
+          sum$3[ramp(0, 1, 4)] = x4(uint16(0))
+        } update sum$3 {
+          for (sum$3.s1.i0.y$r, 0, 3) {
+            for (sum$3.s1.i0.x$r, 0, 3) {
+              sum$3[ramp(0, 1, 4)] = (sum$3[ramp(0, 1, 4)] + (x4(i0[(sum$3.s1.i0.x$r + (sum$3.s1.i0.y$r*3))])*blur_root2[ramp(((((blur_root3.s0.x.v38.base + sum$3.s1.i0.x$r) - blur_root2.x.min_realized) + ((((blur_root3.s0.y + sum$3.s1.i0.y$r) - blur_root8.min.1) + 5)*((blur_root2.x.extent_realized.s.s - blur_root2.x.min_realized) + 1))) + -1), 1, 4)]))
+            }
+          }
+        }
+        blur_root3[ramp(((blur_root3.s0.x.v38.base - blur_root3.x.min_realized) + (((blur_root3.s0.y - blur_root8.min.1) + 5)*((blur_root3.x.extent_realized.s.s - blur_root3.x.min_realized) + 1))), 1, 4)] = sum$3[ramp(0, 1, 4)]
+        free sum$3
+      }
+    }
+    free blur_root2
+  }
+  let blur_root4.x.min_realized = min((min(blur_root8.extent.0, -4) + blur_root8.min.0), (min((blur_root8.min.0 + -3), ((blur_root8.min.0 + blur_root8.extent.0) + -1)) + -1))
+  let blur_root4.x.extent_realized.s.s = max(min((((((blur_root8.extent.0 + 7)/4)*4) + blur_root8.min.0) + -1), ((blur_root8.min.0 + blur_root8.extent.0) + 3)), (min(((((blur_root8.extent.0 + 5)/4)*4) + blur_root8.min.0), ((blur_root8.min.0 + blur_root8.extent.0) + 2)) + 1))
+  allocate blur_root4[uint16 * ((blur_root4.x.extent_realized.s.s - blur_root4.x.min_realized) + 1) * (blur_root8.extent.1 + 8)]
+  produce blur_root4 {
+    parallel (blur_root4.s0.y, (blur_root8.min.1 + -4), (blur_root8.extent.1 + 8)) {
+      for (blur_root4.s0.x.x, 0, ((blur_root8.extent.0 + 11)/4)) {
+        let blur_root4.s0.x.v39.base = min((((blur_root4.s0.x.x*4) + blur_root8.min.0) + -4), (blur_root8.min.0 + blur_root8.extent.0))
+        allocate sum$4[uint16 * 4 * 1 * 1]
+        produce sum$4 {
+          sum$4[ramp(0, 1, 4)] = x4(uint16(0))
+        } update sum$4 {
+          for (sum$4.s1.i0.y$r, 0, 3) {
+            for (sum$4.s1.i0.x$r, 0, 3) {
+              sum$4[ramp(0, 1, 4)] = (sum$4[ramp(0, 1, 4)] + (x4(i0[(sum$4.s1.i0.x$r + (sum$4.s1.i0.y$r*3))])*blur_root3[ramp(((((blur_root4.s0.x.v39.base + sum$4.s1.i0.x$r) - blur_root3.x.min_realized) + ((((blur_root4.s0.y + sum$4.s1.i0.y$r) - blur_root8.min.1) + 4)*((blur_root3.x.extent_realized.s.s - blur_root3.x.min_realized) + 1))) + -1), 1, 4)]))
+            }
+          }
+        }
+        blur_root4[ramp(((blur_root4.s0.x.v39.base - blur_root4.x.min_realized) + (((blur_root4.s0.y - blur_root8.min.1) + 4)*((blur_root4.x.extent_realized.s.s - blur_root4.x.min_realized) + 1))), 1, 4)] = sum$4[ramp(0, 1, 4)]
+        free sum$4
+      }
+    }
+    free blur_root3
+  }
+  let blur_root5.x.min_realized = min(min((blur_root8.min.0 + -3), ((blur_root8.min.0 + blur_root8.extent.0) + -1)), (min(blur_root8.min.0, (blur_root8.min.0 + blur_root8.extent.0)) + -3))
+  let blur_root5.x.extent_realized.s.s = max(min(((((blur_root8.extent.0 + 5)/4)*4) + blur_root8.min.0), ((blur_root8.min.0 + blur_root8.extent.0) + 2)), ((blur_root8.extent.0 + blur_root8.min.0) + 2))
+  allocate blur_root5[uint16 * ((blur_root5.x.extent_realized.s.s - blur_root5.x.min_realized) + 1) * (blur_root8.extent.1 + 6)]
+  produce blur_root5 {
+    parallel (blur_root5.s0.y, (blur_root8.min.1 + -3), (blur_root8.extent.1 + 6)) {
+      for (blur_root5.s0.x.x, 0, ((blur_root8.extent.0 + 9)/4)) {
+        let blur_root5.s0.x.v40.base = min((((blur_root5.s0.x.x*4) + blur_root8.min.0) + -3), ((blur_root8.min.0 + blur_root8.extent.0) + -1))
+        allocate sum$5[uint16 * 4 * 1 * 1]
+        produce sum$5 {
+          sum$5[ramp(0, 1, 4)] = x4(uint16(0))
+        } update sum$5 {
+          for (sum$5.s1.i0.y$r, 0, 3) {
+            for (sum$5.s1.i0.x$r, 0, 3) {
+              sum$5[ramp(0, 1, 4)] = (sum$5[ramp(0, 1, 4)] + (x4(i0[(sum$5.s1.i0.x$r + (sum$5.s1.i0.y$r*3))])*blur_root4[ramp(((((blur_root5.s0.x.v40.base + sum$5.s1.i0.x$r) - blur_root4.x.min_realized) + ((((blur_root5.s0.y + sum$5.s1.i0.y$r) - blur_root8.min.1) + 3)*((blur_root4.x.extent_realized.s.s - blur_root4.x.min_realized) + 1))) + -1), 1, 4)]))
+            }
+          }
+        }
+        blur_root5[ramp(((blur_root5.s0.x.v40.base - blur_root5.x.min_realized) + (((blur_root5.s0.y - blur_root8.min.1) + 3)*((blur_root5.x.extent_realized.s.s - blur_root5.x.min_realized) + 1))), 1, 4)] = sum$5[ramp(0, 1, 4)]
+        free sum$5
+      }
+    }
+    free blur_root4
+  }
+  let blur_root6.x.min_realized = min((min(blur_root8.min.0, (blur_root8.min.0 + blur_root8.extent.0)) + -2), (min((blur_root8.min.0 + -1), ((blur_root8.min.0 + blur_root8.extent.0) + -3)) + -1))
+  let blur_root6.x.extent_realized.s.s = max((blur_root8.extent.0 + blur_root8.min.0), min((((((blur_root8.extent.0 + 1)/4)*4) + blur_root8.min.0) + 2), (blur_root8.min.0 + blur_root8.extent.0)))
+  allocate blur_root6[uint16 * ((blur_root6.x.extent_realized.s.s - blur_root6.x.min_realized) + 2) * (blur_root8.extent.1 + 4)]
+  produce blur_root6 {
+    parallel (blur_root6.s0.y, (blur_root8.min.1 + -2), (blur_root8.extent.1 + 4)) {
+      for (blur_root6.s0.x.x, 0, ((blur_root8.extent.0 + 7)/4)) {
+        let blur_root6.s0.x.v41.base.s = min((blur_root6.s0.x.x*4), blur_root8.extent.0)
+        allocate sum$6[uint16 * 4 * 1 * 1]
+        produce sum$6 {
+          sum$6[ramp(0, 1, 4)] = x4(uint16(0))
+        } update sum$6 {
+          for (sum$6.s1.i0.y$r, 0, 3) {
+            for (sum$6.s1.i0.x$r, 0, 3) {
+              sum$6[ramp(0, 1, 4)] = (sum$6[ramp(0, 1, 4)] + (x4(i0[(sum$6.s1.i0.x$r + (sum$6.s1.i0.y$r*3))])*blur_root5[ramp((((((blur_root6.s0.x.v41.base.s + blur_root8.min.0) + sum$6.s1.i0.x$r) - blur_root5.x.min_realized) + ((((blur_root6.s0.y + sum$6.s1.i0.y$r) - blur_root8.min.1) + 2)*((blur_root5.x.extent_realized.s.s - blur_root5.x.min_realized) + 1))) + -3), 1, 4)]))
+            }
+          }
+        }
+        blur_root6[ramp(((((blur_root6.s0.x.v41.base.s + blur_root8.min.0) - blur_root6.x.min_realized) + (((blur_root6.s0.y - blur_root8.min.1) + 2)*((blur_root6.x.extent_realized.s.s - blur_root6.x.min_realized) + 2))) + -2), 1, 4)] = sum$6[ramp(0, 1, 4)]
+        free sum$6
+      }
+    }
+    free blur_root5
+  }
+  let blur_root7.x.min_realized = min(min((blur_root8.min.0 + -1), ((blur_root8.min.0 + blur_root8.extent.0) + -3)), (blur_root8.min.0.required + -1))
+  let blur_root7.x.extent_realized.s = (min(max((((((blur_root8.extent.0 + 1)/4)*4) + blur_root8.min.0) + 2), (((((blur_root8.extent.0 + -1)/4)*4) + blur_root8.min.0) + 4)), (blur_root8.min.0 + blur_root8.extent.0)) - min(min((blur_root8.min.0 + -1), ((blur_root8.min.0 + blur_root8.extent.0) + -3)), (blur_root8.min.0.required + -1)))
+  allocate blur_root7[uint16 * (blur_root7.x.extent_realized.s + 1) * (blur_root8.extent.1 + 2)]
+  produce blur_root7 {
+    parallel (blur_root7.s0.y, (blur_root8.min.1 + -1), (blur_root8.extent.1 + 2)) {
+      for (blur_root7.s0.x.x, 0, ((blur_root8.extent.0 + 5)/4)) {
+        let blur_root7.s0.x.v42.base = min((((blur_root7.s0.x.x*4) + blur_root8.min.0) + -1), ((blur_root8.min.0 + blur_root8.extent.0) + -3))
+        allocate sum$7[uint16 * 4 * 1 * 1]
+        produce sum$7 {
+          sum$7[ramp(0, 1, 4)] = x4(uint16(0))
+        } update sum$7 {
+          for (sum$7.s1.i0.y$r, 0, 3) {
+            for (sum$7.s1.i0.x$r, 0, 3) {
+              sum$7[ramp(0, 1, 4)] = (sum$7[ramp(0, 1, 4)] + (x4(i0[(sum$7.s1.i0.x$r + (sum$7.s1.i0.y$r*3))])*blur_root6[ramp(((((blur_root7.s0.x.v42.base + sum$7.s1.i0.x$r) - blur_root6.x.min_realized) + ((((blur_root7.s0.y + sum$7.s1.i0.y$r) - blur_root8.min.1) + 1)*((blur_root6.x.extent_realized.s.s - blur_root6.x.min_realized) + 2))) + -1), 1, 4)]))
+            }
+          }
+        }
+        blur_root7[ramp(((blur_root7.s0.x.v42.base - blur_root7.x.min_realized) + (((blur_root7.s0.y - blur_root8.min.1) + 1)*(blur_root7.x.extent_realized.s + 1))), 1, 4)] = sum$7[ramp(0, 1, 4)]
+        free sum$7
+      }
+    }
+    free blur_root6
+  }
+  produce blur_root8 {
+    parallel (blur_root8.s0.y, blur_root8.min.1, blur_root8.extent.1) {
+      for (blur_root8.s0.x.x, 0, ((blur_root8.extent.0 + 3)/4)) {
+        let blur_root8.s0.x.v43.base = min(((blur_root8.s0.x.x*4) + blur_root8.min.0), ((blur_root8.min.0 + blur_root8.extent.0) + -4))
+        allocate sum$8[uint16 * 4 * 1 * 1]
+        produce sum$8 {
+          sum$8[ramp(0, 1, 4)] = x4(uint16(0))
+        } update sum$8 {
+          for (sum$8.s1.i0.y$r, 0, 3) {
+            for (sum$8.s1.i0.x$r, 0, 3) {
+              sum$8[ramp(0, 1, 4)] = (sum$8[ramp(0, 1, 4)] + (x4(i0[(sum$8.s1.i0.x$r + (sum$8.s1.i0.y$r*3))])*blur_root7[ramp(((((blur_root8.s0.x.v43.base + sum$8.s1.i0.x$r) - blur_root7.x.min_realized) + (((blur_root8.s0.y + sum$8.s1.i0.y$r) - blur_root8.min.1)*(blur_root7.x.extent_realized.s + 1))) + -1), 1, 4)]))
+            }
+          }
+        }
+        blur_root8[ramp(((blur_root8.s0.x.v43.base + (blur_root8.s0.y*blur_root8.stride.1)) - (blur_root8.min.0 + (blur_root8.min.1*blur_root8.stride.1))), 1, 4)] = sum$8[ramp(0, 1, 4)]
+        free sum$8
+      }
+    }
+    free blur_root7
+  }
+  0
+}
+
+
+Embedding image i0
+Target triple of initial module: x86_64--linux-gnu
+Generating llvm bitcode...
+Compiling to native code...
+Injecting realization of sum$8
+Injecting realization of blur_tile7
+Injecting realization of sum$7
+Injecting realization of blur_tile6
+Injecting realization of sum$6
+Injecting realization of blur_tile5
+Injecting realization of sum$5
+Injecting realization of blur_tile4
+Injecting realization of sum$4
+Injecting realization of blur_tile3
+Injecting realization of sum$3
+Injecting realization of blur_tile2
+Injecting realization of sum$2
+Injecting realization of blur_tile1
+Injecting realization of sum
+Inlining blur_tile0
+Injecting tracing...
+Injecting profiling...
+Adding checks for parameters
+Computing bounds of each function's value
+Adding checks for images
+Performing computation bounds inference...
+Performing sliding window optimization...
+Performing allocation bounds inference...
+Uniquifying variable names...
+Performing storage folding optimization...
+Injecting debug_to_file calls...
+Simplifying...
+Dynamically skipping stages...
+Performing storage flattening...
+Injecting host <-> dev buffer copies...
+Injecting per-block gpu synchronization...
+Removing code that depends on undef values...
+Simplifying...
+Unrolling...
+Vectorizing...
+Detecting vector interleavings...
+Specializing clamped ramps...
+Injecting early frees...
+Injecting device frees...
+Simplifying...
+Lowering after final simplification:
+let blur_tile8.extent.0.required.s = (min((((((blur_tile8.extent.0 + -1)/64)*64) + blur_tile8.min.0) + 63), ((blur_tile8.min.0 + blur_tile8.extent.0) + -1)) - min(blur_tile8.min.0, ((blur_tile8.min.0 + blur_tile8.extent.0) + -64)))
+let blur_tile8.min.0.required = min(blur_tile8.min.0, ((blur_tile8.min.0 + blur_tile8.extent.0) + -64))
+let blur_tile8.extent.1.required.s = (min((((((blur_tile8.extent.1 + -1)/64)*64) + blur_tile8.min.1) + 63), ((blur_tile8.min.1 + blur_tile8.extent.1) + -1)) - min(blur_tile8.min.1, ((blur_tile8.min.1 + blur_tile8.extent.1) + -64)))
+let blur_tile8.min.1.required = min(blur_tile8.min.1, ((blur_tile8.min.1 + blur_tile8.extent.1) + -64))
+let p0.extent.0.required = (max(min(((blur_tile8.min.0 + blur_tile8.extent.0) + 8), p0.extent.0), 1) - max((min((blur_tile8.min.0 + -7), p0.extent.0) + -1), 0))
+let p0.min.0.required = max((min((blur_tile8.min.0 + -7), p0.extent.0) + -1), 0)
+let p0.extent.1.required = (max(min(((blur_tile8.min.1 + blur_tile8.extent.1) + 8), p0.extent.1), 1) - max((min((blur_tile8.min.1 + -7), p0.extent.1) + -1), 0))
+let p0.min.1.required = max((min((blur_tile8.min.1 + -7), p0.extent.1) + -1), 0)
+if (blur_tile8.host_and_dev_are_null) {
+  rewrite_buffer(blur_tile8.buffer, 2, blur_tile8.min.0.required, (blur_tile8.extent.0.required.s + 1), 1, blur_tile8.min.1.required, (blur_tile8.extent.1.required.s + 1), (blur_tile8.extent.0.required.s + 1))
+}
+if (i0.host_and_dev_are_null) {
+  rewrite_buffer(i0.buffer, 2, 0, 3, 1, 0, 3, 3)
+}
+if (p0.host_and_dev_are_null) {
+  rewrite_buffer(p0.buffer, 2, p0.min.0.required, p0.extent.0.required, 1, p0.min.1.required, p0.extent.1.required, p0.extent.0.required)
+}
+if (!((blur_tile8.host_and_dev_are_null || i0.host_and_dev_are_null) || p0.host_and_dev_are_null)) {
+  assert((blur_tile8.elem_size == 2), stringify("Output buffer blur_tile8 has type uint16, but elem_size of the buffer_t passed in is ", blur_tile8.elem_size, " instead of 2"))
+  assert((i0.elem_size == 2), stringify("Input buffer i0 has type uint16, but elem_size of the buffer_t passed in is ", i0.elem_size, " instead of 2"))
+  assert((p0.elem_size == 2), stringify("Input buffer p0 has type uint16, but elem_size of the buffer_t passed in is ", p0.elem_size, " instead of 2"))
+  assert((blur_tile8.min.0 <= blur_tile8.min.0.required), stringify("Output buffer blur_tile8 is accessed at ", min(blur_tile8.min.0, ((blur_tile8.min.0 + blur_tile8.extent.0) + -64)), ", which is before the min (", blur_tile8.min.0, ") in dimension 0"))
+  assert(((((blur_tile8.min.0.required + blur_tile8.extent.0.required.s) - blur_tile8.extent.0) + 1) <= blur_tile8.min.0), stringify("Output buffer blur_tile8 is accessed at ", (blur_tile8.min.0.required + blur_tile8.extent.0.required.s), ", which is beyond the max (", ((blur_tile8.min.0 + blur_tile8.extent.0) + -1), ") in dimension 0"))
+  assert((blur_tile8.min.1 <= blur_tile8.min.1.required), stringify("Output buffer blur_tile8 is accessed at ", min(blur_tile8.min.1, ((blur_tile8.min.1 + blur_tile8.extent.1) + -64)), ", which is before the min (", blur_tile8.min.1, ") in dimension 1"))
+  assert(((((blur_tile8.min.1.required + blur_tile8.extent.1.required.s) - blur_tile8.extent.1) + 1) <= blur_tile8.min.1), stringify("Output buffer blur_tile8 is accessed at ", (blur_tile8.min.1.required + blur_tile8.extent.1.required.s), ", which is beyond the max (", ((blur_tile8.min.1 + blur_tile8.extent.1) + -1), ") in dimension 1"))
+  assert((i0.min.0 <= 0), stringify("Input buffer i0 is accessed at 0, which is before the min (", i0.min.0, ") in dimension 0"))
+  assert(((3 - i0.extent.0) <= i0.min.0), stringify("Input buffer i0 is accessed at 2, which is beyond the max (", ((i0.min.0 + i0.extent.0) + -1), ") in dimension 0"))
+  assert((i0.min.1 <= 0), stringify("Input buffer i0 is accessed at 0, which is before the min (", i0.min.1, ") in dimension 1"))
+  assert(((3 - i0.extent.1) <= i0.min.1), stringify("Input buffer i0 is accessed at 2, which is beyond the max (", ((i0.min.1 + i0.extent.1) + -1), ") in dimension 1"))
+  assert((p0.min.0 <= p0.min.0.required), stringify("Input buffer p0 is accessed at ", max((min((blur_tile8.min.0 + -7), p0.extent.0) + -1), 0), ", which is before the min (", p0.min.0, ") in dimension 0"))
+  assert((((p0.min.0.required + p0.extent.0.required) - p0.extent.0) <= p0.min.0), stringify("Input buffer p0 is accessed at ", ((p0.min.0.required + p0.extent.0.required) + -1), ", which is beyond the max (", ((p0.min.0 + p0.extent.0) + -1), ") in dimension 0"))
+  assert((p0.min.1 <= p0.min.1.required), stringify("Input buffer p0 is accessed at ", max((min((blur_tile8.min.1 + -7), p0.extent.1) + -1), 0), ", which is before the min (", p0.min.1, ") in dimension 1"))
+  assert((((p0.min.1.required + p0.extent.1.required) - p0.extent.1) <= p0.min.1), stringify("Input buffer p0 is accessed at ", ((p0.min.1.required + p0.extent.1.required) + -1), ", which is beyond the max (", ((p0.min.1 + p0.extent.1) + -1), ") in dimension 1"))
+  assert((blur_tile8.stride.0 == 1), "Static constraint violated: blur_tile8.stride.0 == 1")
+  assert((i0.stride.0 == 1), "Static constraint violated: i0.stride.0 == 1")
+  assert((i0.min.0 == 0), "Static constraint violated: i0.min.0 == 0")
+  assert((i0.extent.0 == 3), "Static constraint violated: i0.extent.0 == 3")
+  assert((i0.stride.1 == 3), "Static constraint violated: i0.stride.1 == 3")
+  assert((i0.min.1 == 0), "Static constraint violated: i0.min.1 == 0")
+  assert((i0.extent.1 == 3), "Static constraint violated: i0.extent.1 == 3")
+  assert((p0.stride.0 == 1), "Static constraint violated: p0.stride.0 == 1")
+  let blur_tile8.total_extent.1 = (int64(blur_tile8.extent.1)*int64(blur_tile8.extent.0))
+  let p0.total_extent.1 = (int64(p0.extent.1)*int64(p0.extent.0))
+  assert((int64(blur_tile8.extent.0) <= int64(2147483647)), "Total allocation for buffer blur_tile8 exceeds 2^31 - 1")
+  assert(((int64(blur_tile8.extent.1)*int64(blur_tile8.stride.1)) <= int64(2147483647)), "Total allocation for buffer blur_tile8 exceeds 2^31 - 1")
+  assert((blur_tile8.total_extent.1 <= int64(2147483647)), "Product of extents for buffer blur_tile8 exceeds 2^31 - 1")
+  assert((int64(3) <= int64(2147483647)), "Total allocation for buffer i0 exceeds 2^31 - 1")
+  assert(((int64(3)*int64(3)) <= int64(2147483647)), "Total allocation for buffer i0 exceeds 2^31 - 1")
+  assert(((int64(3)*int64(3)) <= int64(2147483647)), "Product of extents for buffer i0 exceeds 2^31 - 1")
+  assert((int64(p0.extent.0) <= int64(2147483647)), "Total allocation for buffer p0 exceeds 2^31 - 1")
+  assert(((int64(p0.extent.1)*int64(p0.stride.1)) <= int64(2147483647)), "Total allocation for buffer p0 exceeds 2^31 - 1")
+  assert((p0.total_extent.1 <= int64(2147483647)), "Product of extents for buffer p0 exceeds 2^31 - 1")
+  let blur_tile1.y.min_realized = min(min((blur_tile8.min.1 + -7), ((blur_tile8.min.1 + blur_tile8.extent.1) + -57)), (min((blur_tile8.min.1 + -6), ((blur_tile8.min.1 + blur_tile8.extent.1) + -58)) + -1))
+  let blur_tile1.y.extent_realized.s.s = max(min((((((blur_tile8.extent.1 + 13)/64)*64) + blur_tile8.min.1) + 56), ((blur_tile8.min.1 + blur_tile8.extent.1) + 6)), (min((((((blur_tile8.extent.1 + 11)/64)*64) + blur_tile8.min.1) + 57), ((blur_tile8.min.1 + blur_tile8.extent.1) + 5)) + 1))
+  let blur_tile1.x.min_realized = min(min((blur_tile8.min.0 + -7), ((blur_tile8.min.0 + blur_tile8.extent.0) + -57)), (min((blur_tile8.min.0 + -6), ((blur_tile8.min.0 + blur_tile8.extent.0) + -58)) + -1))
+  let blur_tile1.x.extent_realized.s.s = max(min((((((blur_tile8.extent.0 + 13)/64)*64) + blur_tile8.min.0) + 56), ((blur_tile8.min.0 + blur_tile8.extent.0) + 6)), (min((((((blur_tile8.extent.0 + 11)/64)*64) + blur_tile8.min.0) + 57), ((blur_tile8.min.0 + blur_tile8.extent.0) + 5)) + 1))
+  allocate blur_tile1[uint16 * ((blur_tile1.x.extent_realized.s.s - blur_tile1.x.min_realized) + 1) * ((blur_tile1.y.extent_realized.s.s - blur_tile1.y.min_realized) + 1)]
+  produce blur_tile1 {
+    assert((halide_copy_to_host(p0.buffer) == 0), "Failed to copy buffer p0 to host.")
+    assert((halide_copy_to_host(i0.buffer) == 0), "Failed to copy buffer i0 to host.")
+    parallel (blur_tile1.s0.y.y, 0, ((blur_tile8.extent.1 + 77)/64)) {
+      let blur_tile1.s0.y.v35.base = min((((blur_tile1.s0.y.y*64) + blur_tile8.min.1) + -7), ((blur_tile8.min.1 + blur_tile8.extent.1) + -57))
+      for (blur_tile1.s0.x.x, 0, ((blur_tile8.extent.0 + 77)/64)) {
+        let blur_tile1.s0.x.v34.base = min((((blur_tile1.s0.x.x*64) + blur_tile8.min.0) + -7), ((blur_tile8.min.0 + blur_tile8.extent.0) + -57))
+        for (blur_tile1.s0.y.v35, 0, 64) {
+          for (blur_tile1.s0.x.v34.v34, 0, 16) {
+            let blur_tile1.s0.x.min_1.s = (blur_tile1.s0.x.v34.base + (blur_tile1.s0.x.v34.v34*4))
+            allocate sum[uint16 * 4 * 1 * 1]
+            produce sum {
+              sum[ramp(0, 1, 4)] = x4(uint16(0))
+            } update sum {
+              for (sum.s1.i0.y$r, 0, 3) {
+                for (sum.s1.i0.x$r, 0, 3) {
+                  if (((((blur_tile1.s0.x.min_1.s + sum.s1.i0.x$r) + 3) <= p0.extent.0) && ((1 - sum.s1.i0.x$r) <= blur_tile1.s0.x.min_1.s))) {
+                    sum[ramp(0, 1, 4)] = (sum[ramp(0, 1, 4)] + (x4(i0[(sum.s1.i0.x$r + (sum.s1.i0.y$r*3))])*p0[ramp(((((blur_tile1.s0.x.min_1.s + sum.s1.i0.x$r) + (max((min(((blur_tile1.s0.y.v35.base + blur_tile1.s0.y.v35) + sum.s1.i0.y$r), p0.extent.1) + -1), 0)*p0.stride.1)) - (p0.min.0 + (p0.min.1*p0.stride.1))) + -1), 1, 4)]))
+                  } else {
+                    sum[ramp(0, 1, 4)] = (sum[ramp(0, 1, 4)] + (x4(i0[(sum.s1.i0.x$r + (sum.s1.i0.y$r*3))])*p0[((max((min(ramp((blur_tile1.s0.x.min_1.s + sum.s1.i0.x$r), 1, 4), x4(p0.extent.0)) + x4(-1)), x4(0)) + x4((max((min(((blur_tile1.s0.y.v35.base + blur_tile1.s0.y.v35) + sum.s1.i0.y$r), p0.extent.1) + -1), 0)*p0.stride.1))) - x4((p0.min.0 + (p0.min.1*p0.stride.1))))]))
+                  }
+                }
+              }
+            }
+            blur_tile1[ramp(((blur_tile1.s0.x.min_1.s - blur_tile1.x.min_realized) + (((blur_tile1.s0.y.v35.base + blur_tile1.s0.y.v35) - blur_tile1.y.min_realized)*((blur_tile1.x.extent_realized.s.s - blur_tile1.x.min_realized) + 1))), 1, 4)] = sum[ramp(0, 1, 4)]
+            free sum
+          }
+        }
+      }
+    }
+  }
+  let blur_tile2.y.min_realized = min(min((blur_tile8.min.1 + -6), ((blur_tile8.min.1 + blur_tile8.extent.1) + -58)), (min((blur_tile8.min.1 + -5), ((blur_tile8.min.1 + blur_tile8.extent.1) + -59)) + -1))
+  let blur_tile2.y.extent_realized.s.s = max(min((((((blur_tile8.extent.1 + 11)/64)*64) + blur_tile8.min.1) + 57), ((blur_tile8.min.1 + blur_tile8.extent.1) + 5)), (min((((((blur_tile8.extent.1 + 9)/64)*64) + blur_tile8.min.1) + 58), ((blur_tile8.min.1 + blur_tile8.extent.1) + 4)) + 1))
+  let blur_tile2.x.min_realized = min(min((blur_tile8.min.0 + -6), ((blur_tile8.min.0 + blur_tile8.extent.0) + -58)), (min((blur_tile8.min.0 + -5), ((blur_tile8.min.0 + blur_tile8.extent.0) + -59)) + -1))
+  let blur_tile2.x.extent_realized.s.s = max(min((((((blur_tile8.extent.0 + 11)/64)*64) + blur_tile8.min.0) + 57), ((blur_tile8.min.0 + blur_tile8.extent.0) + 5)), (min((((((blur_tile8.extent.0 + 9)/64)*64) + blur_tile8.min.0) + 58), ((blur_tile8.min.0 + blur_tile8.extent.0) + 4)) + 1))
+  allocate blur_tile2[uint16 * ((blur_tile2.x.extent_realized.s.s - blur_tile2.x.min_realized) + 1) * ((blur_tile2.y.extent_realized.s.s - blur_tile2.y.min_realized) + 1)]
+  produce blur_tile2 {
+    parallel (blur_tile2.s0.y.y, 0, ((blur_tile8.extent.1 + 75)/64)) {
+      let blur_tile2.s0.y.v35.base = min((((blur_tile2.s0.y.y*64) + blur_tile8.min.1) + -6), ((blur_tile8.min.1 + blur_tile8.extent.1) + -58))
+      for (blur_tile2.s0.x.x, 0, ((blur_tile8.extent.0 + 75)/64)) {
+        let blur_tile2.s0.x.v34.base = min((((blur_tile2.s0.x.x*64) + blur_tile8.min.0) + -6), ((blur_tile8.min.0 + blur_tile8.extent.0) + -58))
+        for (blur_tile2.s0.y.v35, 0, 64) {
+          for (blur_tile2.s0.x.v34.v34, 0, 16) {
+            let blur_tile2.s0.x.min_1.s = (blur_tile2.s0.x.v34.base + (blur_tile2.s0.x.v34.v34*4))
+            allocate sum$2[uint16 * 4 * 1 * 1]
+            produce sum$2 {
+              sum$2[ramp(0, 1, 4)] = x4(uint16(0))
+            } update sum$2 {
+              for (sum$2.s1.i0.y$r, 0, 3) {
+                for (sum$2.s1.i0.x$r, 0, 3) {
+                  sum$2[ramp(0, 1, 4)] = (sum$2[ramp(0, 1, 4)] + (x4(i0[(sum$2.s1.i0.x$r + (sum$2.s1.i0.y$r*3))])*blur_tile1[ramp(((((blur_tile2.s0.x.min_1.s + sum$2.s1.i0.x$r) - blur_tile1.x.min_realized) + (((((blur_tile2.s0.y.v35.base + blur_tile2.s0.y.v35) + sum$2.s1.i0.y$r) - blur_tile1.y.min_realized) + -1)*((blur_tile1.x.extent_realized.s.s - blur_tile1.x.min_realized) + 1))) + -1), 1, 4)]))
+                }
+              }
+            }
+            blur_tile2[ramp(((blur_tile2.s0.x.min_1.s - blur_tile2.x.min_realized) + (((blur_tile2.s0.y.v35.base + blur_tile2.s0.y.v35) - blur_tile2.y.min_realized)*((blur_tile2.x.extent_realized.s.s - blur_tile2.x.min_realized) + 1))), 1, 4)] = sum$2[ramp(0, 1, 4)]
+            free sum$2
+          }
+        }
+      }
+    }
+    free blur_tile1
+  }
+  let blur_tile3.y.min_realized = min(min((blur_tile8.min.1 + -5), ((blur_tile8.min.1 + blur_tile8.extent.1) + -59)), (min((blur_tile8.min.1 + -4), ((blur_tile8.min.1 + blur_tile8.extent.1) + -60)) + -1))
+  let blur_tile3.y.extent_realized.s.s = max(min((((((blur_tile8.extent.1 + 9)/64)*64) + blur_tile8.min.1) + 58), ((blur_tile8.min.1 + blur_tile8.extent.1) + 4)), (min((((((blur_tile8.extent.1 + 7)/64)*64) + blur_tile8.min.1) + 59), ((blur_tile8.min.1 + blur_tile8.extent.1) + 3)) + 1))
+  let blur_tile3.x.min_realized = min(min((blur_tile8.min.0 + -5), ((blur_tile8.min.0 + blur_tile8.extent.0) + -59)), (min((blur_tile8.min.0 + -4), ((blur_tile8.min.0 + blur_tile8.extent.0) + -60)) + -1))
+  let blur_tile3.x.extent_realized.s.s = max(min((((((blur_tile8.extent.0 + 9)/64)*64) + blur_tile8.min.0) + 58), ((blur_tile8.min.0 + blur_tile8.extent.0) + 4)), (min((((((blur_tile8.extent.0 + 7)/64)*64) + blur_tile8.min.0) + 59), ((blur_tile8.min.0 + blur_tile8.extent.0) + 3)) + 1))
+  allocate blur_tile3[uint16 * ((blur_tile3.x.extent_realized.s.s - blur_tile3.x.min_realized) + 1) * ((blur_tile3.y.extent_realized.s.s - blur_tile3.y.min_realized) + 1)]
+  produce blur_tile3 {
+    parallel (blur_tile3.s0.y.y, 0, ((blur_tile8.extent.1 + 73)/64)) {
+      let blur_tile3.s0.y.v35.base = min((((blur_tile3.s0.y.y*64) + blur_tile8.min.1) + -5), ((blur_tile8.min.1 + blur_tile8.extent.1) + -59))
+      for (blur_tile3.s0.x.x, 0, ((blur_tile8.extent.0 + 73)/64)) {
+        let blur_tile3.s0.x.v34.base = min((((blur_tile3.s0.x.x*64) + blur_tile8.min.0) + -5), ((blur_tile8.min.0 + blur_tile8.extent.0) + -59))
+        for (blur_tile3.s0.y.v35, 0, 64) {
+          for (blur_tile3.s0.x.v34.v34, 0, 16) {
+            let blur_tile3.s0.x.min_1.s = (blur_tile3.s0.x.v34.base + (blur_tile3.s0.x.v34.v34*4))
+            allocate sum$3[uint16 * 4 * 1 * 1]
+            produce sum$3 {
+              sum$3[ramp(0, 1, 4)] = x4(uint16(0))
+            } update sum$3 {
+              for (sum$3.s1.i0.y$r, 0, 3) {
+                for (sum$3.s1.i0.x$r, 0, 3) {
+                  sum$3[ramp(0, 1, 4)] = (sum$3[ramp(0, 1, 4)] + (x4(i0[(sum$3.s1.i0.x$r + (sum$3.s1.i0.y$r*3))])*blur_tile2[ramp(((((blur_tile3.s0.x.min_1.s + sum$3.s1.i0.x$r) - blur_tile2.x.min_realized) + (((((blur_tile3.s0.y.v35.base + blur_tile3.s0.y.v35) + sum$3.s1.i0.y$r) - blur_tile2.y.min_realized) + -1)*((blur_tile2.x.extent_realized.s.s - blur_tile2.x.min_realized) + 1))) + -1), 1, 4)]))
+                }
+              }
+            }
+            blur_tile3[ramp(((blur_tile3.s0.x.min_1.s - blur_tile3.x.min_realized) + (((blur_tile3.s0.y.v35.base + blur_tile3.s0.y.v35) - blur_tile3.y.min_realized)*((blur_tile3.x.extent_realized.s.s - blur_tile3.x.min_realized) + 1))), 1, 4)] = sum$3[ramp(0, 1, 4)]
+            free sum$3
+          }
+        }
+      }
+    }
+    free blur_tile2
+  }
+  let blur_tile4.y.min_realized = min(min((blur_tile8.min.1 + -4), ((blur_tile8.min.1 + blur_tile8.extent.1) + -60)), (min((blur_tile8.min.1 + -3), ((blur_tile8.min.1 + blur_tile8.extent.1) + -61)) + -1))
+  let blur_tile4.y.extent_realized.s.s = max(min((((((blur_tile8.extent.1 + 7)/64)*64) + blur_tile8.min.1) + 59), ((blur_tile8.min.1 + blur_tile8.extent.1) + 3)), (min((((((blur_tile8.extent.1 + 5)/64)*64) + blur_tile8.min.1) + 60), ((blur_tile8.min.1 + blur_tile8.extent.1) + 2)) + 1))
+  let blur_tile4.x.min_realized = min(min((blur_tile8.min.0 + -4), ((blur_tile8.min.0 + blur_tile8.extent.0) + -60)), (min((blur_tile8.min.0 + -3), ((blur_tile8.min.0 + blur_tile8.extent.0) + -61)) + -1))
+  let blur_tile4.x.extent_realized.s.s = max(min((((((blur_tile8.extent.0 + 7)/64)*64) + blur_tile8.min.0) + 59), ((blur_tile8.min.0 + blur_tile8.extent.0) + 3)), (min((((((blur_tile8.extent.0 + 5)/64)*64) + blur_tile8.min.0) + 60), ((blur_tile8.min.0 + blur_tile8.extent.0) + 2)) + 1))
+  allocate blur_tile4[uint16 * ((blur_tile4.x.extent_realized.s.s - blur_tile4.x.min_realized) + 1) * ((blur_tile4.y.extent_realized.s.s - blur_tile4.y.min_realized) + 1)]
+  produce blur_tile4 {
+    parallel (blur_tile4.s0.y.y, 0, ((blur_tile8.extent.1 + 71)/64)) {
+      let blur_tile4.s0.y.v35.base = min((((blur_tile4.s0.y.y*64) + blur_tile8.min.1) + -4), ((blur_tile8.min.1 + blur_tile8.extent.1) + -60))
+      for (blur_tile4.s0.x.x, 0, ((blur_tile8.extent.0 + 71)/64)) {
+        let blur_tile4.s0.x.v34.base = min((((blur_tile4.s0.x.x*64) + blur_tile8.min.0) + -4), ((blur_tile8.min.0 + blur_tile8.extent.0) + -60))
+        for (blur_tile4.s0.y.v35, 0, 64) {
+          for (blur_tile4.s0.x.v34.v34, 0, 16) {
+            let blur_tile4.s0.x.min_1.s = (blur_tile4.s0.x.v34.base + (blur_tile4.s0.x.v34.v34*4))
+            allocate sum$4[uint16 * 4 * 1 * 1]
+            produce sum$4 {
+              sum$4[ramp(0, 1, 4)] = x4(uint16(0))
+            } update sum$4 {
+              for (sum$4.s1.i0.y$r, 0, 3) {
+                for (sum$4.s1.i0.x$r, 0, 3) {
+                  sum$4[ramp(0, 1, 4)] = (sum$4[ramp(0, 1, 4)] + (x4(i0[(sum$4.s1.i0.x$r + (sum$4.s1.i0.y$r*3))])*blur_tile3[ramp(((((blur_tile4.s0.x.min_1.s + sum$4.s1.i0.x$r) - blur_tile3.x.min_realized) + (((((blur_tile4.s0.y.v35.base + blur_tile4.s0.y.v35) + sum$4.s1.i0.y$r) - blur_tile3.y.min_realized) + -1)*((blur_tile3.x.extent_realized.s.s - blur_tile3.x.min_realized) + 1))) + -1), 1, 4)]))
+                }
+              }
+            }
+            blur_tile4[ramp(((blur_tile4.s0.x.min_1.s - blur_tile4.x.min_realized) + (((blur_tile4.s0.y.v35.base + blur_tile4.s0.y.v35) - blur_tile4.y.min_realized)*((blur_tile4.x.extent_realized.s.s - blur_tile4.x.min_realized) + 1))), 1, 4)] = sum$4[ramp(0, 1, 4)]
+            free sum$4
+          }
+        }
+      }
+    }
+    free blur_tile3
+  }
+  let blur_tile5.y.min_realized = min(min((blur_tile8.min.1 + -3), ((blur_tile8.min.1 + blur_tile8.extent.1) + -61)), (min((blur_tile8.min.1 + -2), ((blur_tile8.min.1 + blur_tile8.extent.1) + -62)) + -1))
+  let blur_tile5.y.extent_realized.s.s = max(min((((((blur_tile8.extent.1 + 5)/64)*64) + blur_tile8.min.1) + 60), ((blur_tile8.min.1 + blur_tile8.extent.1) + 2)), (min((((((blur_tile8.extent.1 + 3)/64)*64) + blur_tile8.min.1) + 61), ((blur_tile8.min.1 + blur_tile8.extent.1) + 1)) + 1))
+  let blur_tile5.x.min_realized = min(min((blur_tile8.min.0 + -3), ((blur_tile8.min.0 + blur_tile8.extent.0) + -61)), (min((blur_tile8.min.0 + -2), ((blur_tile8.min.0 + blur_tile8.extent.0) + -62)) + -1))
+  let blur_tile5.x.extent_realized.s.s = max(min((((((blur_tile8.extent.0 + 5)/64)*64) + blur_tile8.min.0) + 60), ((blur_tile8.min.0 + blur_tile8.extent.0) + 2)), (min((((((blur_tile8.extent.0 + 3)/64)*64) + blur_tile8.min.0) + 61), ((blur_tile8.min.0 + blur_tile8.extent.0) + 1)) + 1))
+  allocate blur_tile5[uint16 * ((blur_tile5.x.extent_realized.s.s - blur_tile5.x.min_realized) + 1) * ((blur_tile5.y.extent_realized.s.s - blur_tile5.y.min_realized) + 1)]
+  produce blur_tile5 {
+    parallel (blur_tile5.s0.y.y, 0, ((blur_tile8.extent.1 + 69)/64)) {
+      let blur_tile5.s0.y.v35.base = min((((blur_tile5.s0.y.y*64) + blur_tile8.min.1) + -3), ((blur_tile8.min.1 + blur_tile8.extent.1) + -61))
+      for (blur_tile5.s0.x.x, 0, ((blur_tile8.extent.0 + 69)/64)) {
+        let blur_tile5.s0.x.v34.base = min((((blur_tile5.s0.x.x*64) + blur_tile8.min.0) + -3), ((blur_tile8.min.0 + blur_tile8.extent.0) + -61))
+        for (blur_tile5.s0.y.v35, 0, 64) {
+          for (blur_tile5.s0.x.v34.v34, 0, 16) {
+            let blur_tile5.s0.x.min_1.s = (blur_tile5.s0.x.v34.base + (blur_tile5.s0.x.v34.v34*4))
+            allocate sum$5[uint16 * 4 * 1 * 1]
+            produce sum$5 {
+              sum$5[ramp(0, 1, 4)] = x4(uint16(0))
+            } update sum$5 {
+              for (sum$5.s1.i0.y$r, 0, 3) {
+                for (sum$5.s1.i0.x$r, 0, 3) {
+                  sum$5[ramp(0, 1, 4)] = (sum$5[ramp(0, 1, 4)] + (x4(i0[(sum$5.s1.i0.x$r + (sum$5.s1.i0.y$r*3))])*blur_tile4[ramp(((((blur_tile5.s0.x.min_1.s + sum$5.s1.i0.x$r) - blur_tile4.x.min_realized) + (((((blur_tile5.s0.y.v35.base + blur_tile5.s0.y.v35) + sum$5.s1.i0.y$r) - blur_tile4.y.min_realized) + -1)*((blur_tile4.x.extent_realized.s.s - blur_tile4.x.min_realized) + 1))) + -1), 1, 4)]))
+                }
+              }
+            }
+            blur_tile5[ramp(((blur_tile5.s0.x.min_1.s - blur_tile5.x.min_realized) + (((blur_tile5.s0.y.v35.base + blur_tile5.s0.y.v35) - blur_tile5.y.min_realized)*((blur_tile5.x.extent_realized.s.s - blur_tile5.x.min_realized) + 1))), 1, 4)] = sum$5[ramp(0, 1, 4)]
+            free sum$5
+          }
+        }
+      }
+    }
+    free blur_tile4
+  }
+  let blur_tile6.y.min_realized = min(min((blur_tile8.min.1 + -2), ((blur_tile8.min.1 + blur_tile8.extent.1) + -62)), (min((blur_tile8.min.1 + -1), ((blur_tile8.min.1 + blur_tile8.extent.1) + -63)) + -1))
+  let blur_tile6.y.extent_realized.s.s = max(min((((((blur_tile8.extent.1 + 3)/64)*64) + blur_tile8.min.1) + 61), ((blur_tile8.min.1 + blur_tile8.extent.1) + 1)), (min((((((blur_tile8.extent.1 + 1)/64)*64) + blur_tile8.min.1) + 62), (blur_tile8.min.1 + blur_tile8.extent.1)) + 1))
+  let blur_tile6.x.min_realized = min(min((blur_tile8.min.0 + -2), ((blur_tile8.min.0 + blur_tile8.extent.0) + -62)), (min((blur_tile8.min.0 + -1), ((blur_tile8.min.0 + blur_tile8.extent.0) + -63)) + -1))
+  let blur_tile6.x.extent_realized.s.s = max(min((((((blur_tile8.extent.0 + 3)/64)*64) + blur_tile8.min.0) + 61), ((blur_tile8.min.0 + blur_tile8.extent.0) + 1)), (min((((((blur_tile8.extent.0 + 1)/64)*64) + blur_tile8.min.0) + 62), (blur_tile8.min.0 + blur_tile8.extent.0)) + 1))
+  allocate blur_tile6[uint16 * ((blur_tile6.x.extent_realized.s.s - blur_tile6.x.min_realized) + 1) * ((blur_tile6.y.extent_realized.s.s - blur_tile6.y.min_realized) + 1)]
+  produce blur_tile6 {
+    parallel (blur_tile6.s0.y.y, 0, ((blur_tile8.extent.1 + 67)/64)) {
+      let blur_tile6.s0.y.v35.base = min((((blur_tile6.s0.y.y*64) + blur_tile8.min.1) + -2), ((blur_tile8.min.1 + blur_tile8.extent.1) + -62))
+      for (blur_tile6.s0.x.x, 0, ((blur_tile8.extent.0 + 67)/64)) {
+        let blur_tile6.s0.x.v34.base = min((((blur_tile6.s0.x.x*64) + blur_tile8.min.0) + -2), ((blur_tile8.min.0 + blur_tile8.extent.0) + -62))
+        for (blur_tile6.s0.y.v35, 0, 64) {
+          for (blur_tile6.s0.x.v34.v34, 0, 16) {
+            let blur_tile6.s0.x.min_1.s = (blur_tile6.s0.x.v34.base + (blur_tile6.s0.x.v34.v34*4))
+            allocate sum$6[uint16 * 4 * 1 * 1]
+            produce sum$6 {
+              sum$6[ramp(0, 1, 4)] = x4(uint16(0))
+            } update sum$6 {
+              for (sum$6.s1.i0.y$r, 0, 3) {
+                for (sum$6.s1.i0.x$r, 0, 3) {
+                  sum$6[ramp(0, 1, 4)] = (sum$6[ramp(0, 1, 4)] + (x4(i0[(sum$6.s1.i0.x$r + (sum$6.s1.i0.y$r*3))])*blur_tile5[ramp(((((blur_tile6.s0.x.min_1.s + sum$6.s1.i0.x$r) - blur_tile5.x.min_realized) + (((((blur_tile6.s0.y.v35.base + blur_tile6.s0.y.v35) + sum$6.s1.i0.y$r) - blur_tile5.y.min_realized) + -1)*((blur_tile5.x.extent_realized.s.s - blur_tile5.x.min_realized) + 1))) + -1), 1, 4)]))
+                }
+              }
+            }
+            blur_tile6[ramp(((blur_tile6.s0.x.min_1.s - blur_tile6.x.min_realized) + (((blur_tile6.s0.y.v35.base + blur_tile6.s0.y.v35) - blur_tile6.y.min_realized)*((blur_tile6.x.extent_realized.s.s - blur_tile6.x.min_realized) + 1))), 1, 4)] = sum$6[ramp(0, 1, 4)]
+            free sum$6
+          }
+        }
+      }
+    }
+    free blur_tile5
+  }
+  let blur_tile7.y.min_realized = min(min((blur_tile8.min.1 + -1), ((blur_tile8.min.1 + blur_tile8.extent.1) + -63)), (blur_tile8.min.1.required + -1))
+  let blur_tile7.y.extent_realized.s = (min(max((((((blur_tile8.extent.1 + 1)/64)*64) + blur_tile8.min.1) + 62), (((((blur_tile8.extent.1 + -1)/64)*64) + blur_tile8.min.1) + 64)), (blur_tile8.min.1 + blur_tile8.extent.1)) - min(min((blur_tile8.min.1 + -1), ((blur_tile8.min.1 + blur_tile8.extent.1) + -63)), (blur_tile8.min.1.required + -1)))
+  let blur_tile7.x.min_realized = min(min((blur_tile8.min.0 + -1), ((blur_tile8.min.0 + blur_tile8.extent.0) + -63)), (blur_tile8.min.0.required + -1))
+  let blur_tile7.x.extent_realized.s = (min(max((((((blur_tile8.extent.0 + 1)/64)*64) + blur_tile8.min.0) + 62), (((((blur_tile8.extent.0 + -1)/64)*64) + blur_tile8.min.0) + 64)), (blur_tile8.min.0 + blur_tile8.extent.0)) - min(min((blur_tile8.min.0 + -1), ((blur_tile8.min.0 + blur_tile8.extent.0) + -63)), (blur_tile8.min.0.required + -1)))
+  allocate blur_tile7[uint16 * (blur_tile7.x.extent_realized.s + 1) * (blur_tile7.y.extent_realized.s + 1)]
+  produce blur_tile7 {
+    parallel (blur_tile7.s0.y.y, 0, ((blur_tile8.extent.1 + 65)/64)) {
+      let blur_tile7.s0.y.v35.base = min((((blur_tile7.s0.y.y*64) + blur_tile8.min.1) + -1), ((blur_tile8.min.1 + blur_tile8.extent.1) + -63))
+      for (blur_tile7.s0.x.x, 0, ((blur_tile8.extent.0 + 65)/64)) {
+        let blur_tile7.s0.x.v34.base = min((((blur_tile7.s0.x.x*64) + blur_tile8.min.0) + -1), ((blur_tile8.min.0 + blur_tile8.extent.0) + -63))
+        for (blur_tile7.s0.y.v35, 0, 64) {
+          for (blur_tile7.s0.x.v34.v34, 0, 16) {
+            let blur_tile7.s0.x.min_1.s = (blur_tile7.s0.x.v34.base + (blur_tile7.s0.x.v34.v34*4))
+            allocate sum$7[uint16 * 4 * 1 * 1]
+            produce sum$7 {
+              sum$7[ramp(0, 1, 4)] = x4(uint16(0))
+            } update sum$7 {
+              for (sum$7.s1.i0.y$r, 0, 3) {
+                for (sum$7.s1.i0.x$r, 0, 3) {
+                  sum$7[ramp(0, 1, 4)] = (sum$7[ramp(0, 1, 4)] + (x4(i0[(sum$7.s1.i0.x$r + (sum$7.s1.i0.y$r*3))])*blur_tile6[ramp(((((blur_tile7.s0.x.min_1.s + sum$7.s1.i0.x$r) - blur_tile6.x.min_realized) + (((((blur_tile7.s0.y.v35.base + blur_tile7.s0.y.v35) + sum$7.s1.i0.y$r) - blur_tile6.y.min_realized) + -1)*((blur_tile6.x.extent_realized.s.s - blur_tile6.x.min_realized) + 1))) + -1), 1, 4)]))
+                }
+              }
+            }
+            blur_tile7[ramp(((blur_tile7.s0.x.min_1.s - blur_tile7.x.min_realized) + (((blur_tile7.s0.y.v35.base + blur_tile7.s0.y.v35) - blur_tile7.y.min_realized)*(blur_tile7.x.extent_realized.s + 1))), 1, 4)] = sum$7[ramp(0, 1, 4)]
+            free sum$7
+          }
+        }
+      }
+    }
+    free blur_tile6
+  }
+  produce blur_tile8 {
+    assert((halide_copy_to_host(blur_tile8.buffer) == 0), "Failed to copy buffer blur_tile8 to host.")
+    parallel (blur_tile8.s0.y.y, 0, ((blur_tile8.extent.1 + 63)/64)) {
+      let blur_tile8.s0.y.v35.base = min(((blur_tile8.s0.y.y*64) + blur_tile8.min.1), ((blur_tile8.min.1 + blur_tile8.extent.1) + -64))
+      for (blur_tile8.s0.x.x, 0, ((blur_tile8.extent.0 + 63)/64)) {
+        let blur_tile8.s0.x.v34.base = min(((blur_tile8.s0.x.x*64) + blur_tile8.min.0), ((blur_tile8.min.0 + blur_tile8.extent.0) + -64))
+        for (blur_tile8.s0.y.v35, 0, 64) {
+          for (blur_tile8.s0.x.v34.v34, 0, 16) {
+            let blur_tile8.s0.x.min_1.s = (blur_tile8.s0.x.v34.base + (blur_tile8.s0.x.v34.v34*4))
+            allocate sum$8[uint16 * 4 * 1 * 1]
+            produce sum$8 {
+              sum$8[ramp(0, 1, 4)] = x4(uint16(0))
+            } update sum$8 {
+              for (sum$8.s1.i0.y$r, 0, 3) {
+                for (sum$8.s1.i0.x$r, 0, 3) {
+                  sum$8[ramp(0, 1, 4)] = (sum$8[ramp(0, 1, 4)] + (x4(i0[(sum$8.s1.i0.x$r + (sum$8.s1.i0.y$r*3))])*blur_tile7[ramp(((((blur_tile8.s0.x.min_1.s + sum$8.s1.i0.x$r) - blur_tile7.x.min_realized) + (((((blur_tile8.s0.y.v35.base + blur_tile8.s0.y.v35) + sum$8.s1.i0.y$r) - blur_tile7.y.min_realized) + -1)*(blur_tile7.x.extent_realized.s + 1))) + -1), 1, 4)]))
+                }
+              }
+            }
+            blur_tile8[ramp(((blur_tile8.s0.x.min_1.s + ((blur_tile8.s0.y.v35.base + blur_tile8.s0.y.v35)*blur_tile8.stride.1)) - (blur_tile8.min.0 + (blur_tile8.min.1*blur_tile8.stride.1))), 1, 4)] = sum$8[ramp(0, 1, 4)]
+            free sum$8
+          }
+        }
+      }
+    }
+    free blur_tile7
+    set_host_dirty(blur_tile8.buffer, uint8(1))
+  }
+  0
+}
+
+
+Embedding image i0
+Constructing OpenCL device codegen
+Target triple of initial module: x86_64-unknown-unknown-unknown
+Target triple of initial module: x86_64--linux-gnu
+Generating llvm bitcode...
+OpenCL kernel:
+/*OpenCL C*/
+#pragma OPENCL FP_CONTRACT ON
+float maxval_f32() {return FLT_MAX;}
+float minval_f32() {return -FLT_MAX;}
+float nan_f32() { return NAN; }
+float neg_inf_f32() { return -INFINITY; }
+float inf_f32() { return INFINITY; }
+float float_from_bits(unsigned int x) {return as_float(x);}
+char smod_char(char a, char b) {
+char r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+short smod_short(short a, short b) {
+short r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+int smod_int(int a, int b) {
+int r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+long smod_long(long a, long b) {
+long r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+char sdiv_char(char a, char b) {
+char q = a / b;
+char r = a - q*b;
+char bs = b >> (8*sizeof(char) - 1);
+char rs = r >> (8*sizeof(char) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+short sdiv_short(short a, short b) {
+short q = a / b;
+short r = a - q*b;
+short bs = b >> (8*sizeof(short) - 1);
+short rs = r >> (8*sizeof(short) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+int sdiv_int(int a, int b) {
+int q = a / b;
+int r = a - q*b;
+int bs = b >> (8*sizeof(int) - 1);
+int rs = r >> (8*sizeof(int) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+long sdiv_long(long a, long b) {
+long q = a / b;
+long r = a - q*b;
+long bs = b >> (8*sizeof(long) - 1);
+long rs = r >> (8*sizeof(long) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+#define sqrt_f32 sqrt 
+#define sin_f32 sin 
+#define cos_f32 cos 
+#define exp_f32 exp 
+#define log_f32 log 
+#define abs_f32 fabs 
+#define floor_f32 floor 
+#define ceil_f32 ceil 
+#define round_f32 round 
+#define trunc_f32 trunc 
+#define pow_f32 pow
+#define asin_f32 asin 
+#define acos_f32 acos 
+#define tan_f32 tan 
+#define atan_f32 atan 
+#define atan2_f32 atan2
+#define sinh_f32 sinh 
+#define asinh_f32 asinh 
+#define cosh_f32 cosh 
+#define acosh_f32 acosh 
+#define tanh_f32 tanh 
+#define atanh_f32 atanh 
+int halide_gpu_thread_barrier() {
+  barrier(CLK_LOCAL_MEM_FENCE);
+  return 0;
+}
+#define __address_space___shared __local
+
+__kernel void _at_least_one_kernel(int x) { }
+
+Compiling to native code...
+Injecting realization of sum$8
+Inlining blur_MergeTile7
+Injecting realization of sum$7
+Inlining blur_MergeTile6
+Injecting realization of sum$6
+Inlining blur_MergeTile5
+Injecting realization of sum$5
+Inlining blur_MergeTile4
+Injecting realization of sum$4
+Inlining blur_MergeTile3
+Injecting realization of sum$3
+Inlining blur_MergeTile2
+Injecting realization of sum$2
+Inlining blur_MergeTile1
+Injecting realization of sum
+Inlining blur_MergeTile0
+Injecting tracing...
+Injecting profiling...
+Adding checks for parameters
+Computing bounds of each function's value
+Adding checks for images
+Performing computation bounds inference...
+Performing sliding window optimization...
+Performing allocation bounds inference...
+Uniquifying variable names...
+Performing storage folding optimization...
+Injecting debug_to_file calls...
+Simplifying...
+Dynamically skipping stages...
+Performing storage flattening...
+Injecting host <-> dev buffer copies...
+Injecting per-block gpu synchronization...
+Removing code that depends on undef values...
+Simplifying...
+Unrolling...
+Vectorizing...
+Detecting vector interleavings...
+Specializing clamped ramps...
+Injecting early frees...
+Injecting device frees...
+Simplifying...
+Lowering after final simplification:
+let p0.extent.0.required = (max(min(((blur_MergeTile8.min.0 + blur_MergeTile8.extent.0) + 8), p0.extent.0), 1) - max((min((blur_MergeTile8.min.0 + -7), p0.extent.0) + -1), 0))
+let p0.min.0.required = max((min((blur_MergeTile8.min.0 + -7), p0.extent.0) + -1), 0)
+let p0.extent.1.required = (max(min(((blur_MergeTile8.min.1 + blur_MergeTile8.extent.1) + 8), p0.extent.1), 1) - max((min((blur_MergeTile8.min.1 + -7), p0.extent.1) + -1), 0))
+let p0.min.1.required = max((min((blur_MergeTile8.min.1 + -7), p0.extent.1) + -1), 0)
+if (blur_MergeTile8.host_and_dev_are_null) {
+  rewrite_buffer(blur_MergeTile8.buffer, 2, blur_MergeTile8.min.0, blur_MergeTile8.extent.0, 1, blur_MergeTile8.min.1, blur_MergeTile8.extent.1, blur_MergeTile8.extent.0)
+}
+if (i0.host_and_dev_are_null) {
+  rewrite_buffer(i0.buffer, 2, 0, 3, 1, 0, 3, 3)
+}
+if (p0.host_and_dev_are_null) {
+  rewrite_buffer(p0.buffer, 2, p0.min.0.required, p0.extent.0.required, 1, p0.min.1.required, p0.extent.1.required, p0.extent.0.required)
+}
+if (!((blur_MergeTile8.host_and_dev_are_null || i0.host_and_dev_are_null) || p0.host_and_dev_are_null)) {
+  assert((blur_MergeTile8.elem_size == 2), stringify("Output buffer blur_MergeTile8 has type uint16, but elem_size of the buffer_t passed in is ", blur_MergeTile8.elem_size, " instead of 2"))
+  assert((i0.elem_size == 2), stringify("Input buffer i0 has type uint16, but elem_size of the buffer_t passed in is ", i0.elem_size, " instead of 2"))
+  assert((p0.elem_size == 2), stringify("Input buffer p0 has type uint16, but elem_size of the buffer_t passed in is ", p0.elem_size, " instead of 2"))
+  assert((i0.min.0 <= 0), stringify("Input buffer i0 is accessed at 0, which is before the min (", i0.min.0, ") in dimension 0"))
+  assert(((3 - i0.extent.0) <= i0.min.0), stringify("Input buffer i0 is accessed at 2, which is beyond the max (", ((i0.min.0 + i0.extent.0) + -1), ") in dimension 0"))
+  assert((i0.min.1 <= 0), stringify("Input buffer i0 is accessed at 0, which is before the min (", i0.min.1, ") in dimension 1"))
+  assert(((3 - i0.extent.1) <= i0.min.1), stringify("Input buffer i0 is accessed at 2, which is beyond the max (", ((i0.min.1 + i0.extent.1) + -1), ") in dimension 1"))
+  assert((p0.min.0 <= p0.min.0.required), stringify("Input buffer p0 is accessed at ", max((min((blur_MergeTile8.min.0 + -7), p0.extent.0) + -1), 0), ", which is before the min (", p0.min.0, ") in dimension 0"))
+  assert((((p0.min.0.required + p0.extent.0.required) - p0.extent.0) <= p0.min.0), stringify("Input buffer p0 is accessed at ", ((p0.min.0.required + p0.extent.0.required) + -1), ", which is beyond the max (", ((p0.min.0 + p0.extent.0) + -1), ") in dimension 0"))
+  assert((p0.min.1 <= p0.min.1.required), stringify("Input buffer p0 is accessed at ", max((min((blur_MergeTile8.min.1 + -7), p0.extent.1) + -1), 0), ", which is before the min (", p0.min.1, ") in dimension 1"))
+  assert((((p0.min.1.required + p0.extent.1.required) - p0.extent.1) <= p0.min.1), stringify("Input buffer p0 is accessed at ", ((p0.min.1.required + p0.extent.1.required) + -1), ", which is beyond the max (", ((p0.min.1 + p0.extent.1) + -1), ") in dimension 1"))
+  assert((blur_MergeTile8.stride.0 == 1), "Static constraint violated: blur_MergeTile8.stride.0 == 1")
+  assert((i0.stride.0 == 1), "Static constraint violated: i0.stride.0 == 1")
+  assert((i0.min.0 == 0), "Static constraint violated: i0.min.0 == 0")
+  assert((i0.extent.0 == 3), "Static constraint violated: i0.extent.0 == 3")
+  assert((i0.stride.1 == 3), "Static constraint violated: i0.stride.1 == 3")
+  assert((i0.min.1 == 0), "Static constraint violated: i0.min.1 == 0")
+  assert((i0.extent.1 == 3), "Static constraint violated: i0.extent.1 == 3")
+  assert((p0.stride.0 == 1), "Static constraint violated: p0.stride.0 == 1")
+  let blur_MergeTile8.total_extent.1 = (int64(blur_MergeTile8.extent.1)*int64(blur_MergeTile8.extent.0))
+  let p0.total_extent.1 = (int64(p0.extent.1)*int64(p0.extent.0))
+  assert((int64(blur_MergeTile8.extent.0) <= int64(2147483647)), "Total allocation for buffer blur_MergeTile8 exceeds 2^31 - 1")
+  assert(((int64(blur_MergeTile8.extent.1)*int64(blur_MergeTile8.stride.1)) <= int64(2147483647)), "Total allocation for buffer blur_MergeTile8 exceeds 2^31 - 1")
+  assert((blur_MergeTile8.total_extent.1 <= int64(2147483647)), "Product of extents for buffer blur_MergeTile8 exceeds 2^31 - 1")
+  assert((int64(3) <= int64(2147483647)), "Total allocation for buffer i0 exceeds 2^31 - 1")
+  assert(((int64(3)*int64(3)) <= int64(2147483647)), "Total allocation for buffer i0 exceeds 2^31 - 1")
+  assert(((int64(3)*int64(3)) <= int64(2147483647)), "Product of extents for buffer i0 exceeds 2^31 - 1")
+  assert((int64(p0.extent.0) <= int64(2147483647)), "Total allocation for buffer p0 exceeds 2^31 - 1")
+  assert(((int64(p0.extent.1)*int64(p0.stride.1)) <= int64(2147483647)), "Total allocation for buffer p0 exceeds 2^31 - 1")
+  assert((p0.total_extent.1 <= int64(2147483647)), "Product of extents for buffer p0 exceeds 2^31 - 1")
+  produce blur_MergeTile8 {
+    assert((halide_copy_to_host(p0.buffer) == 0), "Failed to copy buffer p0 to host.")
+    assert((halide_copy_to_host(i0.buffer) == 0), "Failed to copy buffer i0 to host.")
+    assert((halide_copy_to_host(blur_MergeTile8.buffer) == 0), "Failed to copy buffer blur_MergeTile8 to host.")
+    for (blur_MergeTile8.s0.y, blur_MergeTile8.min.1, blur_MergeTile8.extent.1) {
+      for (blur_MergeTile8.s0.x, blur_MergeTile8.min.0, blur_MergeTile8.extent.0) {
+        allocate sum$8[uint16 * 1 * 1]
+        produce sum$8 {
+          sum$8[0] = uint16(0)
+        } update sum$8 {
+          for (sum$8.s1.i0.y$r, 0, 3) {
+            for (sum$8.s1.i0.x$r, 0, 3) {
+              allocate sum$7[uint16 * 1 * 1]
+              produce sum$7 {
+                sum$7[0] = uint16(0)
+              } update sum$7 {
+                for (sum$7.s1.i0.y$r, 0, 3) {
+                  for (sum$7.s1.i0.x$r, 0, 3) {
+                    allocate sum$6[uint16 * 1 * 1]
+                    produce sum$6 {
+                      sum$6[0] = uint16(0)
+                    } update sum$6 {
+                      for (sum$6.s1.i0.y$r, 0, 3) {
+                        for (sum$6.s1.i0.x$r, 0, 3) {
+                          allocate sum$5[uint16 * 1 * 1]
+                          produce sum$5 {
+                            sum$5[0] = uint16(0)
+                          } update sum$5 {
+                            for (sum$5.s1.i0.y$r, 0, 3) {
+                              for (sum$5.s1.i0.x$r, 0, 3) {
+                                allocate sum$4[uint16 * 1 * 1]
+                                produce sum$4 {
+                                  sum$4[0] = uint16(0)
+                                } update sum$4 {
+                                  for (sum$4.s1.i0.y$r, 0, 3) {
+                                    for (sum$4.s1.i0.x$r, 0, 3) {
+                                      allocate sum$3[uint16 * 1 * 1]
+                                      produce sum$3 {
+                                        sum$3[0] = uint16(0)
+                                      } update sum$3 {
+                                        for (sum$3.s1.i0.y$r, 0, 3) {
+                                          for (sum$3.s1.i0.x$r, 0, 3) {
+                                            allocate sum$2[uint16 * 1 * 1]
+                                            produce sum$2 {
+                                              sum$2[0] = uint16(0)
+                                            } update sum$2 {
+                                              for (sum$2.s1.i0.y$r, 0, 3) {
+                                                for (sum$2.s1.i0.x$r, 0, 3) {
+                                                  allocate sum[uint16 * 1 * 1]
+                                                  produce sum {
+                                                    sum[0] = uint16(0)
+                                                  } update sum {
+                                                    for (sum.s1.i0.y$r, 0, 3) {
+                                                      for (sum.s1.i0.x$r, 0, 3) {
+                                                        sum[0] = (sum[0] + (i0[(sum.s1.i0.x$r + (sum.s1.i0.y$r*3))]*p0[((max((min((((((((((blur_MergeTile8.s0.x + sum$8.s1.i0.x$r) + sum$7.s1.i0.x$r) + sum$6.s1.i0.x$r) + sum$5.s1.i0.x$r) + sum$4.s1.i0.x$r) + sum$3.s1.i0.x$r) + sum$2.s1.i0.x$r) + sum.s1.i0.x$r) + -7), p0.extent.0) + -1), 0) + (max((min((((((((((blur_MergeTile8.s0.y + sum$8.s1.i0.y$r) + sum$7.s1.i0.y$r) + sum$6.s1.i0.y$r) + sum$5.s1.i0.y$r) + sum$4.s1.i0.y$r) + sum$3.s1.i0.y$r) + sum$2.s1.i0.y$r) + sum.s1.i0.y$r) + -7), p0.extent.1) + -1), 0)*p0.stride.1)) - (p0.min.0 + (p0.min.1*p0.stride.1)))]))
+                                                      }
+                                                    }
+                                                  }
+                                                  sum$2[0] = (sum$2[0] + (i0[(sum$2.s1.i0.x$r + (sum$2.s1.i0.y$r*3))]*sum[0]))
+                                                  free sum
+                                                }
+                                              }
+                                            }
+                                            sum$3[0] = (sum$3[0] + (i0[(sum$3.s1.i0.x$r + (sum$3.s1.i0.y$r*3))]*sum$2[0]))
+                                            free sum$2
+                                          }
+                                        }
+                                      }
+                                      sum$4[0] = (sum$4[0] + (i0[(sum$4.s1.i0.x$r + (sum$4.s1.i0.y$r*3))]*sum$3[0]))
+                                      free sum$3
+                                    }
+                                  }
+                                }
+                                sum$5[0] = (sum$5[0] + (i0[(sum$5.s1.i0.x$r + (sum$5.s1.i0.y$r*3))]*sum$4[0]))
+                                free sum$4
+                              }
+                            }
+                          }
+                          sum$6[0] = (sum$6[0] + (i0[(sum$6.s1.i0.x$r + (sum$6.s1.i0.y$r*3))]*sum$5[0]))
+                          free sum$5
+                        }
+                      }
+                    }
+                    sum$7[0] = (sum$7[0] + (i0[(sum$7.s1.i0.x$r + (sum$7.s1.i0.y$r*3))]*sum$6[0]))
+                    free sum$6
+                  }
+                }
+              }
+              sum$8[0] = (sum$8[0] + (i0[(sum$8.s1.i0.x$r + (sum$8.s1.i0.y$r*3))]*sum$7[0]))
+              free sum$7
+            }
+          }
+        }
+        blur_MergeTile8[((blur_MergeTile8.s0.x + (blur_MergeTile8.s0.y*blur_MergeTile8.stride.1)) - (blur_MergeTile8.min.0 + (blur_MergeTile8.min.1*blur_MergeTile8.stride.1)))] = sum$8[0]
+        free sum$8
+      }
+    }
+    set_host_dirty(blur_MergeTile8.buffer, uint8(1))
+  }
+  0
+}
+
+
+Embedding image i0
+Constructing OpenCL device codegen
+Target triple of initial module: x86_64-unknown-unknown-unknown
+Target triple of initial module: x86_64--linux-gnu
+Generating llvm bitcode...
+OpenCL kernel:
+/*OpenCL C*/
+#pragma OPENCL FP_CONTRACT ON
+float maxval_f32() {return FLT_MAX;}
+float minval_f32() {return -FLT_MAX;}
+float nan_f32() { return NAN; }
+float neg_inf_f32() { return -INFINITY; }
+float inf_f32() { return INFINITY; }
+float float_from_bits(unsigned int x) {return as_float(x);}
+char smod_char(char a, char b) {
+char r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+short smod_short(short a, short b) {
+short r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+int smod_int(int a, int b) {
+int r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+long smod_long(long a, long b) {
+long r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}ss
+
+char sdiv_char(char a, char b) {
+char q = a / b;
+char r = a - q*b;
+char bs = b >> (8*sizeof(char) - 1);
+char rs = r >> (8*sizeof(char) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+short sdiv_short(short a, short b) {
+short q = a / b;
+short r = a - q*b;
+short bs = b >> (8*sizeof(short) - 1);
+short rs = r >> (8*sizeof(short) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+int sdiv_int(int a, int b) {
+int q = a / b;
+int r = a - q*b;
+int bs = b >> (8*sizeof(int) - 1);
+int rs = r >> (8*sizeof(int) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+long sdiv_long(long a, long b) {
+long q = a / b;
+long r = a - q*b;
+long bs = b >> (8*sizeof(long) - 1);
+long rs = r >> (8*sizeof(long) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+#define sqrt_f32 sqrt 
+#define sin_f32 sin 
+#define cos_f32 cos 
+#define exp_f32 exp 
+#define log_f32 log 
+#define abs_f32 fabs 
+#define floor_f32 floor 
+#define ceil_f32 ceil 
+#define round_f32 round 
+#define trunc_f32 trunc 
+#define pow_f32 pow
+#define asin_f32 asin 
+#define acos_f32 acos 
+#define tan_f32 tan 
+#define atan_f32 atan 
+#define atan2_f32 atan2
+#define sinh_f32 sinh 
+#define asinh_f32 asinh 
+#define cosh_f32 cosh 
+#define acosh_f32 acosh 
+#define tanh_f32 tanh 
+#define atanh_f32 atanh 
+int halide_gpu_thread_barrier() {
+  barrier(CLK_LOCAL_MEM_FENCE);
+  return 0;
+}
+#define __address_space___shared __local
+
+__kernel void _at_least_one_kernel(int x) { }
+
+Compiling to native code...

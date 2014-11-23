@@ -1,0 +1,22 @@
+include /home/sting47/Halide/apps/support/Makefile.inc
+LIB_HALIDE=-I /home/sting47/Halide/include/ -L /home/sting47/Halide/bin/ -lHalide
+export LD_LIBRARY_PATH=/home/sting47/Halide/bin/
+#TARGET?=host
+DEBUG?=0
+outfile?=build/
+SIZE?=4096
+TILESIZE?=64
+LAYER?=1
+#OPENCL_LDFLAGS=-I /opt/intel/intel-opencl-1.2-4.6.0.92/opencl-1.2-sdk-4.6.0.92/include -L /usr/lib/x86_64-linux-gnu/libOpenCL.so -lOpenCL
+all: $(outfile)test
+
+$(outfile)tmp/blur_tile: blur_tile.cpp
+	@$(CXX) blur_tile.cpp $(LIB_HALIDE) -o $(outfile)tmp/blur_tile -ldl -lpthread -lz $(LDFLAGS)
+$(outfile)tmp/blur_tile.o: $(outfile)tmp/blur_tile
+	cd $(outfile)tmp/;HL_DEBUG_CODEGEN=$(DEBUG) ./blur_tile $(LAYER) $(TILESIZE)
+$(outfile)test: test.cpp $(outfile)tmp/blur_tile.o
+	$(CXX) -g -msse2 -Wall -O3 -I /home/sting47/Halide/apps/support/ -I $(outfile)tmp/ test.cpp $(outfile)tmp/blur_tile.o -o $(outfile)test -lpthread -ldl $(PNGFLAGS) $(OPENCL_LDFLAGS) -lOpenCL $(OPENGL_LDFLAGS) ;rm $(outfile)tmp/*
+run:
+	./build/test $(SIZE)
+clean:
+	@rm -f $(outfile)test $(outfile)tmp/blur_tile.o $(outfile)tmp/blur_tile.h $(outfile)tmp/blur_tile

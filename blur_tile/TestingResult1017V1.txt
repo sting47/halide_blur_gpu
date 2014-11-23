@@ -1,0 +1,37 @@
+32
+make: Nothing to be done for `all'.
+./build/test 16777216
+root time: 0.720939 
+tile time: 0.673554 
+64
+./build/test 16777216
+root time: 0.734431 
+tile time: 0.716381 
+128
+./build/test 16777216
+root time: 0.732351 
+tile time: 0.686697 
+256
+./build/test 16777216
+root time: 0.730016 
+tile time: 0.676715 
+512
+./build/test 16777216
+root time: 0.721695 
+tile time: 0.669306 
+1024
+./build/test 16777216
+root time: 0.722538 
+tile time: 0.667086 
+2048
+./build/test 16777216
+root time: 0.721730 
+tile time: 0.668278 
+4096
+./build/test 16777216
+root time: 0.721551 
+tile time: 0.665695 
+8192
+./build/test 16777216
+root time: 0.722438 
+tile time: 0.668883 
