@@ -5,7 +5,7 @@ do
 	for ((t=16;t<=1024;t*=2));
 	do
 		echo "Tile Size t=$t"
-		TILESIZE=$t  LAYER=$l make;
+		HL_TARGET=host-opencl HL_GPU_DEVICE=0 TILESIZE=$t  LAYER=$l make;
 		make run;
 	done
 	echo "================================================="

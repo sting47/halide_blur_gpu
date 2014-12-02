@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
                 //blur[1].split(x,xo,xi,16).split(xi,xx,xy,16);
             //blur[i].gpu_blocks(xo);//.gpu_threads(xx);
            //Var xi,yi;
-           cout << "in GPU schedule" << endl;
+           //cout << "in GPU schedule" << endl;
            //int blockw = 8;
            //int blockh = 8;
            for(int i=1;i<=m;i++)

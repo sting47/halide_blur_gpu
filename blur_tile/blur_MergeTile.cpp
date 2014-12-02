@@ -51,10 +51,10 @@ int main(int argc, char **argv) {
 		Var xo,xi,xx,xy,yi;
 //		blur_x.split(x,xo,xi,16).split(xi,xx,xy,16);
 //		blur_x.gpu_blocks(xo).gpu_threads(xx);
-        blur[m].compute_root().tile(x,y,xi,yi,tileSize,tileSize);
-        blur[m].compute_root().gpu_tile(x,y,16,16,GPU_Default);
+        blur[m].compute_root(); //.tile(x,y,xi,yi,tileSize,tileSize);
+        //blur[m].compute_root().gpu_tile(x,y,16,16,GPU_Default);
         for(int i=1; i<m; i++)
-            blur[i].compute_at(blur[m],xi);
+            blur[i].compute_at(blur[m],x);
     }
     else{
     	Var xi,yi;
