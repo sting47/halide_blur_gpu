@@ -1,0 +1,59 @@
+./process rgb.png 8 1 1 out.png
+CL: halide_init_kernels (user_context: 0x0, state_ptr: 0x610370, program: 0x40d520, size: 4522
+    create_opencl_context (user_context: 0x0)
+    Got platform 'AMD Accelerated Parallel Processing', about to create context (t=1417853049810259378)
+      device name: Intel(R) Core(TM) i5-4440 CPU @ 3.10GHz
+      device vendor: GenuineIntel
+      device profile: FULL_PROFILE
+      global mem size: 3893 MB
+      max mem alloc size: 2048 MB
+      local mem size: 32768
+      max compute units: 4
+      max workgroup size: 1024
+      max work item dimensions: 3
+      max work item sizes: 1024x1024x1024x0
+    clCreateContext -> 0x281b0f0
+    clCreateCommandQueue 0x2823be0
+    clCreateProgramWithSource -> 0x2da41b0
+    clBuildProgram 0x2da41b0 -D MAX_CONSTANT_BUFFER_SIZE=65536 -D MAX_CONSTANT_ARGS=8
+    Time: 3.109380e+01 ms
+CL: halide_dev_malloc (user_context: 0x0, buf: 0x7fff3601d3d0)
+    Allocating buffer of 47308800 bytes, extents: 1540x2560x3x0 strides: 1x1540x3942400x0 (4 bytes per element)
+    clCreateBuffer -> 47308800 0x28295f0
+    Allocated device buffer 0x28295f0 for buffer 0x7fff3601d3d0
+    Time: 1.334900e-02 ms
+CL: halide_dev_malloc (user_context: 0x0, buf: 0x7fff3601d420)
+    Allocating buffer of 47185920 bytes, extents: 1536x2560x3x0 strides: 1x1536x3932160x0 (4 bytes per element)
+    clCreateBuffer -> 47185920 0x2d96ec0
+    Allocated device buffer 0x2d96ec0 for buffer 0x7fff3601d420
+    Time: 9.532000e-03 ms
+CL: halide_dev_malloc (user_context: 0x0, buf: 0x7fff3601d3d0)
+CL: validate 0x28295f0: asked for 47308800, actual allocated 47308800
+CL: halide_copy_to_dev (user_context: 0x0, buf: 0x7fff3601d3d0)
+CL: validate 0x28295f0: asked for 0, actual allocated 47308800
+    clEnqueueWriteBufferRect ((0, 0), (0x2b0850000020 -> 42112496) + 0, 47308800x1x1 bytes, 0x0)
+    Time: 1.571878e+01 ms
+CL: halide_dev_run (user_context: 0x0, entry: kernel_blur_1__s0_c___block_id_z, blocks: 1536x2560x3, threads: 1x1x1, shmem: 12
+    clCreateKernel kernel_blur_1__s0_c___block_id_z ->     Time: 9.530000e-03 ms
+    clSetKernelArg 0 4 [0x7fff00000600 ...]
+    clSetKernelArg 1 4 [0x7fff00000a00 ...]
+    clSetKernelArg 2 4 [0x7fff00000003 ...]
+    clSetKernelArg 3 4 [0x0 ...]
+    clSetKernelArg 4 8 [0x2d96ec0 ...]
+    clSetKernelArg 5 8 [0x28295f0 ...]
+    clSetKernelArg 6 12 [NULL]
+    clEnqueueNDRangeKernel 1536x2560x3, 1x1x1 -> CL_SUCCESS
+    clReleaseKernel 0x2915db0
+    Time: 5.980417e+02 ms
+CL: halide_dev_free (user_context: 0x0, buf: 0x7fff3601d3d0)
+CL: validate 0x28295f0: asked for 0, actual allocated 47308800
+    clReleaseMemObject 0x28295f0
+    Time: 1.981247e+00 ms
+CL: halide_copy_to_host (user_context: 0x0, buf: 0x7fff3601d420)
+CL: validate 0x2d96ec0: asked for 0, actual allocated 47185920
+    clEnqueueReadBufferRect ((0, 0), (0x2d96ec0 -> 0x2b0855a3f020) + 0, 47185920x1x1 bytes, 0x0)
+    Time: 1.577628e+01 ms
+CL: halide_dev_free (user_context: 0x0, buf: 0x7fff3601d420)
+CL: validate 0x2d96ec0: asked for 0, actual allocated 47185920
+    clReleaseMemObject 0x2d96ec0
+    Time: 1.995324e+00 ms

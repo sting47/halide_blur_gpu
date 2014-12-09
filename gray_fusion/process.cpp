@@ -19,14 +19,14 @@ int main(int argc, char **argv) {
     // Timing code
     timeval t1, t2;
     unsigned int bestT = 0xffffffff;
-    for (int i = 0; i < 5; i++) {
+    /*for (int i = 0; i < 5; i++) {
       gettimeofday(&t1, NULL);
       gray_fusion(levels, alpha/(levels-1), beta, input, output);
       gettimeofday(&t2, NULL);
       unsigned int t = (t2.tv_sec - t1.tv_sec) * 1000000 + (t2.tv_usec - t1.tv_usec);
       if (t < bestT) bestT = t;
     }
-    printf("%u\n", bestT);
+    printf("%u\n", bestT);*/
 
 
     gray_fusion(levels, alpha/(levels-1), beta, input, output);

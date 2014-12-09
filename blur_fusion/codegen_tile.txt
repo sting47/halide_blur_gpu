@@ -1,0 +1,362 @@
+g++ blur_fusion.cpp -g -I /home/sting47/Halide/include -L /home/sting47/Halide/bin -lHalide -o blur_fusion -lpthread -ldl -lz 
+./blur_fusion
+Injecting realization of blur[1]
+Injecting realization of blur[0]
+Injecting realization of clamped
+Inlining floating
+Injecting tracing...
+Injecting profiling...
+Adding checks for parameters
+Computing bounds of each function's value
+Adding checks for images
+Performing computation bounds inference...
+Performing sliding window optimization...
+Performing allocation bounds inference...
+Uniquifying variable names...
+Performing storage folding optimization...
+Injecting debug_to_file calls...
+Simplifying...
+Dynamically skipping stages...
+Performing storage flattening...
+Injecting host <-> dev buffer copies...
+Injecting per-block gpu synchronization...
+Removing code that depends on undef values...
+Simplifying...
+Unrolling...
+Vectorizing...
+Detecting vector interleavings...
+Specializing clamped ramps...
+Injecting early frees...
+Injecting device frees...
+Simplifying...
+Lowering after final simplification:
+let input.extent.0.required.s = (max(min(((blur_fusion.min.0 + blur_fusion.extent.0) + 1), (input.extent.0 + -1)), 0) - max(min((blur_fusion.min.0 + -2), (input.extent.0 + -1)), 0))
+let input.min.0.required = max(min((blur_fusion.min.0 + -2), (input.extent.0 + -1)), 0)
+let input.extent.1.required.s = (max((min((blur_fusion.min.1 + blur_fusion.extent.1), input.extent.1) + -1), 0) - max(min(blur_fusion.min.1, (input.extent.1 + -1)), 0))
+let input.min.1.required = max(min(blur_fusion.min.1, (input.extent.1 + -1)), 0)
+let input.stride.2.required = ((input.extent.0.required.s + 1)*(input.extent.1.required.s + 1))
+if (blur_fusion.host_and_dev_are_null) {
+  rewrite_buffer(blur_fusion.buffer, 2, blur_fusion.min.0, blur_fusion.extent.0, 1, blur_fusion.min.1, blur_fusion.extent.1, blur_fusion.extent.0, blur_fusion.min.2, blur_fusion.extent.2, (blur_fusion.extent.0*blur_fusion.extent.1))
+}
+if (input.host_and_dev_are_null) {
+  rewrite_buffer(input.buffer, 2, input.min.0.required, (input.extent.0.required.s + 1), 1, input.min.1.required, (input.extent.1.required.s + 1), (input.extent.0.required.s + 1), blur_fusion.min.2, blur_fusion.extent.2, input.stride.2.required)
+}
+if (!(blur_fusion.host_and_dev_are_null || input.host_and_dev_are_null)) {
+  assert((blur_fusion.elem_size == 2), stringify("Output buffer blur_fusion has type uint16, but elem_size of the buffer_t passed in is ", blur_fusion.elem_size, " instead of 2"))
+  assert((input.elem_size == 2), stringify("Input buffer input has type uint16, but elem_size of the buffer_t passed in is ", input.elem_size, " instead of 2"))
+  assert((input.min.0 <= input.min.0.required), stringify("Input buffer input is accessed at ", max(min((blur_fusion.min.0 + -2), (input.extent.0 + -1)), 0), ", which is before the min (", input.min.0, ") in dimension 0"))
+  assert(((((input.min.0.required + input.extent.0.required.s) - input.extent.0) + 1) <= input.min.0), stringify("Input buffer input is accessed at ", (input.min.0.required + input.extent.0.required.s), ", which is beyond the max (", ((input.min.0 + input.extent.0) + -1), ") in dimension 0"))
+  assert((input.min.1 <= input.min.1.required), stringify("Input buffer input is accessed at ", max(min(blur_fusion.min.1, (input.extent.1 + -1)), 0), ", which is before the min (", input.min.1, ") in dimension 1"))
+  assert(((((input.min.1.required + input.extent.1.required.s) - input.extent.1) + 1) <= input.min.1), stringify("Input buffer input is accessed at ", (input.min.1.required + input.extent.1.required.s), ", which is beyond the max (", ((input.min.1 + input.extent.1) + -1), ") in dimension 1"))
+  assert((input.min.2 <= blur_fusion.min.2), stringify("Input buffer input is accessed at ", blur_fusion.min.2, ", which is before the min (", input.min.2, ") in dimension 2"))
+  assert((((blur_fusion.min.2 + blur_fusion.extent.2) - input.extent.2) <= input.min.2), stringify("Input buffer input is accessed at ", ((blur_fusion.min.2 + blur_fusion.extent.2) + -1), ", which is beyond the max (", ((input.min.2 + input.extent.2) + -1), ") in dimension 2"))
+  assert((blur_fusion.stride.0 == 1), "Static constraint violated: blur_fusion.stride.0 == 1")
+  assert((input.stride.0 == 1), "Static constraint violated: input.stride.0 == 1")
+  let blur_fusion.total_extent.1 = (int64(blur_fusion.extent.1)*int64(blur_fusion.extent.0))
+  let input.total_extent.1 = (int64(input.extent.1)*int64(input.extent.0))
+  assert((int64(blur_fusion.extent.0) <= int64(2147483647)), "Total allocation for buffer blur_fusion exceeds 2^31 - 1")
+  assert(((int64(blur_fusion.extent.1)*int64(blur_fusion.stride.1)) <= int64(2147483647)), "Total allocation for buffer blur_fusion exceeds 2^31 - 1")
+  assert((blur_fusion.total_extent.1 <= int64(2147483647)), "Product of extents for buffer blur_fusion exceeds 2^31 - 1")
+  assert(((int64(blur_fusion.extent.2)*int64(blur_fusion.stride.2)) <= int64(2147483647)), "Total allocation for buffer blur_fusion exceeds 2^31 - 1")
+  assert(((int64(blur_fusion.extent.2)*blur_fusion.total_extent.1) <= int64(2147483647)), "Product of extents for buffer blur_fusion exceeds 2^31 - 1")
+  assert((int64(input.extent.0) <= int64(2147483647)), "Total allocation for buffer input exceeds 2^31 - 1")
+  assert(((int64(input.extent.1)*int64(input.stride.1)) <= int64(2147483647)), "Total allocation for buffer input exceeds 2^31 - 1")
+  assert((input.total_extent.1 <= int64(2147483647)), "Product of extents for buffer input exceeds 2^31 - 1")
+  assert(((int64(input.extent.2)*int64(input.stride.2)) <= int64(2147483647)), "Total allocation for buffer input exceeds 2^31 - 1")
+  assert(((int64(input.extent.2)*input.total_extent.1) <= int64(2147483647)), "Product of extents for buffer input exceeds 2^31 - 1")
+  let clamped.y.min_realized = min(blur_fusion.min.1, ((blur_fusion.min.1 + blur_fusion.extent.1) + -64))
+  let clamped.y.extent_realized.s.s = max(((blur_fusion.min.1 + blur_fusion.extent.1) + -1), min((((((blur_fusion.extent.1 + -1)/64)*64) + blur_fusion.min.1) + 63), ((blur_fusion.min.1 + blur_fusion.extent.1) + -1)))
+  let clamped.x.min_realized.s = min(blur_fusion.min.0, ((blur_fusion.min.0 + blur_fusion.extent.0) + -64))
+  let clamped.x.extent_realized.s.s = (let t3 = min((((((blur_fusion.extent.0 + -1)/64)*64) + blur_fusion.min.0) + 63), ((blur_fusion.min.0 + blur_fusion.extent.0) + -1)) in max(max(max(((blur_fusion.min.0 + blur_fusion.extent.0) + 1), t3), min((((((blur_fusion.extent.0 + -1)/64)*64) + blur_fusion.min.0) + 64), (blur_fusion.min.0 + blur_fusion.extent.0))), (t3 + 2)))
+  let clamped.stride.2 = (((clamped.x.extent_realized.s.s - clamped.x.min_realized.s) + 3)*((clamped.y.extent_realized.s.s - clamped.y.min_realized) + 1))
+  allocate clamped[float32 * ((clamped.x.extent_realized.s.s - clamped.x.min_realized.s) + 3) * ((clamped.y.extent_realized.s.s - clamped.y.min_realized) + 1) * blur_fusion.extent.2]
+  let clamped.buffer = create_buffer_t(address_of(clamped[0]), 4, (clamped.x.min_realized.s + -2), ((clamped.x.extent_realized.s.s - clamped.x.min_realized.s) + 3), 1, clamped.y.min_realized, ((clamped.y.extent_realized.s.s - clamped.y.min_realized) + 1), ((clamped.x.extent_realized.s.s - clamped.x.min_realized.s) + 3), blur_fusion.min.2, blur_fusion.extent.2, clamped.stride.2)
+  assert((halide_dev_malloc(clamped.buffer) == 0), "Failed to allocate device buffer for clamped")
+  produce clamped {
+    assert((halide_copy_to_host(input.buffer) == 0), "Failed to copy buffer input to host.")
+    for (clamped.s0.c, blur_fusion.min.2, blur_fusion.extent.2) {
+      for (clamped.s0.y, blur_fusion.min.1, blur_fusion.extent.1) {
+        for (clamped.s0.x, (blur_fusion.min.0 + -2), (blur_fusion.extent.0 + 4)) {
+          clamped[((((clamped.s0.x - clamped.x.min_realized.s) + ((clamped.s0.y - clamped.y.min_realized)*((clamped.x.extent_realized.s.s - clamped.x.min_realized.s) + 3))) + ((clamped.s0.c - blur_fusion.min.2)*clamped.stride.2)) + 2)] = (float32(input[(((max(min(clamped.s0.x, (input.extent.0 + -1)), 0) + (max(min(clamped.s0.y, (input.extent.1 + -1)), 0)*input.stride.1)) + (clamped.s0.c*input.stride.2)) - ((input.min.0 + (input.min.1*input.stride.1)) + (input.min.2*input.stride.2)))])*0.000015f)
+        }
+      }
+    }
+    set_host_dirty(clamped.buffer, uint8(1))
+  }
+  let blur[1].y.extent_realized = max(blur_fusion.extent.1, 64)
+  let blur[1].x.extent_realized = max(blur_fusion.extent.0, 64)
+  allocate blur[1][float32 * blur[1].x.extent_realized * blur[1].y.extent_realized * blur_fusion.extent.2]
+  let blur[1].buffer = create_buffer_t(address_of(blur[1][0]), 4, clamped.x.min_realized.s, blur[1].x.extent_realized, 1, clamped.y.min_realized, blur[1].y.extent_realized, blur[1].x.extent_realized, blur_fusion.min.2, blur_fusion.extent.2, (blur[1].x.extent_realized*blur[1].y.extent_realized))
+  assert((halide_dev_malloc(blur[1].buffer) == 0), "Failed to allocate device buffer for blur[1]")
+  produce blur[1] {
+    assert((halide_copy_to_dev(clamped.buffer) == 0), "Failed to copy buffer clamped to dev.")
+    for (blur[1].s0.c, blur_fusion.min.2, blur_fusion.extent.2) {
+      parallel (blur[1].s0.y.y.__block_id_y, 0, ((blur_fusion.extent.1 + 63)/64)) {
+        let blur[1].s0.s1.base = min(((blur[1].s0.y.y.__block_id_y*64) + blur_fusion.min.1), ((blur_fusion.min.1 + blur_fusion.extent.1) + -64))
+        parallel (blur[1].s0.x.x.__block_id_x, 0, ((blur_fusion.extent.0 + 63)/64)) {
+          allocate __shared[uint8 * 16896]
+          parallel (.__thread_id_y, 0, 4) {
+            parallel (.__thread_id_x, 0, 4) {
+              let blur[1].s0.s0.base = min(((blur[1].s0.x.x.__block_id_x*64) + blur_fusion.min.0), ((blur_fusion.min.0 + blur_fusion.extent.0) + -64))
+              produce blur[0] {
+                if ((.__thread_id_y < 1)) {
+                  if ((.__thread_id_x < 1)) {
+                    for (blur[0].s0.y, blur[1].s0.s1.base, 64) {
+                      for (blur[0].s0.x, (blur[1].s0.s0.base + -1), 66) {
+                        __shared[(((blur[0].s0.x - blur[1].s0.s0.base) + ((blur[0].s0.y - blur[1].s0.s1.base)*66)) + 1)] = (let t5 = (((blur[0].s0.x - clamped.x.min_realized.s) + ((blur[0].s0.y - clamped.y.min_realized)*((clamped.x.extent_realized.s.s - clamped.x.min_realized.s) + 3))) + ((blur[1].s0.c - blur_fusion.min.2)*clamped.stride.2)) in (((clamped[(t5 + 1)] + clamped[(t5 + 2)]) + clamped[(t5 + 3)])*0.333333f))
+                      }
+                    }
+                  }
+                }
+                halide_gpu_thread_barrier()
+              }
+              for (blur[1].s0.y.yi, 0, 16) {
+                for (blur[1].s0.x.xi, 0, 16) {
+                  blur[1][((((blur[1].s0.s0.base + ((.__thread_id_x*16) + blur[1].s0.x.xi)) - clamped.x.min_realized.s) + (((blur[1].s0.s1.base + ((.__thread_id_y*16) + blur[1].s0.y.yi)) - clamped.y.min_realized)*blur[1].x.extent_realized)) + ((blur[1].s0.c - blur_fusion.min.2)*(blur[1].x.extent_realized*blur[1].y.extent_realized)))] = (let t6 = (((.__thread_id_x*16) + blur[1].s0.x.xi) + (((.__thread_id_y*16) + blur[1].s0.y.yi)*66)) in (((__shared[t6] + __shared[(t6 + 1)]) + __shared[(t6 + 2)])*0.333333f))
+                }
+              }
+            }
+          }
+          free __shared
+        }
+      }
+    }
+    assert((halide_dev_free(clamped.buffer) == 0), "Failed to free device buffer for clamped")
+    free clamped
+    set_dev_dirty(blur[1].buffer, uint8(1))
+  }
+  produce blur_fusion {
+    assert((halide_copy_to_host(blur_fusion.buffer) == 0), "Failed to copy buffer blur_fusion to host.")
+    assert((halide_copy_to_host(blur[1].buffer) == 0), "Failed to copy buffer blur[1] to host.")
+    for (blur_fusion.s0.c, blur_fusion.min.2, blur_fusion.extent.2) {
+      for (blur_fusion.s0.y, blur_fusion.min.1, blur_fusion.extent.1) {
+        for (blur_fusion.s0.x, blur_fusion.min.0, blur_fusion.extent.0) {
+          blur_fusion[(((blur_fusion.s0.x + (blur_fusion.s0.y*blur_fusion.stride.1)) + (blur_fusion.s0.c*blur_fusion.stride.2)) - ((blur_fusion.min.0 + (blur_fusion.min.1*blur_fusion.stride.1)) + (blur_fusion.min.2*blur_fusion.stride.2)))] = uint16((max(min(blur[1][(((blur_fusion.s0.x - clamped.x.min_realized.s) + ((blur_fusion.s0.y - clamped.y.min_realized)*blur[1].x.extent_realized)) + ((blur_fusion.s0.c - blur_fusion.min.2)*(blur[1].x.extent_realized*blur[1].y.extent_realized)))], 1.000000f), 0.000000f)*65535.000000f))
+        }
+      }
+    }
+    assert((halide_dev_free(blur[1].buffer) == 0), "Failed to free device buffer for blur[1]")
+    free blur[1]
+    set_host_dirty(blur_fusion.buffer, uint8(1))
+  }
+  0
+}
+
+
+Constructing OpenCL device codegen
+Target triple of initial module: x86_64-unknown-unknown-unknown
+Target triple of initial module: x86_64--linux-gnu
+Generating llvm bitcode...
+OpenCL kernel:
+/*OpenCL C*/
+#pragma OPENCL FP_CONTRACT ON
+float maxval_f32() {return FLT_MAX;}
+float minval_f32() {return -FLT_MAX;}
+float nan_f32() { return NAN; }
+float neg_inf_f32() { return -INFINITY; }
+bool is_nan_f32(float x) {return x != x; }
+float inf_f32() { return INFINITY; }
+float float_from_bits(unsigned int x) {return as_float(x);}
+char smod_char(char a, char b) {
+char r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+short smod_short(short a, short b) {
+short r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+int smod_int(int a, int b) {
+int r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+long smod_long(long a, long b) {
+long r = a % b;
+if (r < 0) { r += b < 0 ? -b : b; }
+return r;
+}
+
+char sdiv_char(char a, char b) {
+char q = a / b;
+char r = a - q*b;
+char bs = b >> (8*sizeof(char) - 1);
+char rs = r >> (8*sizeof(char) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+short sdiv_short(short a, short b) {
+short q = a / b;
+short r = a - q*b;
+short bs = b >> (8*sizeof(short) - 1);
+short rs = r >> (8*sizeof(short) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+int sdiv_int(int a, int b) {
+int q = a / b;
+int r = a - q*b;
+int bs = b >> (8*sizeof(int) - 1);
+int rs = r >> (8*sizeof(int) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+long sdiv_long(long a, long b) {
+long q = a / b;
+long r = a - q*b;
+long bs = b >> (8*sizeof(long) - 1);
+long rs = r >> (8*sizeof(long) - 1);
+return q - (rs&bs) + (rs&~bs);
+}
+
+#define sqrt_f32 sqrt 
+#define sin_f32 sin 
+#define cos_f32 cos 
+#define exp_f32 exp 
+#define log_f32 log 
+#define abs_f32 fabs 
+#define floor_f32 floor 
+#define ceil_f32 ceil 
+#define round_f32 round 
+#define trunc_f32 trunc 
+#define pow_f32 pow
+#define asin_f32 asin 
+#define acos_f32 acos 
+#define tan_f32 tan 
+#define atan_f32 atan 
+#define atan2_f32 atan2
+#define sinh_f32 sinh 
+#define asinh_f32 asinh 
+#define cosh_f32 cosh 
+#define acosh_f32 acosh 
+#define tanh_f32 tanh 
+#define atanh_f32 atanh 
+#define fast_inverse_f32 native_recip 
+#define fast_inverse_sqrt_f32 native_rsqrt 
+int halide_gpu_thread_barrier() {
+  barrier(CLK_LOCAL_MEM_FENCE);
+  return 0;
+}
+#define __address_space___shared __local
+
+__kernel void _at_least_one_kernel(int x) { }
+// Address spaces for kernel_blur_1__s0_y_y___block_id_y
+#define __address_space__blur___1___ __global
+#define __address_space__clamped __global
+__kernel void kernel_blur_1__s0_y_y___block_id_y(
+ const int _blur___1____s0_c,
+ const int _blur___1____x_extent_realized,
+ const int _blur___1____y_extent_realized,
+ const int _blur_fusion_extent_0,
+ const int _blur_fusion_extent_1,
+ const int _blur_fusion_min_0,
+ const int _blur_fusion_min_1,
+ const int _blur_fusion_min_2,
+ const int _clamped_stride_2,
+ const int _clamped_x_extent_realized_s_s,
+ const int _clamped_x_min_realized_s,
+ const int _clamped_y_min_realized,
+ __address_space__blur___1___ float *_blur___1___,
+ __address_space__clamped float *_clamped,
+ __address_space___shared int16* __shared)
+{
+ int _blur___1____s0_y_y___block_id_y = get_group_id(1);
+ int _0 = _blur___1____s0_y_y___block_id_y * 64;
+ int _1 = _0 + _blur_fusion_min_1;
+ int _2 = _blur_fusion_min_1 + _blur_fusion_extent_1;
+ int _3 = _2 + -64;
+ int _4 = min(_1, _3);
+ int _blur___1____s0_x_x___block_id_x = get_group_id(0);
+ int ___thread_id_y = get_local_id(1);
+ int ___thread_id_x = get_local_id(0);
+ int _5 = _blur___1____s0_x_x___block_id_x * 64;
+ int _6 = _5 + _blur_fusion_min_0;
+ int _7 = _blur_fusion_min_0 + _blur_fusion_extent_0;
+ int _8 = _7 + -64;
+ int _9 = min(_6, _8);
+ // produce blur[0]
+ bool _10 = ___thread_id_y < 1;
+ if (_10)
+ {
+  bool _11 = ___thread_id_x < 1;
+  if (_11)
+  {
+   for (int _blur___0____s0_y = _4; _blur___0____s0_y < _4 + 64; _blur___0____s0_y++)
+   {
+    int _12 = _9 + -1;
+    for (int _blur___0____s0_x = _12; _blur___0____s0_x < _12 + 66; _blur___0____s0_x++)
+    {
+     int _13 = _blur___0____s0_x - _clamped_x_min_realized_s;
+     int _14 = _blur___0____s0_y - _clamped_y_min_realized;
+     int _15 = _clamped_x_extent_realized_s_s - _clamped_x_min_realized_s;
+     int _16 = _15 + 3;
+     int _17 = _14 * _16;
+     int _18 = _13 + _17;
+     int _19 = _blur___1____s0_c - _blur_fusion_min_2;
+     int _20 = _19 * _clamped_stride_2;
+     int _21 = _18 + _20;
+     int _22 = _21 + 1;
+     float _23 = _clamped[_22];
+     int _24 = _21 + 2;
+     float _25 = _clamped[_24];
+     float _26 = _23 + _25;
+     int _27 = _21 + 3;
+     float _28 = _clamped[_27];
+     float _29 = _26 + _28;
+     float _30 = _29 * float_from_bits(1051372203 /* 0.333333 */);
+     int _31 = _blur___0____s0_x - _9;
+     int _32 = _blur___0____s0_y - _4;
+     int _33 = _32 * 66;
+     int _34 = _31 + _33;
+     int _35 = _34 + 1;
+     ((__address_space___shared float *)__shared)[_35] = _30;
+    } // for _blur___0____s0_x
+   } // for _blur___0____s0_y
+  } // if _11
+ } // if _10
+ int _36 = halide_gpu_thread_barrier();
+ (void)_36;
+ // consume blur[0]
+ for (int _blur___1____s0_y_yi = 0; _blur___1____s0_y_yi < 0 + 16; _blur___1____s0_y_yi++)
+ {
+  for (int _blur___1____s0_x_xi = 0; _blur___1____s0_x_xi < 0 + 16; _blur___1____s0_x_xi++)
+  {
+   int _37 = ___thread_id_x * 16;
+   int _38 = _37 + _blur___1____s0_x_xi;
+   int _39 = ___thread_id_y * 16;
+   int _40 = _39 + _blur___1____s0_y_yi;
+   int _41 = _40 * 66;
+   int _42 = _38 + _41;
+   float _43 = ((__address_space___shared float *)__shared)[_42];
+   int _44 = _42 + 1;
+   float _45 = ((__address_space___shared float *)__shared)[_44];
+   float _46 = _43 + _45;
+   int _47 = _42 + 2;
+   float _48 = ((__address_space___shared float *)__shared)[_47];
+   float _49 = _46 + _48;
+   float _50 = _49 * float_from_bits(1051372203 /* 0.333333 */);
+   int _51 = _9 + _38;
+   int _52 = _51 - _clamped_x_min_realized_s;
+   int _53 = _4 + _40;
+   int _54 = _53 - _clamped_y_min_realized;
+   int _55 = _54 * _blur___1____x_extent_realized;
+   int _56 = _52 + _55;
+   int _57 = _blur___1____s0_c - _blur_fusion_min_2;
+   int _58 = _blur___1____x_extent_realized * _blur___1____y_extent_realized;
+   int _59 = _57 * _58;
+   int _60 = _56 + _59;
+   _blur___1___[_60] = _50;
+  } // for _blur___1____s0_x_xi
+ } // for _blur___1____s0_y_yi
+} // kernel kernel_blur_1__s0_y_y___block_id_y
+#undef __address_space__blur___1___
+#undef __address_space__clamped
+
+Compiling to native code...
+'+fma +f16c' is not a recognized feature for this target (ignoring feature)
+'+fma +f16c' is not a recognized feature for this target (ignoring feature)
+g++ -I/home/sting47/Halide/apps/support -Wall -O3 process.cpp blur_fusion.o -o process -lpthread -ldl -L/usr/lib/x86_64-linux-gnu -lpng12 -I/usr/include/libpng12  -lOpenCL 
