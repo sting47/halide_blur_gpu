@@ -117,9 +117,9 @@ class DCT
             seed = 123;
             input = NULL;
             verificationOutput = NULL;
-            width = 64;
-            height = 64;
-            blockWidth = 8;
+            width = 1536;
+            height = 2560;
+            blockWidth = 1;
             blockSize  = blockWidth * blockWidth;
             inverse = 0;
             setupTime = 0;

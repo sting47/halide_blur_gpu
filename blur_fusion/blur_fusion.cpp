@@ -64,15 +64,20 @@ int main(int argc, char **argv) {
 
     Target target = get_target_from_environment();
 
-    for(int i=0; i<m; i++)
-	//blur[i].compute_root().gpu_blocks(x, y, c);
+    for(int i=0; i<m; i++){
+	//Var xt, yt;
+	//blur[i].compute_root();//.gpu_blocks(x, y, c);
 	blur[i].compute_at(blur[m], Var::gpu_blocks());
+	//blur[i].compute_root().tile(x, y, xt, yt, groupsize, groupsize);
+	//blur[i].compute_root().gpu_tile(x, y, itemsize, itemsize, GPU_Default);
+    }
     //floating.compute_root();
     clamped.compute_root();
-    //blur[1].compute_root().gpu_blocks(x, y, c);
+    //blur[m].compute_root().gpu_blocks(x, y, c);
     //color.compute_root().gpu_blocks(x, y);
     //gray.compute_root().gpu_blocks(x, y);
     //blur[1].compute_root().gpu_blocks(x, y, c);
+
     Var xi, yi;
     blur[m].compute_root().tile(x, y, xi, yi, groupsize, groupsize);
     blur[m].compute_root().gpu_tile(x, y, itemsize, itemsize, GPU_Default);

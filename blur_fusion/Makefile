@@ -1,6 +1,6 @@
 LAYER?=2
-GROUPSIZE?=4
-ITEMSIZE?=4
+GROUPSIZE?=1
+ITEMSIZE?=2
 
 include /home/sting47/Halide/apps/support/Makefile.inc
 #OPENCL_LDFLAGS=-I /opt/intel/intel-opencl-1.2-4.6.0.92/opencl-1.2-sdk-4.6.0.92/include -L /usr/lib/x86_64-linux-gnu/libOpenCL.so -lOpenCL

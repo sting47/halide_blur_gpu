@@ -1,4 +1,5 @@
 #include "blur_1D.hpp"
+#include <sys/time.h>
 
 using namespace dct;
 
@@ -64,10 +65,12 @@ DCT::setupCL(void)
 
     if(sampleArgs->deviceType.compare("cpu") == 0)
     {
+	std::cout << "using CPU" << std::endl;
         dType = CL_DEVICE_TYPE_CPU;
     }
     else //sampleArgs->deviceType = "gpu"
     {
+	std::cout << "using GPU" << std::endl;
         dType = CL_DEVICE_TYPE_GPU;
         if(sampleArgs->isThereGPU() == false)
         {
@@ -273,6 +276,8 @@ DCT::runCLKernels(void)
      * Enqueue a kernel run call.
      */
     cl_event ndrEvt;
+    timeval t1, t2;
+    gettimeofday(&t1, NULL);
     status = clEnqueueNDRangeKernel(
                  commandQueue,
                  kernel,
@@ -283,6 +288,9 @@ DCT::runCLKernels(void)
                  0,
                  NULL,
                  &ndrEvt);
+    gettimeofday(&t2, NULL);
+    unsigned int t = (t2.tv_sec - t1.tv_sec) * 1000000 + (t2.tv_usec - t1.tv_usec);
+    printf("EnqueueNDRange:%u\n", t);
     CHECK_OPENCL_ERROR(status, "clEnqueueNDRangeKernel failed.");
 
     status = clFlush(commandQueue);

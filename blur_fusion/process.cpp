@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
     Image<uint16_t> output(input.width(), input.height(), 3);
 
     // Timing code
-#if 1
+#if 0
     timeval t1, t2;
     unsigned int bestT = 0xffffffff;
     for (int i = 0; i < 5; i++) {

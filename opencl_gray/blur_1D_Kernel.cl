@@ -9,5 +9,5 @@ void blur_1D(__global float * output,
     
     uint idx = globalIdy * width + globalIdx;
 
-    output[idx] = input[idx]/3;     
+    output[idx] = input[idx]+1;     
 }
