@@ -41,14 +41,14 @@ int main(int argc, char **argv) {
     gray(x, y) = 0.299f * clamped(x, y, 0) + 0.587f * clamped(x, y, 1) + 0.114f * clamped(x, y, 2);
 
     Func blur[m+1];
-    blur[0](x, y) = (gray(x-1, y) + gray(x, y) + gray(x+1, y)) / 3;
+    blur[0](x, y) = gray(x, y);//(gray(x-1, y) + gray(x, y) + gray(x+1, y)) / 3;
 
     // Reintroduce color (Connelly: use eps to avoid scaling up noise w/ apollo3.png input)
     //Func color;
 
     // Get the luminance channel second time
     for(int i=1; i<m+1; i++)
-	blur[i](x, y) = (blur[i-1](x-1, y) + blur[i-1](x, y) + blur[i-1](x+1, y)) / 3;
+	   blur[i](x, y) = (blur[i-1](x-1, y) + blur[i-1](x, y) + blur[i-1](x+1, y)) / 3;
 
     // float eps = 0.01f;
     //color(x, y, c) = 0.0;
@@ -68,10 +68,10 @@ int main(int argc, char **argv) {
     Target target = get_target_from_environment();
 
     for(int i=0; i<m; i++){
-	Var xt, yt;
-	//blur[i].compute_at(blur[m], Var::gpu_blocks());
-	blur[i].compute_root().tile(x, y, xt, yt, groupsize, groupsize);
-	blur[i].compute_root().gpu_tile(x, y, itemsize, itemsize, GPU_Default);
+	   Var xt, yt;
+	   blur[i].compute_at(blur[m], Var::gpu_threads());
+	   //blur[i].compute_root().tile(x, y, xt, yt, groupsize, groupsize);
+	   //blur[i].compute_root().gpu_tile(x, y, itemsize, itemsize, GPU_Default);
     }
     //floating.compute_root();
     clamped.compute_root();

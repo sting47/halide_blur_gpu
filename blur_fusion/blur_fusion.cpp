@@ -67,7 +67,7 @@ int main(int argc, char **argv) {
     for(int i=0; i<m; i++){
 	//Var xt, yt;
 	//blur[i].compute_root();//.gpu_blocks(x, y, c);
-	blur[i].compute_at(blur[m], Var::gpu_blocks());
+	blur[i].compute_at(blur[m], Var::gpu_threads());
 	//blur[i].compute_root().tile(x, y, xt, yt, groupsize, groupsize);
 	//blur[i].compute_root().gpu_tile(x, y, itemsize, itemsize, GPU_Default);
     }
