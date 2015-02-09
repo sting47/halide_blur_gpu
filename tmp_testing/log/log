@@ -1,0 +1,95 @@
+Layer m=8 
+=================================================
+Tile Size t=16
+root time      : 3.842564 
+
+ Performance counter stats for './build/run_root 4096':
+
+      14399.016591 task-clock                #    3.468 CPUs utilized          
+             3,532 context-switches          #    0.245 K/sec                  
+                41 cpu-migrations            #    0.003 K/sec                  
+         1,801,688 page-faults               #    0.125 M/sec                  
+    44,582,861,764 cycles                    #    3.096 GHz                    
+   <not supported> stalled-cycles-frontend 
+   <not supported> stalled-cycles-backend  
+   103,974,349,787 instructions              #    2.33  insns per cycle        
+     7,286,183,575 branches                  #  506.020 M/sec                  
+         6,514,999 branch-misses             #    0.09% of all branches        
+
+       4.151510282 seconds time elapsed
+
+tile time      : 4.466430 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       125,086,942 cache-references                                            
+        64,911,854 cache-misses              #   51.893 % of all cache refs    
+        76,104,551 LLC-loads                                                   
+   <not supported> LLC-load-misses         
+        41,778,800 LLC-stores                                                  
+   <not supported> LLC-store-misses        
+   <not supported> LLC-prefetch-misses     
+
+       4.798510031 seconds time elapsed
+
+Merge Tile time: 106.450668 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        83,660,883 cache-references                                            
+         5,128,616 cache-misses              #    6.130 % of all cache refs    
+        56,924,616 LLC-loads                                                   
+   <not supported> LLC-load-misses         
+        11,983,537 LLC-stores                                                  
+   <not supported> LLC-store-misses        
+   <not supported> LLC-prefetch-misses     
+
+     110.176312631 seconds time elapsed
+
+Tile Size t=32
+root time      : 3.835414 
+
+ Performance counter stats for './build/run_root 4096':
+
+      14399.696142 task-clock                #    3.472 CPUs utilized          
+             3,376 context-switches          #    0.234 K/sec                  
+                28 cpu-migrations            #    0.002 K/sec                  
+         1,801,651 page-faults               #    0.125 M/sec                  
+    44,582,339,459 cycles                    #    3.096 GHz                    
+   <not supported> stalled-cycles-frontend 
+   <not supported> stalled-cycles-backend  
+   103,973,908,994 instructions              #    2.33  insns per cycle        
+     7,286,113,745 branches                  #  505.991 M/sec                  
+         6,556,952 branch-misses             #    0.09% of all branches        
+
+       4.146945136 seconds time elapsed
+
+tile time      : 4.501263 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       336,394,449 cache-references                                            
+       176,016,430 cache-misses              #   52.324 % of all cache refs    
+       184,870,122 LLC-loads                                                   
+   <not supported> LLC-load-misses         
+       144,426,515 LLC-stores                                                  
+   <not supported> LLC-store-misses        
+   <not supported> LLC-prefetch-misses     
+
+       4.837631054 seconds time elapsed
+
+Merge Tile time: 105.815071 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        98,525,351 cache-references                                            
+         3,286,778 cache-misses              #    3.336 % of all cache refs    
+        59,893,884 LLC-loads                                                   
+   <not supported> LLC-load-misses         
+        21,499,331 LLC-stores                                                  
+   <not supported> LLC-store-misses        
+   <not supported> LLC-prefetch-misses     
+
+     109.538186496 seconds time elapsed
+
+=================================================

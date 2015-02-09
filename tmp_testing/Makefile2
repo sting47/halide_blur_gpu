@@ -1,0 +1,50 @@
+LOG_FILE=log/log
+LIB_HALIDE=-I /home/sting47/Halide/include/ -L /home/sting47/Halide/bin/ -lHalide
+export LD_LIBRARY_PATH=/home/sting47/Halide/bin/
+TARGET?=arm-32-android
+DEBUG?=0
+outfile?=build/
+SIZE?=4096
+TILESIZE?=64
+LAYER?=2
+CXXX?=arm-linux-androideabi-g++
+EPNGFLAGS=-L/home/sting47/Library/my-android-toolchain/include/lib/ -lpng16 -I/home/sting47/Library/my-android-toolchain/include/include
+# include /home/sting47/Halide/apps/support/Makefile.inc
+
+all: $(outfile)gen_root $(outfile)gen_rootTile $(outfile)gen_mergeTile
+$(outfile)tmp/blur_root: blur_root.cpp
+	@$(CXX) blur_root.cpp $(LIB_HALIDE) -o $(outfile)tmp/blur_root -ldl -lpthread -lz $(LDFLAGS)
+$(outfile)tmp/blur_tile: blur_tile.cpp
+	@$(CXX) blur_tile.cpp $(LIB_HALIDE) -o $(outfile)tmp/blur_tile -ldl -lpthread -lz $(LDFLAGS)
+$(outfile)tmp/blur_MergeTile: blur_MergeTile.cpp
+	@$(CXX) blur_MergeTile.cpp $(LIB_HALIDE) -o $(outfile)tmp/blur_MergeTile -ldl -lpthread -lz $(LDFLAGS)
+$(outfile)tmp/blur_root.o: $(outfile)tmp/blur_root
+	@cd $(outfile)tmp/;HL_DEBUG_CODEGEN=$(DEBUG) ./blur_root $(LAYER)
+$(outfile)tmp/blur_tile.o: $(outfile)tmp/blur_tile
+	@cd $(outfile)tmp/;HL_DEBUG_CODEGEN=$(DEBUG) ./blur_tile $(LAYER) $(TILESIZE)
+$(outfile)tmp/blur_MergeTile.o: $(outfile)tmp/blur_MergeTile
+	@cd $(outfile)tmp/;HL_DEBUG_CODEGEN=$(DEBUG) ./blur_MergeTile $(LAYER) $(TILESIZE)
+$(outfile)gen_root: gen_root.cpp $(outfile)tmp/blur_root.o
+	@$(CXX) -g -Wall -O3 -I ../support/ -I $(outfile)tmp/ gen_root.cpp $(outfile)tmp/blur_root.o -o $(outfile)run_root -ldl -lpthread -lz -fPIC $(PNGFLAGS) $(OPENCL_LDFLAGS) $(OPENGL_LDFLAGS) ;rm $(outfile)tmp/*
+$(outfile)gen_rootTile: gen_rootTile.cpp $(outfile)tmp/blur_tile.o 
+	@$(CXX) -g -Wall -O3 -I ../support/ -I $(outfile)tmp/ gen_rootTile.cpp $(outfile)tmp/blur_tile.o -o $(outfile)run_rootTile -ldl -lpthread -lz -fPIC $(PNGFLAGS) $(OPENCL_LDFLAGS) $(OPENGL_LDFLAGS) ;rm $(outfile)tmp/*
+$(outfile)gen_mergeTile: gen_mergeTile.cpp $(outfile)tmp/blur_MergeTile.o
+	@$(CXX) -g -Wall -O3 -I ../support/ -I $(outfile)tmp/ gen_mergeTile.cpp $(outfile)tmp/blur_MergeTile.o  -o $(outfile)run_mergeTile -ldl -lpthread -lz -fPIC $(PNGFLAGS) $(OPENCL_LDFLAGS) $(OPENGL_LDFLAGS) ;rm $(outfile)tmp/*
+
+
+run:
+	@3>>$(LOG_FILE) perf stat --log-fd 3 --append ./build/run_root $(SIZE)
+	@3>>$(LOG_FILE) perf stat --log-fd 3 --append -e cache-references,cache-misses,LLC-loads,LLC-load-misses,LLC-stores,LLC-store-misses,LLC-prefetch-misses ./build/run_rootTile $(SIZE)
+	@3>>$(LOG_FILE) perf stat --log-fd 3 --append -e cache-references,cache-misses,LLC-loads,LLC-load-misses,LLC-stores,LLC-store-misses,LLC-prefetch-misses ./build/run_mergeTile $(SIZE)
+#	@3>>$(LOG_FILE) perf stat --log-fd 3 --append -e cache-references,cache-misses,LLC-loads,LLC-load-misses,LLC-stores,LLC-store-misses,LLC-prefetch-misses ./build/run_root $(SIZE)
+#	@3>>$(LOG_FILE) perf stat --log-fd 3 --append -e cache-references,cache-misses,LLC-loads,LLC-load-misses,LLC-stores,LLC-store-misses,LLC-prefetch-misses ./build/run_rootTile $(SIZE)
+#	@3>>$(LOG_FILE) perf stat --log-fd 3 --append -e cache-references,cache-misses,LLC-loads,LLC-load-misses,LLC-stores,LLC-store-misses,LLC-prefetch-misses ./build/run_mergeTile $(SIZE)
+#	adb push build/run_root /data/sting_test
+#	adb push build/run_rootTile /data/sting_test
+#	adb push build/run_mergeTile /data/sting_test
+#	adb shell ./data/sting_test/run_root $(SIZE)
+#	adb shell ./data/sting_test/run_rootTile $(SIZE)
+#	adb shell ./data/sting_test/run_mergeTile $(SIZE)
+
+clean:
+	@rm -f $(outfile)run_root $(outfile)run_rootTile $(outfile)run_mergeTile $(outfile)tmp/blur_root.o $(outfile)tmp/blur_tile.o $(outfile)tmp/blur_tile.h $(outfile)tmp/blur_root.h $(outfile)tmp/blur_root $(outfile)tmp/blur_tile $(outfile)tmp/blur_MergeTile

@@ -1,0 +1,12 @@
+{"input_size": "4096, 4096",
+ "functions": [
+               {"name": "blur1", "vars": ["x", "y"], "calls": []},
+               {"name": "blur2", "vars": ["x", "y"], "calls": ["blur1"]},
+               {"name": "blur3", "vars": ["x", "y"], "calls": ["blur2"]},
+               {"name": "blur4", "vars": ["x", "y"], "calls": ["blur3"]},
+               {"name": "blur5", "vars": ["x", "y"], "calls": ["blur4"]},
+               {"name": "blur6", "vars": ["x", "y"], "calls": ["blur5"]},
+               {"name": "blur7", "vars": ["x", "y"], "calls": ["blur6"]},
+               {"name": "blur8", "vars": ["x", "y"], "calls": ["blur7"]}
+              ]
+}

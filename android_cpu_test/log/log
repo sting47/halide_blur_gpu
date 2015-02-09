@@ -1,0 +1,45 @@
+Layer m=8 
+=================================================
+Tile Size t=16
+adb push build/run_root /data/sting_test
+adb shell CONFIG_PERF_EVENTS=y
+adb shell CONFIG_HW_PERF_EVENTS=y
+root time      : 18.990326 
+
+ Performance counter stats for './data/sting_test/run_root 4096':
+
+                 0 instructions              #    0.00  insns per cycle        
+                 0 L1-dcache-load-misses                                       
+                 0 L1-icache-load-misses                                       
+     <not counted> cache-references        
+     <not counted> cache-misses            
+     <not counted> LLC-loads               
+     <not counted> LLC-load-misses         
+     <not counted> LLC-stores              
+     <not counted> LLC-store-misses        
+     <not counted> LLC-prefetch-misses     
+
+      20.748748781 seconds time elapsed
+
+Tile Size t=32
+adb push build/run_root /data/sting_test
+adb shell CONFIG_PERF_EVENTS=y
+adb shell CONFIG_HW_PERF_EVENTS=y
+root time      : 18.990234 
+
+ Performance counter stats for './data/sting_test/run_root 4096':
+
+                 0 instructions              #    0.00  insns per cycle        
+                 0 L1-dcache-load-misses                                       
+                 0 L1-icache-load-misses                                       
+     <not counted> cache-references        
+     <not counted> cache-misses            
+     <not counted> LLC-loads               
+     <not counted> LLC-load-misses         
+     <not counted> LLC-stores              
+     <not counted> LLC-store-misses        
+     <not counted> LLC-prefetch-misses     
+
+      20.722625734 seconds time elapsed
+
+=================================================

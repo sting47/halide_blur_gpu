@@ -1,0 +1,1824 @@
+Layer m=1 
+=================================================
+Tile Size t=16
+root time      : 1.192696 
+
+ Performance counter stats for './build/run_root 4096':
+
+         5,208,667 cache-references                                             [22.47%]
+         2,860,213 cache-misses              #   54.913 % of all cache refs     [36.87%]
+         2,663,090 LLC-loads                                                    [30.71%]
+           969,533 LLC-load-misses           #   36.41% of all LL-cache hits    [ 6.67%]
+        19,011,411 LLC-stores                                                   [ 7.43%]
+         1,856,454 LLC-store-misses                                             [ 8.06%]
+        30,288,058 LLC-prefetch-misses                                          [ 8.19%]
+
+       1.440104067 seconds time elapsed
+
+tile time      : 1.206220 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+        42,135,684 cache-references                                             [24.11%]
+        33,602,789 cache-misses              #   79.749 % of all cache refs     [38.45%]
+        23,141,931 LLC-loads                                                    [27.71%]
+        16,320,323 LLC-load-misses           #   70.52% of all LL-cache hits    [ 5.95%]
+        36,912,374 LLC-stores                                                   [ 7.79%]
+        16,904,676 LLC-store-misses                                             [ 9.44%]
+            18,777 LLC-prefetch-misses                                          [ 9.90%]
+
+       1.456272356 seconds time elapsed
+
+Merge Tile time: 1.205116 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        42,248,733 cache-references                                             [23.20%]
+        33,417,947 cache-misses              #   79.098 % of all cache refs     [37.43%]
+        22,965,649 LLC-loads                                                    [24.96%]
+        16,444,838 LLC-load-misses           #   71.61% of all LL-cache hits    [ 6.68%]
+        37,334,831 LLC-stores                                                   [ 7.91%]
+        16,953,168 LLC-store-misses                                             [ 8.51%]
+            26,347 LLC-prefetch-misses                                          [ 8.96%]
+
+       1.457788739 seconds time elapsed
+
+Tile Size t=32
+root time      : 1.189239 
+
+ Performance counter stats for './build/run_root 4096':
+
+         5,038,919 cache-references                                             [23.81%]
+         2,701,004 cache-misses              #   53.603 % of all cache refs     [38.24%]
+         2,604,330 LLC-loads                                                    [27.40%]
+           883,757 LLC-load-misses           #   33.93% of all LL-cache hits    [ 4.83%]
+        19,201,682 LLC-stores                                                   [ 6.65%]
+         1,740,062 LLC-store-misses                                             [ 8.66%]
+        30,450,843 LLC-prefetch-misses                                          [ 9.58%]
+
+       1.439225433 seconds time elapsed
+
+tile time      : 1.181696 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+        59,043,237 cache-references                                             [24.17%]
+        33,342,786 cache-misses              #   56.472 % of all cache refs     [38.23%]
+        33,052,415 LLC-loads                                                    [31.13%]
+        16,506,134 LLC-load-misses           #   49.94% of all LL-cache hits    [ 6.94%]
+        51,091,152 LLC-stores                                                   [ 8.45%]
+        16,948,789 LLC-store-misses                                             [ 9.68%]
+           120,624 LLC-prefetch-misses                                          [ 9.81%]
+
+       1.436955188 seconds time elapsed
+
+Merge Tile time: 1.179341 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        59,841,679 cache-references                                             [22.53%]
+        33,541,629 cache-misses              #   56.051 % of all cache refs     [36.69%]
+        33,197,772 LLC-loads                                                    [33.71%]
+        16,327,159 LLC-load-misses           #   49.18% of all LL-cache hits    [ 6.76%]
+        52,068,922 LLC-stores                                                   [ 7.44%]
+        16,868,864 LLC-store-misses                                             [ 7.95%]
+           166,716 LLC-prefetch-misses                                          [ 8.25%]
+
+       1.432267243 seconds time elapsed
+
+Tile Size t=64
+root time      : 1.190793 
+
+ Performance counter stats for './build/run_root 4096':
+
+         4,794,644 cache-references                                             [23.39%]
+         2,370,621 cache-misses              #   49.443 % of all cache refs     [37.71%]
+         2,462,084 LLC-loads                                                    [27.81%]
+         1,207,757 LLC-load-misses           #   49.05% of all LL-cache hits    [ 5.03%]
+        19,713,115 LLC-stores                                                   [ 7.07%]
+         1,810,151 LLC-store-misses                                             [ 8.65%]
+        30,762,123 LLC-prefetch-misses                                          [ 9.08%]
+
+       1.442007074 seconds time elapsed
+
+tile time      : 1.171510 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+        59,181,171 cache-references                                             [24.94%]
+        31,557,670 cache-misses              #   53.324 % of all cache refs     [39.14%]
+        33,245,850 LLC-loads                                                    [29.57%]
+        14,993,604 LLC-load-misses           #   45.10% of all LL-cache hits    [ 7.56%]
+        50,683,385 LLC-stores                                                   [ 9.34%]
+        16,153,913 LLC-store-misses                                             [10.47%]
+         2,792,902 LLC-prefetch-misses                                          [10.70%]
+
+       1.436204095 seconds time elapsed
+
+Merge Tile time: 1.174924 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        58,559,157 cache-references                                             [23.16%]
+        31,334,113 cache-misses              #   53.508 % of all cache refs     [37.42%]
+        33,059,639 LLC-loads                                                    [34.54%]
+        15,134,897 LLC-load-misses           #   45.78% of all LL-cache hits    [ 7.69%]
+        50,207,600 LLC-stores                                                   [ 8.03%]
+        16,465,354 LLC-store-misses                                             [ 8.51%]
+         2,614,382 LLC-prefetch-misses                                          [ 8.77%]
+
+       1.426215822 seconds time elapsed
+
+Tile Size t=128
+root time      : 1.191880 
+
+ Performance counter stats for './build/run_root 4096':
+
+         4,978,700 cache-references                                             [23.13%]
+         2,668,458 cache-misses              #   53.597 % of all cache refs     [37.49%]
+         2,399,516 LLC-loads                                                    [31.31%]
+           895,514 LLC-load-misses           #   37.32% of all LL-cache hits    [ 6.20%]
+        18,902,151 LLC-stores                                                   [ 7.18%]
+         1,911,783 LLC-store-misses                                             [ 7.88%]
+        30,451,722 LLC-prefetch-misses                                          [ 8.92%]
+
+       1.441404913 seconds time elapsed
+
+tile time      : 1.180387 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+        45,992,884 cache-references                                             [22.77%]
+        35,176,191 cache-misses              #   76.482 % of all cache refs     [36.85%]
+        24,668,256 LLC-loads                                                    [32.21%]
+        17,643,230 LLC-load-misses           #   71.52% of all LL-cache hits    [ 6.50%]
+        42,506,050 LLC-stores                                                   [ 7.33%]
+        18,115,367 LLC-store-misses                                             [ 8.22%]
+         3,927,006 LLC-prefetch-misses                                          [ 8.51%]
+
+       1.434054149 seconds time elapsed
+
+Merge Tile time: 1.178236 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        45,868,259 cache-references                                             [22.42%]
+        35,383,605 cache-misses              #   77.142 % of all cache refs     [36.56%]
+        24,614,348 LLC-loads                                                    [32.28%]
+        17,281,089 LLC-load-misses           #   70.21% of all LL-cache hits    [ 6.62%]
+        42,477,323 LLC-stores                                                   [ 7.07%]
+        18,135,465 LLC-store-misses                                             [ 7.88%]
+         4,262,682 LLC-prefetch-misses                                          [ 8.10%]
+
+       1.433056154 seconds time elapsed
+
+Tile Size t=256
+root time      : 1.189999 
+
+ Performance counter stats for './build/run_root 4096':
+
+         4,785,912 cache-references                                             [23.90%]
+         2,460,636 cache-misses              #   51.414 % of all cache refs     [38.08%]
+         2,071,981 LLC-loads                                                    [30.76%]
+         1,672,300 LLC-load-misses           #   80.71% of all LL-cache hits    [ 6.96%]
+        19,810,895 LLC-stores                                                   [ 7.13%]
+         2,042,958 LLC-store-misses                                             [ 8.59%]
+        30,583,578 LLC-prefetch-misses                                          [ 9.37%]
+
+       1.446035820 seconds time elapsed
+
+tile time      : 1.460814 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+        41,766,406 cache-references                                             [27.72%]
+        34,980,123 cache-misses              #   83.752 % of all cache refs     [41.90%]
+        21,190,285 LLC-loads                                                    [41.67%]
+        17,484,341 LLC-load-misses           #   82.51% of all LL-cache hits    [12.95%]
+        39,307,612 LLC-stores                                                   [13.07%]
+        17,802,533 LLC-store-misses                                             [13.53%]
+           654,181 LLC-prefetch-misses                                          [13.57%]
+
+       1.727357191 seconds time elapsed
+
+Merge Tile time: 1.382927 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        41,261,264 cache-references                                             [29.07%]
+        34,770,136 cache-misses              #   84.268 % of all cache refs     [43.48%]
+        21,474,834 LLC-loads                                                    [41.87%]
+        17,904,153 LLC-load-misses           #   83.37% of all LL-cache hits    [13.09%]
+        38,697,370 LLC-stores                                                   [13.56%]
+        17,907,086 LLC-store-misses                                             [13.26%]
+           756,937 LLC-prefetch-misses                                          [14.17%]
+
+       1.635359131 seconds time elapsed
+
+Tile Size t=512
+root time      : 1.196704 
+
+ Performance counter stats for './build/run_root 4096':
+
+         5,504,428 cache-references                                             [23.14%]
+         2,623,161 cache-misses              #   47.655 % of all cache refs     [37.32%]
+         2,496,640 LLC-loads                                                    [31.35%]
+           957,204 LLC-load-misses           #   38.34% of all LL-cache hits    [ 6.09%]
+        19,725,214 LLC-stores                                                   [ 7.67%]
+         2,130,070 LLC-store-misses                                             [ 8.04%]
+        30,186,094 LLC-prefetch-misses                                          [ 8.71%]
+
+       1.456561342 seconds time elapsed
+
+tile time      : 2.355784 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+        12,392,314 cache-references                                             [28.58%]
+         8,421,274 cache-misses              #   67.956 % of all cache refs     [43.04%]
+         6,302,811 LLC-loads                                                    [43.03%]
+         4,296,615 LLC-load-misses           #   68.17% of all LL-cache hits    [14.33%]
+        23,224,278 LLC-stores                                                   [14.40%]
+         4,387,822 LLC-store-misses                                             [14.23%]
+        44,215,302 LLC-prefetch-misses                                          [14.27%]
+
+       2.646561055 seconds time elapsed
+
+Merge Tile time: 2.334382 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        12,469,337 cache-references                                             [28.33%]
+         8,338,616 cache-misses              #   66.873 % of all cache refs     [42.72%]
+         6,075,497 LLC-loads                                                    [43.15%]
+         3,945,167 LLC-load-misses           #   64.94% of all LL-cache hits    [14.40%]
+        23,385,460 LLC-stores                                                   [14.29%]
+         4,378,872 LLC-store-misses                                             [14.33%]
+        42,332,353 LLC-prefetch-misses                                          [14.27%]
+
+       2.625855829 seconds time elapsed
+
+Tile Size t=1024
+root time      : 1.192347 
+
+ Performance counter stats for './build/run_root 4096':
+
+         5,551,899 cache-references                                             [23.22%]
+         2,644,832 cache-misses              #   47.638 % of all cache refs     [37.40%]
+         2,744,979 LLC-loads                                                    [28.86%]
+           904,672 LLC-load-misses           #   32.96% of all LL-cache hits    [ 6.24%]
+        19,302,514 LLC-stores                                                   [ 7.89%]
+         1,709,184 LLC-store-misses                                             [ 9.00%]
+        30,768,614 LLC-prefetch-misses                                          [ 8.91%]
+
+       1.445781660 seconds time elapsed
+
+tile time      : 4.406614 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+         4,666,776 cache-references                                             [28.63%]
+         3,523,126 cache-misses              #   75.494 % of all cache refs     [42.95%]
+         2,292,061 LLC-loads                                                    [43.03%]
+         1,528,335 LLC-load-misses           #   66.68% of all LL-cache hits    [14.26%]
+        19,846,694 LLC-stores                                                   [14.25%]
+         2,205,494 LLC-store-misses                                             [14.30%]
+        39,548,572 LLC-prefetch-misses                                          [14.29%]
+
+       4.773509381 seconds time elapsed
+
+Merge Tile time: 4.479667 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+         4,438,749 cache-references                                             [28.66%]
+         3,482,339 cache-misses              #   78.453 % of all cache refs     [42.96%]
+         1,973,623 LLC-loads                                                    [42.95%]
+         1,881,001 LLC-load-misses           #   95.31% of all LL-cache hits    [14.42%]
+        19,809,702 LLC-stores                                                   [14.29%]
+         1,846,843 LLC-store-misses                                             [14.28%]
+        39,554,657 LLC-prefetch-misses                                          [14.31%]
+
+       4.861417139 seconds time elapsed
+
+=================================================
+Layer m=2 
+=================================================
+Tile Size t=16
+root time      : 1.667904 
+
+ Performance counter stats for './build/run_root 4096':
+
+        30,930,863 cache-references                                             [23.42%]
+        21,710,396 cache-misses              #   70.190 % of all cache refs     [37.57%]
+         9,907,484 LLC-loads                                                    [26.64%]
+         4,959,504 LLC-load-misses           #   50.06% of all LL-cache hits    [ 6.55%]
+        59,849,081 LLC-stores                                                   [ 7.93%]
+        17,272,073 LLC-store-misses                                             [ 8.83%]
+        45,963,674 LLC-prefetch-misses                                          [ 8.96%]
+
+       1.937261148 seconds time elapsed
+
+tile time      : 1.646043 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+        96,098,575 cache-references                                             [23.25%]
+        67,656,571 cache-misses              #   70.403 % of all cache refs     [37.68%]
+        43,070,594 LLC-loads                                                    [29.25%]
+        38,979,015 LLC-load-misses           #   90.50% of all LL-cache hits    [ 7.17%]
+       103,922,540 LLC-stores                                                   [ 8.17%]
+        33,888,935 LLC-store-misses                                             [ 8.83%]
+            28,648 LLC-prefetch-misses                                          [ 8.86%]
+
+       1.910289973 seconds time elapsed
+
+Merge Tile time: 2.022985 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        47,876,016 cache-references                                             [23.12%]
+        33,610,907 cache-misses              #   70.204 % of all cache refs     [37.32%]
+        27,865,124 LLC-loads                                                    [29.89%]
+        17,283,654 LLC-load-misses           #   62.03% of all LL-cache hits    [ 6.57%]
+        39,406,611 LLC-stores                                                   [ 7.76%]
+        17,006,076 LLC-store-misses                                             [ 8.36%]
+            47,096 LLC-prefetch-misses                                          [ 8.80%]
+
+       2.303648197 seconds time elapsed
+
+Tile Size t=32
+root time      : 1.669939 
+
+ Performance counter stats for './build/run_root 4096':
+
+        32,493,357 cache-references                                             [22.90%]
+        22,483,327 cache-misses              #   69.194 % of all cache refs     [37.00%]
+        10,996,694 LLC-loads                                                    [28.56%]
+         6,274,627 LLC-load-misses           #   57.06% of all LL-cache hits    [ 6.47%]
+        59,479,969 LLC-stores                                                   [ 7.53%]
+        16,892,532 LLC-store-misses                                             [ 8.47%]
+        48,591,026 LLC-prefetch-misses                                          [ 8.79%]
+
+       1.942024653 seconds time elapsed
+
+tile time      : 1.707967 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       107,605,226 cache-references                                             [22.78%]
+        67,993,460 cache-misses              #   63.188 % of all cache refs     [36.86%]
+        50,193,083 LLC-loads                                                    [27.31%]
+        37,463,469 LLC-load-misses           #   74.64% of all LL-cache hits    [ 6.77%]
+       110,018,183 LLC-stores                                                   [ 8.62%]
+        35,906,952 LLC-store-misses                                             [ 9.02%]
+           200,254 LLC-prefetch-misses                                          [ 8.61%]
+
+       1.976329150 seconds time elapsed
+
+Merge Tile time: 1.696800 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        69,880,759 cache-references                                             [23.71%]
+        33,453,789 cache-misses              #   47.873 % of all cache refs     [38.09%]
+        40,427,107 LLC-loads                                                    [32.20%]
+        16,411,384 LLC-load-misses           #   40.59% of all LL-cache hits    [ 7.02%]
+        59,004,101 LLC-stores                                                   [ 7.81%]
+        16,906,480 LLC-store-misses                                             [ 8.63%]
+           492,650 LLC-prefetch-misses                                          [ 9.37%]
+
+       1.965285051 seconds time elapsed
+
+Tile Size t=64
+root time      : 1.673049 
+
+ Performance counter stats for './build/run_root 4096':
+
+        31,153,720 cache-references                                             [23.10%]
+        21,651,924 cache-misses              #   69.500 % of all cache refs     [37.49%]
+         9,964,423 LLC-loads                                                    [28.51%]
+         5,472,673 LLC-load-misses           #   54.92% of all LL-cache hits    [ 6.41%]
+        60,042,573 LLC-stores                                                   [ 7.51%]
+        17,583,418 LLC-store-misses                                             [ 7.95%]
+        46,317,894 LLC-prefetch-misses                                          [ 8.59%]
+
+       1.937572693 seconds time elapsed
+
+tile time      : 1.867752 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       120,744,546 cache-references                                             [23.69%]
+        72,612,790 cache-misses              #   60.138 % of all cache refs     [37.77%]
+        58,952,994 LLC-loads                                                    [25.95%]
+        39,096,864 LLC-load-misses           #   66.32% of all LL-cache hits    [ 6.27%]
+       122,591,501 LLC-stores                                                   [ 8.48%]
+        37,712,141 LLC-store-misses                                             [ 9.68%]
+           417,639 LLC-prefetch-misses                                          [ 9.39%]
+
+       2.136053354 seconds time elapsed
+
+Merge Tile time: 1.579844 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        62,937,193 cache-references                                             [23.24%]
+        33,730,288 cache-misses              #   53.594 % of all cache refs     [37.50%]
+        35,411,888 LLC-loads                                                    [32.87%]
+        16,746,048 LLC-load-misses           #   47.29% of all LL-cache hits    [ 6.33%]
+        53,153,549 LLC-stores                                                   [ 7.18%]
+        17,052,444 LLC-store-misses                                             [ 7.84%]
+         1,072,041 LLC-prefetch-misses                                          [ 8.79%]
+
+       1.858037839 seconds time elapsed
+
+Tile Size t=128
+root time      : 1.670089 
+
+ Performance counter stats for './build/run_root 4096':
+
+        31,545,795 cache-references                                             [22.90%]
+        21,831,654 cache-misses              #   69.206 % of all cache refs     [37.26%]
+         9,568,874 LLC-loads                                                    [29.85%]
+         5,450,205 LLC-load-misses           #   56.96% of all LL-cache hits    [ 6.60%]
+        60,520,806 LLC-stores                                                   [ 7.85%]
+        18,188,575 LLC-store-misses                                             [ 8.14%]
+        46,250,211 LLC-prefetch-misses                                          [ 8.59%]
+
+       1.939185536 seconds time elapsed
+
+tile time      : 2.166909 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       119,543,065 cache-references                                             [22.92%]
+        80,016,343 cache-misses              #   66.935 % of all cache refs     [37.17%]
+        57,377,851 LLC-loads                                                    [31.55%]
+        37,633,753 LLC-load-misses           #   65.59% of all LL-cache hits    [ 7.89%]
+       122,434,761 LLC-stores                                                   [ 8.56%]
+        43,674,979 LLC-store-misses                                             [ 8.44%]
+         1,188,049 LLC-prefetch-misses                                          [ 8.67%]
+
+       2.451299308 seconds time elapsed
+
+Merge Tile time: 1.569614 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        51,533,890 cache-references                                             [23.50%]
+        35,413,405 cache-misses              #   68.719 % of all cache refs     [37.72%]
+        26,909,734 LLC-loads                                                    [31.69%]
+        16,792,950 LLC-load-misses           #   62.40% of all LL-cache hits    [ 6.33%]
+        49,925,461 LLC-stores                                                   [ 7.37%]
+        18,572,781 LLC-store-misses                                             [ 8.73%]
+         3,305,601 LLC-prefetch-misses                                          [ 9.21%]
+
+       1.843960794 seconds time elapsed
+
+Tile Size t=256
+root time      : 1.670887 
+
+ Performance counter stats for './build/run_root 4096':
+
+        33,078,437 cache-references                                             [23.23%]
+        22,617,049 cache-misses              #   68.374 % of all cache refs     [37.63%]
+        11,807,008 LLC-loads                                                    [28.03%]
+         3,783,748 LLC-load-misses           #   32.05% of all LL-cache hits    [ 5.90%]
+        59,717,723 LLC-stores                                                   [ 7.69%]
+        16,894,598 LLC-store-misses                                             [ 8.82%]
+        52,101,731 LLC-prefetch-misses                                          [ 9.10%]
+
+       1.941116813 seconds time elapsed
+
+tile time      : 2.605909 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       118,441,667 cache-references                                             [26.18%]
+        82,233,628 cache-misses              #   69.430 % of all cache refs     [40.73%]
+        54,533,960 LLC-loads                                                    [36.77%]
+        39,489,444 LLC-load-misses           #   72.41% of all LL-cache hits    [11.14%]
+       121,471,011 LLC-stores                                                   [11.51%]
+        43,610,415 LLC-store-misses                                             [11.58%]
+         1,587,560 LLC-prefetch-misses                                          [11.88%]
+
+       2.912425771 seconds time elapsed
+
+Merge Tile time: 1.704632 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        30,598,825 cache-references                                             [28.09%]
+        14,370,306 cache-misses              #   46.964 % of all cache refs     [41.96%]
+        14,059,326 LLC-loads                                                    [41.77%]
+         6,493,805 LLC-load-misses           #   46.19% of all LL-cache hits    [13.74%]
+        42,281,649 LLC-stores                                                   [13.87%]
+         8,726,371 LLC-store-misses                                             [13.71%]
+        26,590,020 LLC-prefetch-misses                                          [13.79%]
+
+       1.968886011 seconds time elapsed
+
+Tile Size t=512
+root time      : 1.672884 
+
+ Performance counter stats for './build/run_root 4096':
+
+        29,528,393 cache-references                                             [22.84%]
+        21,528,832 cache-misses              #   72.909 % of all cache refs     [37.02%]
+        10,848,448 LLC-loads                                                    [30.46%]
+         4,836,210 LLC-load-misses           #   44.58% of all LL-cache hits    [ 6.75%]
+        59,711,627 LLC-stores                                                   [ 7.66%]
+        17,767,425 LLC-store-misses                                             [ 8.24%]
+        48,965,492 LLC-prefetch-misses                                          [ 8.51%]
+
+       1.949295643 seconds time elapsed
+
+tile time      : 3.354575 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+        85,133,909 cache-references                                             [28.62%]
+        30,638,470 cache-misses              #   35.989 % of all cache refs     [42.75%]
+        22,765,696 LLC-loads                                                    [42.49%]
+        10,114,088 LLC-load-misses           #   44.43% of all LL-cache hits    [14.22%]
+       111,309,492 LLC-stores                                                   [14.36%]
+        24,229,407 LLC-store-misses                                             [14.30%]
+        58,790,644 LLC-prefetch-misses                                          [14.25%]
+
+       3.681932506 seconds time elapsed
+
+Merge Tile time: 3.043229 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        21,999,237 cache-references                                             [28.64%]
+         9,434,598 cache-misses              #   42.886 % of all cache refs     [42.86%]
+        10,094,685 LLC-loads                                                    [42.91%]
+         6,145,469 LLC-load-misses           #   60.88% of all LL-cache hits    [14.26%]
+        46,927,162 LLC-stores                                                   [14.37%]
+         3,465,983 LLC-store-misses                                             [14.36%]
+        42,247,608 LLC-prefetch-misses                                          [14.29%]
+
+       3.362872097 seconds time elapsed
+
+Tile Size t=1024
+root time      : 1.669170 
+
+ Performance counter stats for './build/run_root 4096':
+
+        33,293,977 cache-references                                             [23.33%]
+        22,920,559 cache-misses              #   68.843 % of all cache refs     [37.48%]
+        10,006,746 LLC-loads                                                    [27.41%]
+         4,300,019 LLC-load-misses           #   42.97% of all LL-cache hits    [ 6.37%]
+        59,769,796 LLC-stores                                                   [ 7.74%]
+        16,968,001 LLC-store-misses                                             [ 8.51%]
+        47,121,248 LLC-prefetch-misses                                          [ 8.99%]
+
+       1.940372940 seconds time elapsed
+
+tile time      : 6.912860 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       110,886,695 cache-references                                             [28.67%]
+        21,980,847 cache-misses              #   19.823 % of all cache refs     [42.94%]
+        11,251,988 LLC-loads                                                    [42.95%]
+         3,942,127 LLC-load-misses           #   35.03% of all LL-cache hits    [14.27%]
+       143,679,951 LLC-stores                                                   [14.36%]
+        18,656,830 LLC-store-misses                                             [14.36%]
+        74,554,447 LLC-prefetch-misses                                          [14.27%]
+
+       7.369006878 seconds time elapsed
+
+Merge Tile time: 5.590418 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+         6,015,089 cache-references                                             [28.62%]
+         4,210,097 cache-misses              #   69.992 % of all cache refs     [42.93%]
+         3,040,802 LLC-loads                                                    [43.00%]
+         2,098,209 LLC-load-misses           #   69.00% of all LL-cache hits    [14.27%]
+        36,509,955 LLC-stores                                                   [14.26%]
+         2,261,027 LLC-store-misses                                             [14.30%]
+        45,325,898 LLC-prefetch-misses                                          [14.29%]
+
+       6.006551283 seconds time elapsed
+
+=================================================
+Layer m=4 
+=================================================
+Tile Size t=16
+root time      : 2.661296 
+
+ Performance counter stats for './build/run_root 4096':
+
+        86,827,073 cache-references                                             [22.72%]
+        61,319,446 cache-misses              #   70.622 % of all cache refs     [37.01%]
+        23,230,303 LLC-loads                                                    [28.89%]
+        14,914,074 LLC-load-misses           #   64.20% of all LL-cache hits    [ 6.37%]
+       146,287,527 LLC-stores                                                   [ 7.66%]
+        51,648,375 LLC-store-misses                                             [ 7.97%]
+        73,773,728 LLC-prefetch-misses                                          [ 8.48%]
+
+       2.960695935 seconds time elapsed
+
+tile time      : 2.586589 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       210,561,169 cache-references                                             [23.18%]
+       137,837,728 cache-misses              #   65.462 % of all cache refs     [37.51%]
+        89,355,253 LLC-loads                                                    [29.61%]
+        69,711,584 LLC-load-misses           #   78.02% of all LL-cache hits    [ 6.50%]
+       239,005,023 LLC-stores                                                   [ 8.09%]
+        67,931,006 LLC-store-misses                                             [ 8.66%]
+           169,283 LLC-prefetch-misses                                          [ 8.83%]
+
+       2.886557141 seconds time elapsed
+
+Merge Tile time: 4.051376 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        58,729,934 cache-references                                             [23.57%]
+        34,337,010 cache-misses              #   58.466 % of all cache refs     [37.84%]
+        35,937,800 LLC-loads                                                    [27.47%]
+        17,290,662 LLC-load-misses           #   48.11% of all LL-cache hits    [ 6.02%]
+        39,492,747 LLC-stores                                                   [ 7.19%]
+        17,073,153 LLC-store-misses                                             [ 8.75%]
+            57,958 LLC-prefetch-misses                                          [ 9.20%]
+
+       4.399248770 seconds time elapsed
+
+Tile Size t=32
+root time      : 2.645357 
+
+ Performance counter stats for './build/run_root 4096':
+
+        86,080,869 cache-references                                             [23.01%]
+        61,901,435 cache-misses              #   71.911 % of all cache refs     [37.40%]
+        23,725,230 LLC-loads                                                    [29.05%]
+        13,034,233 LLC-load-misses           #   54.94% of all LL-cache hits    [ 6.41%]
+       144,308,563 LLC-stores                                                   [ 7.85%]
+        47,961,694 LLC-store-misses                                             [ 8.50%]
+        73,390,015 LLC-prefetch-misses                                          [ 8.80%]
+
+       2.943187102 seconds time elapsed
+
+tile time      : 2.680610 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       217,773,466 cache-references                                             [23.68%]
+       139,287,374 cache-misses              #   63.960 % of all cache refs     [37.82%]
+        93,224,231 LLC-loads                                                    [27.30%]
+        74,352,641 LLC-load-misses           #   79.76% of all LL-cache hits    [ 6.57%]
+       244,386,265 LLC-stores                                                   [ 8.07%]
+        67,354,780 LLC-store-misses                                             [ 8.96%]
+           203,243 LLC-prefetch-misses                                          [ 9.13%]
+
+       2.977318765 seconds time elapsed
+
+Merge Tile time: 3.121082 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        75,163,607 cache-references                                             [23.43%]
+        34,165,068 cache-misses              #   45.454 % of all cache refs     [37.62%]
+        42,877,470 LLC-loads                                                    [27.28%]
+        17,223,498 LLC-load-misses           #   40.17% of all LL-cache hits    [ 5.38%]
+        61,232,035 LLC-stores                                                   [ 7.05%]
+        16,966,220 LLC-store-misses                                             [ 8.67%]
+           466,850 LLC-prefetch-misses                                          [ 9.17%]
+
+       3.438265710 seconds time elapsed
+
+Tile Size t=64
+root time      : 2.649026 
+
+ Performance counter stats for './build/run_root 4096':
+
+        85,969,361 cache-references                                             [23.15%]
+        61,757,636 cache-misses              #   71.837 % of all cache refs     [37.35%]
+        23,366,912 LLC-loads                                                    [28.76%]
+        14,418,407 LLC-load-misses           #   61.70% of all LL-cache hits    [ 6.11%]
+       143,922,903 LLC-stores                                                   [ 7.60%]
+        48,728,044 LLC-store-misses                                             [ 8.37%]
+        76,738,420 LLC-prefetch-misses                                          [ 8.76%]
+
+       2.952474966 seconds time elapsed
+
+tile time      : 2.904982 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       240,957,928 cache-references                                             [23.27%]
+       151,235,872 cache-misses              #   62.764 % of all cache refs     [37.52%]
+       109,811,129 LLC-loads                                                    [24.53%]
+        79,916,973 LLC-load-misses           #   72.78% of all LL-cache hits    [ 6.47%]
+       265,081,317 LLC-stores                                                   [ 8.36%]
+        76,244,789 LLC-store-misses                                             [ 9.15%]
+           618,314 LLC-prefetch-misses                                          [ 9.08%]
+
+       3.213125878 seconds time elapsed
+
+Merge Tile time: 2.763122 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        66,331,528 cache-references                                             [23.26%]
+        32,989,876 cache-misses              #   49.735 % of all cache refs     [37.60%]
+        37,910,884 LLC-loads                                                    [30.75%]
+        17,936,684 LLC-load-misses           #   47.31% of all LL-cache hits    [ 6.06%]
+        56,511,211 LLC-stores                                                   [ 7.11%]
+        15,278,536 LLC-store-misses                                             [ 8.22%]
+         2,580,786 LLC-prefetch-misses                                          [ 8.97%]
+
+       3.067243366 seconds time elapsed
+
+Tile Size t=128
+root time      : 2.646441 
+
+ Performance counter stats for './build/run_root 4096':
+
+        84,760,373 cache-references                                             [23.21%]
+        61,311,496 cache-misses              #   72.335 % of all cache refs     [37.39%]
+        23,195,409 LLC-loads                                                    [26.20%]
+        14,717,720 LLC-load-misses           #   63.45% of all LL-cache hits    [ 6.07%]
+       142,350,358 LLC-stores                                                   [ 7.58%]
+        49,022,511 LLC-store-misses                                             [ 8.63%]
+        76,814,243 LLC-prefetch-misses                                          [ 8.94%]
+
+       2.946101771 seconds time elapsed
+
+tile time      : 3.447331 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       252,598,488 cache-references                                             [23.28%]
+       171,449,266 cache-misses              #   67.874 % of all cache refs     [37.59%]
+       114,942,600 LLC-loads                                                    [29.91%]
+        80,885,121 LLC-load-misses           #   70.37% of all LL-cache hits    [ 7.03%]
+       280,965,002 LLC-stores                                                   [ 8.45%]
+        94,049,900 LLC-store-misses                                             [ 8.90%]
+         1,128,086 LLC-prefetch-misses                                          [ 9.02%]
+
+       3.771001673 seconds time elapsed
+
+Merge Tile time: 2.514899 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        55,445,459 cache-references                                             [23.01%]
+        36,032,047 cache-misses              #   64.986 % of all cache refs     [37.25%]
+        30,150,368 LLC-loads                                                    [34.92%]
+        19,055,266 LLC-load-misses           #   63.20% of all LL-cache hits    [ 7.71%]
+        55,833,414 LLC-stores                                                   [ 7.63%]
+        16,783,855 LLC-store-misses                                             [ 8.13%]
+         6,461,264 LLC-prefetch-misses                                          [ 8.71%]
+
+       2.810461986 seconds time elapsed
+
+Tile Size t=256
+root time      : 2.654364 
+
+ Performance counter stats for './build/run_root 4096':
+
+        85,983,220 cache-references                                             [22.62%]
+        61,704,985 cache-misses              #   71.764 % of all cache refs     [36.94%]
+        23,589,321 LLC-loads                                                    [29.74%]
+        12,362,611 LLC-load-misses           #   52.41% of all LL-cache hits    [ 6.84%]
+       148,111,973 LLC-stores                                                   [ 7.65%]
+        49,140,797 LLC-store-misses                                             [ 8.18%]
+        74,370,236 LLC-prefetch-misses                                          [ 8.48%]
+
+       2.954050259 seconds time elapsed
+
+tile time      : 4.300325 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       249,959,071 cache-references                                             [26.06%]
+       168,053,119 cache-misses              #   67.232 % of all cache refs     [40.38%]
+       110,119,401 LLC-loads                                                    [36.30%]
+        82,456,725 LLC-load-misses           #   74.88% of all LL-cache hits    [10.73%]
+       292,488,472 LLC-stores                                                   [10.70%]
+        99,321,669 LLC-store-misses                                             [11.52%]
+         4,130,056 LLC-prefetch-misses                                          [11.84%]
+
+       4.669055891 seconds time elapsed
+
+Merge Tile time: 2.634303 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        59,484,174 cache-references                                             [28.30%]
+        17,945,797 cache-misses              #   30.169 % of all cache refs     [42.68%]
+        22,519,953 LLC-loads                                                    [42.06%]
+         7,718,894 LLC-load-misses           #   34.28% of all LL-cache hits    [13.69%]
+        89,920,768 LLC-stores                                                   [14.21%]
+        10,336,151 LLC-store-misses                                             [14.01%]
+        24,982,223 LLC-prefetch-misses                                          [13.91%]
+
+       2.948541166 seconds time elapsed
+
+Tile Size t=512
+root time      : 2.652990 
+
+ Performance counter stats for './build/run_root 4096':
+
+        85,263,126 cache-references                                             [22.58%]
+        61,006,241 cache-misses              #   71.551 % of all cache refs     [36.93%]
+        24,151,812 LLC-loads                                                    [31.54%]
+        13,454,937 LLC-load-misses           #   55.71% of all LL-cache hits    [ 6.75%]
+       144,514,967 LLC-stores                                                   [ 7.64%]
+        49,081,020 LLC-store-misses                                             [ 8.02%]
+        75,563,702 LLC-prefetch-misses                                          [ 8.33%]
+
+       2.949397194 seconds time elapsed
+
+tile time      : 5.366491 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       198,610,728 cache-references                                             [28.72%]
+        77,059,078 cache-misses              #   38.799 % of all cache refs     [42.99%]
+        53,116,813 LLC-loads                                                    [42.61%]
+        21,322,462 LLC-load-misses           #   40.14% of all LL-cache hits    [13.96%]
+       262,629,669 LLC-stores                                                   [14.04%]
+        59,295,422 LLC-store-misses                                             [14.03%]
+       110,326,405 LLC-prefetch-misses                                          [14.23%]
+
+       5.765866530 seconds time elapsed
+
+Merge Tile time: 5.006388 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        59,322,288 cache-references                                             [28.53%]
+        20,398,923 cache-misses              #   34.387 % of all cache refs     [42.77%]
+        19,914,363 LLC-loads                                                    [43.08%]
+        10,988,786 LLC-load-misses           #   55.18% of all LL-cache hits    [14.29%]
+       106,656,278 LLC-stores                                                   [14.31%]
+         8,470,663 LLC-store-misses                                             [14.32%]
+        40,361,695 LLC-prefetch-misses                                          [14.12%]
+
+       5.388476384 seconds time elapsed
+
+Tile Size t=1024
+root time      : 2.647456 
+
+ Performance counter stats for './build/run_root 4096':
+
+        84,695,027 cache-references                                             [22.72%]
+        61,186,195 cache-misses              #   72.243 % of all cache refs     [37.05%]
+        23,826,327 LLC-loads                                                    [31.74%]
+        12,207,083 LLC-load-misses           #   51.23% of all LL-cache hits    [ 6.86%]
+       147,233,122 LLC-stores                                                   [ 7.26%]
+        50,425,932 LLC-store-misses                                             [ 8.12%]
+        76,740,821 LLC-prefetch-misses                                          [ 8.33%]
+
+       2.945342448 seconds time elapsed
+
+tile time      : 10.581379 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       230,177,091 cache-references                                             [28.59%]
+        60,297,639 cache-misses              #   26.196 % of all cache refs     [42.93%]
+        32,033,447 LLC-loads                                                    [42.95%]
+         9,583,774 LLC-load-misses           #   29.92% of all LL-cache hits    [14.27%]
+       300,854,846 LLC-stores                                                   [14.33%]
+        55,998,810 LLC-store-misses                                             [14.30%]
+       146,711,427 LLC-prefetch-misses                                          [14.28%]
+
+      11.149693291 seconds time elapsed
+
+Merge Tile time: 9.201534 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        46,113,756 cache-references                                             [28.60%]
+        23,385,919 cache-misses              #   50.714 % of all cache refs     [42.90%]
+        10,260,776 LLC-loads                                                    [42.93%]
+         5,584,492 LLC-load-misses           #   54.43% of all LL-cache hits    [14.27%]
+       103,558,337 LLC-stores                                                   [14.30%]
+        17,332,660 LLC-store-misses                                             [14.29%]
+        46,147,175 LLC-prefetch-misses                                          [14.29%]
+
+       9.726073019 seconds time elapsed
+
+=================================================
+Layer m=8 
+=================================================
+Tile Size t=16
+root time      : 4.615103 
+
+ Performance counter stats for './build/run_root 4096':
+
+       192,318,089 cache-references                                             [23.25%]
+       139,298,398 cache-misses              #   72.431 % of all cache refs     [37.58%]
+        53,258,227 LLC-loads                                                    [27.50%]
+        32,492,386 LLC-load-misses           #   61.01% of all LL-cache hits    [ 6.21%]
+       314,868,927 LLC-stores                                                   [ 7.73%]
+       111,413,603 LLC-store-misses                                             [ 8.46%]
+       134,460,426 LLC-prefetch-misses                                          [ 9.01%]
+
+       4.977324633 seconds time elapsed
+
+tile time      : 4.481546 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       435,219,625 cache-references                                             [22.85%]
+       274,322,267 cache-misses              #   63.031 % of all cache refs     [37.21%]
+       177,980,907 LLC-loads                                                    [29.51%]
+       143,959,887 LLC-load-misses           #   80.89% of all LL-cache hits    [ 6.17%]
+       501,703,831 LLC-stores                                                   [ 7.62%]
+       132,673,388 LLC-store-misses                                             [ 8.25%]
+           346,673 LLC-prefetch-misses                                          [ 8.60%]
+
+       4.846135490 seconds time elapsed
+
+Merge Tile time: 9.507737 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       125,082,166 cache-references                                             [22.76%]
+        35,769,519 cache-misses              #   28.597 % of all cache refs     [37.02%]
+        95,008,269 LLC-loads                                                    [30.63%]
+        19,081,013 LLC-load-misses           #   20.08% of all LL-cache hits    [ 6.55%]
+        53,782,696 LLC-stores                                                   [ 7.26%]
+        17,206,944 LLC-store-misses                                             [ 8.11%]
+           273,229 LLC-prefetch-misses                                          [ 8.48%]
+
+      10.030605336 seconds time elapsed
+
+Tile Size t=32
+root time      : 4.626862 
+
+ Performance counter stats for './build/run_root 4096':
+
+       192,020,420 cache-references                                             [22.98%]
+       139,111,122 cache-misses              #   72.446 % of all cache refs     [37.21%]
+        52,068,258 LLC-loads                                                    [29.36%]
+        30,224,054 LLC-load-misses           #   58.05% of all LL-cache hits    [ 6.60%]
+       310,178,261 LLC-stores                                                   [ 7.55%]
+       112,811,273 LLC-store-misses                                             [ 8.20%]
+       136,174,415 LLC-prefetch-misses                                          [ 8.70%]
+
+       4.994410882 seconds time elapsed
+
+tile time      : 4.574490 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       444,572,240 cache-references                                             [23.15%]
+       280,257,004 cache-misses              #   63.040 % of all cache refs     [37.23%]
+       178,436,564 LLC-loads                                                    [29.46%]
+       146,866,969 LLC-load-misses           #   82.31% of all LL-cache hits    [ 6.58%]
+       522,245,646 LLC-stores                                                   [ 7.79%]
+       137,416,447 LLC-store-misses                                             [ 8.52%]
+           472,948 LLC-prefetch-misses                                          [ 8.75%]
+
+       4.939124220 seconds time elapsed
+
+Merge Tile time: 6.163022 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       101,144,135 cache-references                                             [23.13%]
+        36,203,072 cache-misses              #   35.794 % of all cache refs     [37.45%]
+        62,944,249 LLC-loads                                                    [30.35%]
+        18,993,017 LLC-load-misses           #   30.17% of all LL-cache hits    [ 6.60%]
+        68,704,621 LLC-stores                                                   [ 7.18%]
+        17,249,803 LLC-store-misses                                             [ 8.44%]
+           491,595 LLC-prefetch-misses                                          [ 8.85%]
+
+       6.569255625 seconds time elapsed
+
+Tile Size t=64
+root time      : 4.682231 
+
+ Performance counter stats for './build/run_root 4096':
+
+       192,427,220 cache-references                                             [23.10%]
+       139,256,156 cache-misses              #   72.368 % of all cache refs     [37.35%]
+        52,394,364 LLC-loads                                                    [30.19%]
+        30,895,886 LLC-load-misses           #   58.97% of all LL-cache hits    [ 6.60%]
+       317,881,798 LLC-stores                                                   [ 7.67%]
+       112,546,390 LLC-store-misses                                             [ 8.32%]
+       135,448,331 LLC-prefetch-misses                                          [ 8.84%]
+
+       5.047419641 seconds time elapsed
+
+tile time      : 5.022654 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       473,827,494 cache-references                                             [22.77%]
+       307,793,781 cache-misses              #   64.959 % of all cache refs     [37.18%]
+       195,668,913 LLC-loads                                                    [29.11%]
+       156,051,750 LLC-load-misses           #   79.75% of all LL-cache hits    [ 6.73%]
+       546,036,908 LLC-stores                                                   [ 7.67%]
+       156,856,497 LLC-store-misses                                             [ 8.75%]
+         1,050,664 LLC-prefetch-misses                                          [ 8.56%]
+
+       5.398295330 seconds time elapsed
+
+Merge Tile time: 4.838713 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        71,712,888 cache-references                                             [22.76%]
+        31,915,849 cache-misses              #   44.505 % of all cache refs     [36.94%]
+        43,007,044 LLC-loads                                                    [27.66%]
+        19,873,196 LLC-load-misses           #   46.21% of all LL-cache hits    [ 6.27%]
+        56,804,908 LLC-stores                                                   [ 7.40%]
+        12,062,312 LLC-store-misses                                             [ 8.35%]
+         6,214,813 LLC-prefetch-misses                                          [ 8.51%]
+
+       5.207773545 seconds time elapsed
+
+Tile Size t=128
+root time      : 4.712523 
+
+ Performance counter stats for './build/run_root 4096':
+
+       191,792,533 cache-references                                             [23.28%]
+       138,874,533 cache-misses              #   72.409 % of all cache refs     [37.49%]
+        53,788,291 LLC-loads                                                    [28.48%]
+        30,733,465 LLC-load-misses           #   57.14% of all LL-cache hits    [ 6.32%]
+       313,124,447 LLC-stores                                                   [ 7.48%]
+       113,599,030 LLC-store-misses                                             [ 8.50%]
+       136,599,560 LLC-prefetch-misses                                          [ 8.91%]
+
+       5.078472724 seconds time elapsed
+
+tile time      : 5.793703 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       513,079,685 cache-references                                             [23.54%]
+       357,954,549 cache-misses              #   69.766 % of all cache refs     [37.85%]
+       223,543,755 LLC-loads                                                    [29.51%]
+       166,820,659 LLC-load-misses           #   74.63% of all LL-cache hits    [ 6.89%]
+       573,213,175 LLC-stores                                                   [ 8.23%]
+       200,756,088 LLC-store-misses                                             [ 9.06%]
+         1,797,292 LLC-prefetch-misses                                          [ 9.24%]
+
+       6.210809776 seconds time elapsed
+
+Merge Tile time: 4.664114 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        62,400,211 cache-references                                             [22.97%]
+        37,959,878 cache-misses              #   60.833 % of all cache refs     [37.30%]
+        34,338,148 LLC-loads                                                    [31.31%]
+        21,020,892 LLC-load-misses           #   61.22% of all LL-cache hits    [ 6.95%]
+        70,967,823 LLC-stores                                                   [ 7.82%]
+        17,384,654 LLC-store-misses                                             [ 8.33%]
+         6,613,473 LLC-prefetch-misses                                          [ 8.71%]
+
+       5.019806894 seconds time elapsed
+
+Tile Size t=256
+root time      : 4.738206 
+
+ Performance counter stats for './build/run_root 4096':
+
+       193,581,703 cache-references                                             [22.81%]
+       139,412,362 cache-misses              #   72.017 % of all cache refs     [37.19%]
+        53,400,534 LLC-loads                                                    [28.67%]
+        29,727,448 LLC-load-misses           #   55.67% of all LL-cache hits    [ 6.90%]
+       315,152,227 LLC-stores                                                   [ 8.08%]
+       114,505,200 LLC-store-misses                                             [ 8.71%]
+       134,227,776 LLC-prefetch-misses                                          [ 8.55%]
+
+       5.104530235 seconds time elapsed
+
+tile time      : 7.334314 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       535,319,677 cache-references                                             [25.53%]
+       354,452,661 cache-misses              #   66.213 % of all cache refs     [39.93%]
+       232,153,064 LLC-loads                                                    [36.45%]
+       164,043,198 LLC-load-misses           #   70.66% of all LL-cache hits    [10.36%]
+       616,733,724 LLC-stores                                                   [11.14%]
+       207,591,015 LLC-store-misses                                             [11.18%]
+         6,956,720 LLC-prefetch-misses                                          [11.37%]
+
+       7.786361850 seconds time elapsed
+
+Merge Tile time: 4.362276 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        81,935,282 cache-references                                             [28.59%]
+        20,376,928 cache-misses              #   24.870 % of all cache refs     [42.79%]
+        31,445,254 LLC-loads                                                    [42.63%]
+         9,260,144 LLC-load-misses           #   29.45% of all LL-cache hits    [14.18%]
+       154,861,969 LLC-stores                                                   [14.21%]
+        11,399,246 LLC-store-misses                                             [14.17%]
+        25,863,752 LLC-prefetch-misses                                          [14.26%]
+
+       4.722390507 seconds time elapsed
+
+Tile Size t=512
+root time      : 4.761396 
+
+ Performance counter stats for './build/run_root 4096':
+
+       193,160,251 cache-references                                             [23.13%]
+       139,121,743 cache-misses              #   72.024 % of all cache refs     [37.43%]
+        53,552,395 LLC-loads                                                    [28.77%]
+        29,881,395 LLC-load-misses           #   55.80% of all LL-cache hits    [ 6.48%]
+       310,087,251 LLC-stores                                                   [ 7.82%]
+       112,290,167 LLC-store-misses                                             [ 8.59%]
+       133,874,019 LLC-prefetch-misses                                          [ 8.76%]
+
+       5.129950750 seconds time elapsed
+
+tile time      : 9.047304 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       416,251,567 cache-references                                             [28.41%]
+       174,956,265 cache-misses              #   42.031 % of all cache refs     [42.52%]
+       117,738,011 LLC-loads                                                    [42.20%]
+        43,006,659 LLC-load-misses           #   36.53% of all LL-cache hits    [13.86%]
+       539,029,760 LLC-stores                                                   [13.98%]
+       130,802,739 LLC-store-misses                                             [13.77%]
+       215,647,800 LLC-prefetch-misses                                          [14.07%]
+
+       9.570037191 seconds time elapsed
+
+Merge Tile time: 8.378208 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        83,965,602 cache-references                                             [28.58%]
+        19,971,308 cache-misses              #   23.785 % of all cache refs     [42.88%]
+        27,004,391 LLC-loads                                                    [42.91%]
+        11,078,266 LLC-load-misses           #   41.02% of all LL-cache hits    [14.28%]
+       192,470,049 LLC-stores                                                   [14.29%]
+         8,273,745 LLC-store-misses                                             [14.29%]
+        41,435,849 LLC-prefetch-misses                                          [14.29%]
+
+       8.876023564 seconds time elapsed
+
+Tile Size t=1024
+root time      : 4.705622 
+
+ Performance counter stats for './build/run_root 4096':
+
+       194,054,527 cache-references                                             [22.92%]
+       140,315,345 cache-misses              #   72.307 % of all cache refs     [37.15%]
+        53,860,262 LLC-loads                                                    [28.96%]
+        31,638,725 LLC-load-misses           #   58.74% of all LL-cache hits    [ 6.27%]
+       312,555,853 LLC-stores                                                   [ 7.48%]
+       113,145,120 LLC-store-misses                                             [ 8.31%]
+       133,033,531 LLC-prefetch-misses                                          [ 8.67%]
+
+       5.075645342 seconds time elapsed
+
+tile time      : 17.497196 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       484,127,402 cache-references                                             [28.58%]
+       142,614,940 cache-misses              #   29.458 % of all cache refs     [42.87%]
+        72,110,686 LLC-loads                                                    [42.88%]
+        23,748,430 LLC-load-misses           #   32.93% of all LL-cache hits    [14.40%]
+       642,965,635 LLC-stores                                                   [14.28%]
+       116,712,155 LLC-store-misses                                             [14.29%]
+       294,150,551 LLC-prefetch-misses                                          [14.27%]
+
+      18.303607389 seconds time elapsed
+
+Merge Tile time: 15.207260 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        53,249,264 cache-references                                             [28.59%]
+        24,780,530 cache-misses              #   46.537 % of all cache refs     [42.87%]
+        13,419,464 LLC-loads                                                    [42.88%]
+         6,043,678 LLC-load-misses           #   45.04% of all LL-cache hits    [14.28%]
+       172,064,849 LLC-stores                                                   [14.29%]
+        18,270,884 LLC-store-misses                                             [14.29%]
+        48,563,313 LLC-prefetch-misses                                          [14.29%]
+
+      15.937083934 seconds time elapsed
+
+=================================================
+Layer m=16 
+=================================================
+Tile Size t=16
+root time      : 8.640956 
+
+ Performance counter stats for './build/run_root 4096':
+
+       411,713,280 cache-references                                             [23.13%]
+       298,199,695 cache-misses              #   72.429 % of all cache refs     [37.45%]
+       112,295,217 LLC-loads                                                    [28.94%]
+        70,808,937 LLC-load-misses           #   63.06% of all LL-cache hits    [ 6.31%]
+       646,563,842 LLC-stores                                                   [ 7.54%]
+       239,179,985 LLC-store-misses                                             [ 8.57%]
+       252,382,346 LLC-prefetch-misses                                          [ 8.82%]
+
+       9.138193419 seconds time elapsed
+
+tile time      : 8.221141 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       890,435,491 cache-references                                             [22.93%]
+       549,334,163 cache-misses              #   61.693 % of all cache refs     [37.24%]
+       354,780,579 LLC-loads                                                    [28.99%]
+       286,592,827 LLC-load-misses           #   80.78% of all LL-cache hits    [ 6.42%]
+     1,040,741,439 LLC-stores                                                   [ 7.53%]
+       267,994,975 LLC-store-misses                                             [ 8.42%]
+           990,169 LLC-prefetch-misses                                          [ 8.65%]
+
+       8.704851885 seconds time elapsed
+
+Merge Tile time: 31.490049 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       236,982,023 cache-references                                             [22.79%]
+        39,923,065 cache-misses              #   16.846 % of all cache refs     [37.07%]
+       193,163,280 LLC-loads                                                    [28.69%]
+        22,444,108 LLC-load-misses           #   11.62% of all LL-cache hits    [ 6.36%]
+        71,552,748 LLC-stores                                                   [ 7.26%]
+        17,199,117 LLC-store-misses                                             [ 8.16%]
+           193,065 LLC-prefetch-misses                                          [ 8.50%]
+
+      32.711752276 seconds time elapsed
+
+Tile Size t=32
+root time      : 9.053781 
+
+ Performance counter stats for './build/run_root 4096':
+
+       417,581,904 cache-references                                             [22.95%]
+       300,482,385 cache-misses              #   71.958 % of all cache refs     [37.21%]
+       116,224,302 LLC-loads                                                    [29.30%]
+        69,708,422 LLC-load-misses           #   59.98% of all LL-cache hits    [ 6.53%]
+       649,104,632 LLC-stores                                                   [ 7.70%]
+       239,867,176 LLC-store-misses                                             [ 8.32%]
+       248,657,664 LLC-prefetch-misses                                          [ 8.66%]
+
+       9.551054270 seconds time elapsed
+
+tile time      : 8.638478 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       890,423,023 cache-references                                             [23.09%]
+       562,477,529 cache-misses              #   63.170 % of all cache refs     [37.42%]
+       351,856,905 LLC-loads                                                    [28.50%]
+       294,251,607 LLC-load-misses           #   83.63% of all LL-cache hits    [ 6.36%]
+     1,073,387,070 LLC-stores                                                   [ 7.79%]
+       271,251,394 LLC-store-misses                                             [ 8.78%]
+         1,060,105 LLC-prefetch-misses                                          [ 8.88%]
+
+       9.131039546 seconds time elapsed
+
+Merge Tile time: 17.012157 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       137,664,398 cache-references                                             [23.11%]
+        42,144,514 cache-misses              #   30.614 % of all cache refs     [37.41%]
+        94,052,352 LLC-loads                                                    [26.38%]
+        25,158,322 LLC-load-misses           #   26.75% of all LL-cache hits    [ 6.38%]
+        76,127,697 LLC-stores                                                   [ 7.35%]
+        17,115,637 LLC-store-misses                                             [ 8.51%]
+           905,459 LLC-prefetch-misses                                          [ 8.83%]
+
+      17.761600834 seconds time elapsed
+
+Tile Size t=64
+root time      : 9.178504 
+
+ Performance counter stats for './build/run_root 4096':
+
+       413,362,363 cache-references                                             [23.03%]
+       299,440,621 cache-misses              #   72.440 % of all cache refs     [37.28%]
+       113,337,283 LLC-loads                                                    [29.72%]
+        67,722,217 LLC-load-misses           #   59.75% of all LL-cache hits    [ 6.52%]
+       649,380,560 LLC-stores                                                   [ 7.51%]
+       237,080,419 LLC-store-misses                                             [ 8.23%]
+       253,524,625 LLC-prefetch-misses                                          [ 8.73%]
+
+       9.677185084 seconds time elapsed
+
+tile time      : 9.389055 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       920,111,228 cache-references                                             [23.37%]
+       618,772,891 cache-misses              #   67.250 % of all cache refs     [37.63%]
+       366,539,282 LLC-loads                                                    [27.49%]
+       316,315,673 LLC-load-misses           #   86.30% of all LL-cache hits    [ 6.46%]
+     1,103,090,003 LLC-stores                                                   [ 7.96%]
+       319,094,796 LLC-store-misses                                             [ 8.90%]
+         1,415,563 LLC-prefetch-misses                                          [ 9.15%]
+
+       9.900552564 seconds time elapsed
+
+Merge Tile time: 11.561435 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        95,712,585 cache-references                                             [22.74%]
+        34,443,329 cache-misses              #   35.986 % of all cache refs     [37.00%]
+        56,464,969 LLC-loads                                                    [31.59%]
+        23,982,703 LLC-load-misses           #   42.47% of all LL-cache hits    [ 6.80%]
+        88,940,372 LLC-stores                                                   [ 7.24%]
+        10,611,432 LLC-store-misses                                             [ 7.94%]
+         9,218,903 LLC-prefetch-misses                                          [ 8.42%]
+
+      12.138591860 seconds time elapsed
+
+Tile Size t=128
+root time      : 9.237680 
+
+ Performance counter stats for './build/run_root 4096':
+
+       414,295,497 cache-references                                             [23.19%]
+       299,102,403 cache-misses              #   72.195 % of all cache refs     [37.51%]
+       115,435,461 LLC-loads                                                    [28.67%]
+        65,703,000 LLC-load-misses           #   56.92% of all LL-cache hits    [ 6.57%]
+       652,799,059 LLC-stores                                                   [ 7.72%]
+       239,626,305 LLC-store-misses                                             [ 8.65%]
+       257,317,798 LLC-prefetch-misses                                          [ 8.95%]
+
+       9.737405267 seconds time elapsed
+
+tile time      : 10.867136 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+     1,018,290,100 cache-references                                             [23.60%]
+       733,120,603 cache-misses              #   71.995 % of all cache refs     [37.90%]
+       428,443,955 LLC-loads                                                    [29.87%]
+       330,704,171 LLC-load-misses           #   77.19% of all LL-cache hits    [ 6.73%]
+     1,172,200,875 LLC-stores                                                   [ 8.15%]
+       409,143,675 LLC-store-misses                                             [ 8.99%]
+         2,667,605 LLC-prefetch-misses                                          [ 9.29%]
+
+      11.437047485 seconds time elapsed
+
+Merge Tile time: 9.971231 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        80,383,638 cache-references                                             [23.20%]
+        41,004,235 cache-misses              #   51.011 % of all cache refs     [37.46%]
+        44,648,574 LLC-loads                                                    [30.41%]
+        24,212,888 LLC-load-misses           #   54.23% of all LL-cache hits    [ 6.66%]
+       113,008,465 LLC-stores                                                   [ 7.68%]
+        17,054,729 LLC-store-misses                                             [ 8.50%]
+         7,456,144 LLC-prefetch-misses                                          [ 8.92%]
+
+      10.498974443 seconds time elapsed
+
+Tile Size t=256
+root time      : 9.342515 
+
+ Performance counter stats for './build/run_root 4096':
+
+       416,923,478 cache-references                                             [22.98%]
+       300,127,172 cache-misses              #   71.986 % of all cache refs     [37.24%]
+       115,158,962 LLC-loads                                                    [29.21%]
+        70,007,987 LLC-load-misses           #   60.79% of all LL-cache hits    [ 6.30%]
+       649,965,568 LLC-stores                                                   [ 7.47%]
+       239,522,455 LLC-store-misses                                             [ 8.35%]
+       255,915,079 LLC-prefetch-misses                                          [ 8.71%]
+
+       9.838125737 seconds time elapsed
+
+tile time      : 13.438728 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+     1,100,067,425 cache-references                                             [26.10%]
+       722,419,933 cache-misses              #   65.671 % of all cache refs     [40.31%]
+       469,962,935 LLC-loads                                                    [35.91%]
+       340,522,825 LLC-load-misses           #   72.46% of all LL-cache hits    [10.21%]
+     1,291,338,998 LLC-stores                                                   [10.96%]
+       434,012,657 LLC-store-misses                                             [11.28%]
+        12,850,647 LLC-prefetch-misses                                          [11.80%]
+
+      14.097863062 seconds time elapsed
+
+Merge Tile time: 8.629788 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       136,754,706 cache-references                                             [28.50%]
+        23,514,626 cache-misses              #   17.195 % of all cache refs     [42.72%]
+        54,851,818 LLC-loads                                                    [42.70%]
+        12,755,443 LLC-load-misses           #   23.25% of all LL-cache hits    [14.26%]
+       297,661,875 LLC-stores                                                   [14.23%]
+        11,996,145 LLC-store-misses                                             [14.30%]
+        23,713,539 LLC-prefetch-misses                                          [14.22%]
+
+       9.111466284 seconds time elapsed
+
+Tile Size t=512
+root time      : 9.286549 
+
+ Performance counter stats for './build/run_root 4096':
+
+       412,871,675 cache-references                                             [23.12%]
+       298,209,399 cache-misses              #   72.228 % of all cache refs     [37.41%]
+       116,132,202 LLC-loads                                                    [27.23%]
+        67,565,133 LLC-load-misses           #   58.18% of all LL-cache hits    [ 6.33%]
+       649,523,805 LLC-stores                                                   [ 7.76%]
+       240,107,193 LLC-store-misses                                             [ 8.57%]
+       254,393,436 LLC-prefetch-misses                                          [ 8.85%]
+
+       9.783510307 seconds time elapsed
+
+tile time      : 16.478994 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+       843,425,419 cache-references                                             [27.98%]
+       361,646,611 cache-misses              #   42.878 % of all cache refs     [42.23%]
+       246,244,721 LLC-loads                                                    [41.67%]
+        84,099,689 LLC-load-misses           #   34.15% of all LL-cache hits    [13.82%]
+     1,114,599,024 LLC-stores                                                   [13.81%]
+       283,627,402 LLC-store-misses                                             [13.85%]
+       416,350,149 LLC-prefetch-misses                                          [13.72%]
+
+      17.247906133 seconds time elapsed
+
+Merge Tile time: 15.261668 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       135,822,696 cache-references                                             [28.63%]
+        19,723,207 cache-misses              #   14.521 % of all cache refs     [42.88%]
+        41,288,645 LLC-loads                                                    [42.90%]
+        11,512,093 LLC-load-misses           #   27.88% of all LL-cache hits    [14.27%]
+       369,307,778 LLC-stores                                                   [14.31%]
+         8,060,271 LLC-store-misses                                             [14.28%]
+        40,267,381 LLC-prefetch-misses                                          [14.28%]
+
+      15.987618006 seconds time elapsed
+
+Tile Size t=1024
+root time      : 9.019878 
+
+ Performance counter stats for './build/run_root 4096':
+
+       412,948,961 cache-references                                             [23.01%]
+       299,467,771 cache-misses              #   72.519 % of all cache refs     [37.29%]
+       113,876,087 LLC-loads                                                    [28.24%]
+        66,764,724 LLC-load-misses           #   58.63% of all LL-cache hits    [ 6.29%]
+       653,157,580 LLC-stores                                                   [ 7.53%]
+       238,833,684 LLC-store-misses                                             [ 8.29%]
+       254,620,286 LLC-prefetch-misses                                          [ 8.72%]
+
+       9.519849917 seconds time elapsed
+
+tile time      : 31.321846 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+     1,025,105,299 cache-references                                             [28.57%]
+       301,310,317 cache-misses              #   29.393 % of all cache refs     [42.86%]
+       157,170,277 LLC-loads                                                    [42.84%]
+        52,487,867 LLC-load-misses           #   33.40% of all LL-cache hits    [14.30%]
+     1,340,605,979 LLC-stores                                                   [14.35%]
+       257,893,005 LLC-store-misses                                             [14.29%]
+       600,892,523 LLC-prefetch-misses                                          [14.30%]
+
+      32.599097231 seconds time elapsed
+
+Merge Tile time: 26.976114 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        58,153,370 cache-references                                             [28.58%]
+        22,414,034 cache-misses              #   38.543 % of all cache refs     [42.87%]
+        19,655,314 LLC-loads                                                    [42.88%]
+         7,134,448 LLC-load-misses           #   36.30% of all LL-cache hits    [14.28%]
+       307,581,009 LLC-stores                                                   [14.29%]
+        24,417,583 LLC-store-misses                                             [14.29%]
+        55,274,922 LLC-prefetch-misses                                          [14.29%]
+
+      28.094767090 seconds time elapsed
+
+=================================================
+Layer m=32 
+=================================================
+Tile Size t=16
+root time      : 16.883963 
+
+ Performance counter stats for './build/run_root 4096':
+
+       846,635,219 cache-references                                             [23.19%]
+       615,134,841 cache-misses              #   72.656 % of all cache refs     [37.47%]
+       228,783,924 LLC-loads                                                    [29.62%]
+       135,234,740 LLC-load-misses           #   59.11% of all LL-cache hits    [ 6.61%]
+     1,324,859,473 LLC-stores                                                   [ 7.66%]
+       492,083,046 LLC-store-misses                                             [ 8.45%]
+       499,684,229 LLC-prefetch-misses                                          [ 8.90%]
+
+      17.656422437 seconds time elapsed
+
+tile time      : 15.837898 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+     1,800,498,872 cache-references                                             [23.13%]
+     1,110,319,200 cache-misses              #   61.667 % of all cache refs     [37.50%]
+       717,682,839 LLC-loads                                                    [28.55%]
+       574,836,565 LLC-load-misses           #   80.10% of all LL-cache hits    [ 6.35%]
+     2,124,881,826 LLC-stores                                                   [ 7.86%]
+       530,587,399 LLC-store-misses                                             [ 8.67%]
+         1,879,544 LLC-prefetch-misses                                          [ 8.91%]
+
+      16.572996514 seconds time elapsed
+
+Merge Tile time: 141.562057 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       718,051,363 cache-references                                             [22.50%]
+        42,810,165 cache-misses              #    5.962 % of all cache refs     [36.78%]
+       598,961,728 LLC-loads                                                    [29.27%]
+        28,603,189 LLC-load-misses           #    4.78% of all LL-cache hits    [ 6.40%]
+       192,569,853 LLC-stores                                                   [ 7.21%]
+        14,674,739 LLC-store-misses                                             [ 8.00%]
+        10,282,773 LLC-prefetch-misses                                          [ 8.22%]
+
+     146.219781269 seconds time elapsed
+
+Tile Size t=32
+root time      : 18.517113 
+
+ Performance counter stats for './build/run_root 4096':
+
+       857,629,736 cache-references                                             [23.08%]
+       620,759,876 cache-misses              #   72.381 % of all cache refs     [37.36%]
+       239,325,524 LLC-loads                                                    [29.28%]
+       135,964,772 LLC-load-misses           #   56.81% of all LL-cache hits    [ 6.50%]
+     1,331,533,100 LLC-stores                                                   [ 7.66%]
+       495,985,017 LLC-store-misses                                             [ 8.50%]
+       493,664,698 LLC-prefetch-misses                                          [ 8.79%]
+
+      19.291945012 seconds time elapsed
+
+tile time      : 17.189447 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+     1,798,805,670 cache-references                                             [23.38%]
+     1,128,822,292 cache-misses              #   62.754 % of all cache refs     [37.70%]
+       695,762,999 LLC-loads                                                    [27.49%]
+       589,979,856 LLC-load-misses           #   84.80% of all LL-cache hits    [ 6.57%]
+     2,163,281,107 LLC-stores                                                   [ 8.11%]
+       546,347,287 LLC-store-misses                                             [ 9.01%]
+         2,051,698 LLC-prefetch-misses                                          [ 9.10%]
+
+      17.982926919 seconds time elapsed
+
+Merge Tile time: 61.135246 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       385,186,665 cache-references                                             [22.99%]
+        48,305,064 cache-misses              #   12.541 % of all cache refs     [37.26%]
+       273,220,164 LLC-loads                                                    [27.51%]
+        43,280,245 LLC-load-misses           #   15.84% of all LL-cache hits    [ 6.28%]
+       244,775,490 LLC-stores                                                   [ 7.49%]
+         5,459,234 LLC-store-misses                                             [ 8.59%]
+        15,356,164 LLC-prefetch-misses                                          [ 8.69%]
+
+      63.365289609 seconds time elapsed
+
+Tile Size t=64
+root time      : 18.503878 
+
+ Performance counter stats for './build/run_root 4096':
+
+       855,331,357 cache-references                                             [23.02%]
+       618,373,308 cache-misses              #   72.296 % of all cache refs     [37.31%]
+       235,548,234 LLC-loads                                                    [27.97%]
+       139,152,391 LLC-load-misses           #   59.08% of all LL-cache hits    [ 6.51%]
+     1,328,499,625 LLC-stores                                                   [ 7.79%]
+       493,505,069 LLC-store-misses                                             [ 8.52%]
+       497,680,108 LLC-prefetch-misses                                          [ 8.73%]
+
+      19.276100111 seconds time elapsed
+
+tile time      : 18.465740 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+     1,844,106,789 cache-references                                             [23.49%]
+     1,254,493,128 cache-misses              #   68.027 % of all cache refs     [37.73%]
+       723,121,649 LLC-loads                                                    [28.01%]
+       625,213,058 LLC-load-misses           #   86.46% of all LL-cache hits    [ 6.53%]
+     2,209,100,524 LLC-stores                                                   [ 8.11%]
+       641,457,183 LLC-store-misses                                             [ 9.13%]
+         2,661,908 LLC-prefetch-misses                                          [ 9.14%]
+
+      19.296124676 seconds time elapsed
+
+Merge Tile time: 34.801445 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       192,725,929 cache-references                                             [23.13%]
+        48,276,087 cache-misses              #   25.049 % of all cache refs     [37.41%]
+       122,740,632 LLC-loads                                                    [27.82%]
+        36,335,710 LLC-load-misses           #   29.60% of all LL-cache hits    [ 6.20%]
+       173,100,157 LLC-stores                                                   [ 7.53%]
+        11,724,550 LLC-store-misses                                             [ 8.67%]
+        12,218,963 LLC-prefetch-misses                                          [ 8.85%]
+
+      36.154506043 seconds time elapsed
+
+Tile Size t=128
+root time      : 18.458549 
+
+ Performance counter stats for './build/run_root 4096':
+
+       849,377,702 cache-references                                             [23.02%]
+       614,453,987 cache-misses              #   72.342 % of all cache refs     [37.31%]
+       234,053,255 LLC-loads                                                    [29.07%]
+       135,030,521 LLC-load-misses           #   57.69% of all LL-cache hits    [ 6.59%]
+     1,317,517,058 LLC-stores                                                   [ 7.69%]
+       491,417,389 LLC-store-misses                                             [ 8.44%]
+       497,136,138 LLC-prefetch-misses                                          [ 8.73%]
+
+      19.241908746 seconds time elapsed
+
+tile time      : 20.620893 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+     2,020,317,957 cache-references                                             [23.42%]
+     1,477,552,021 cache-misses              #   73.135 % of all cache refs     [37.71%]
+       839,267,865 LLC-loads                                                    [30.50%]
+       667,409,311 LLC-load-misses           #   79.52% of all LL-cache hits    [ 7.14%]
+     2,358,748,545 LLC-stores                                                   [ 8.15%]
+       833,632,695 LLC-store-misses                                             [ 8.83%]
+         4,602,531 LLC-prefetch-misses                                          [ 9.11%]
+
+      21.541376733 seconds time elapsed
+
+Merge Tile time: 23.884277 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       207,627,020 cache-references                                             [23.28%]
+        51,265,638 cache-misses              #   24.691 % of all cache refs     [37.56%]
+       105,618,105 LLC-loads                                                    [28.96%]
+        32,339,827 LLC-load-misses           #   30.62% of all LL-cache hits    [ 6.08%]
+       446,480,707 LLC-stores                                                   [ 7.30%]
+        18,754,744 LLC-store-misses                                             [ 8.55%]
+        13,477,893 LLC-prefetch-misses                                          [ 8.99%]
+
+      24.876386382 seconds time elapsed
+
+Tile Size t=256
+root time      : 18.253220 
+
+ Performance counter stats for './build/run_root 4096':
+
+       849,364,303 cache-references                                             [23.05%]
+       615,951,258 cache-misses              #   72.519 % of all cache refs     [37.31%]
+       234,300,619 LLC-loads                                                    [28.83%]
+       134,495,788 LLC-load-misses           #   57.40% of all LL-cache hits    [ 6.50%]
+     1,327,274,656 LLC-stores                                                   [ 7.82%]
+       495,889,864 LLC-store-misses                                             [ 8.50%]
+       499,197,325 LLC-prefetch-misses                                          [ 8.82%]
+
+      19.029367226 seconds time elapsed
+
+tile time      : 25.962181 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+     2,238,574,995 cache-references                                             [25.83%]
+     1,469,696,711 cache-misses              #   65.653 % of all cache refs     [40.05%]
+       953,999,916 LLC-loads                                                    [35.75%]
+       692,746,962 LLC-load-misses           #   72.61% of all LL-cache hits    [10.09%]
+     2,645,992,099 LLC-stores                                                   [10.85%]
+       893,308,362 LLC-store-misses                                             [11.27%]
+        24,711,892 LLC-prefetch-misses                                          [11.57%]
+
+      27.053837856 seconds time elapsed
+
+Merge Tile time: 18.425240 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       289,908,340 cache-references                                             [28.53%]
+        30,488,099 cache-misses              #   10.516 % of all cache refs     [42.84%]
+       114,753,210 LLC-loads                                                    [42.82%]
+        17,113,793 LLC-load-misses           #   14.91% of all LL-cache hits    [14.25%]
+       716,006,161 LLC-stores                                                   [14.31%]
+        14,758,705 LLC-store-misses                                             [14.26%]
+        28,339,822 LLC-prefetch-misses                                          [14.24%]
+
+      19.233594789 seconds time elapsed
+
+Tile Size t=512
+root time      : 18.319080 
+
+ Performance counter stats for './build/run_root 4096':
+
+       848,672,737 cache-references                                             [23.27%]
+       615,956,546 cache-misses              #   72.579 % of all cache refs     [37.56%]
+       235,140,465 LLC-loads                                                    [27.68%]
+       137,079,054 LLC-load-misses           #   58.30% of all LL-cache hits    [ 6.30%]
+     1,321,117,678 LLC-stores                                                   [ 7.71%]
+       493,943,607 LLC-store-misses                                             [ 8.59%]
+       500,365,063 LLC-prefetch-misses                                          [ 8.93%]
+
+      19.098078919 seconds time elapsed
+
+tile time      : 31.388687 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+     1,726,157,208 cache-references                                             [28.13%]
+       736,321,975 cache-misses              #   42.657 % of all cache refs     [42.44%]
+       508,984,460 LLC-loads                                                    [41.65%]
+       165,432,770 LLC-load-misses           #   32.50% of all LL-cache hits    [13.67%]
+     2,291,502,073 LLC-stores                                                   [13.77%]
+       573,134,324 LLC-store-misses                                             [13.73%]
+       851,776,069 LLC-prefetch-misses                                          [13.85%]
+
+      32.666991179 seconds time elapsed
+
+Merge Tile time: 30.313295 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+       244,834,620 cache-references                                             [28.60%]
+        22,456,136 cache-misses              #    9.172 % of all cache refs     [42.89%]
+        69,762,261 LLC-loads                                                    [42.85%]
+        12,809,464 LLC-load-misses           #   18.36% of all LL-cache hits    [14.29%]
+       757,318,643 LLC-stores                                                   [14.29%]
+        10,147,066 LLC-store-misses                                             [14.28%]
+        46,295,113 LLC-prefetch-misses                                          [14.31%]
+
+      31.546317358 seconds time elapsed
+
+Tile Size t=1024
+root time      : 17.631224 
+
+ Performance counter stats for './build/run_root 4096':
+
+       854,815,068 cache-references                                             [23.03%]
+       619,749,009 cache-misses              #   72.501 % of all cache refs     [37.34%]
+       235,076,183 LLC-loads                                                    [29.87%]
+       135,935,838 LLC-load-misses           #   57.83% of all LL-cache hits    [ 6.67%]
+     1,316,411,436 LLC-stores                                                   [ 7.88%]
+       491,128,178 LLC-store-misses                                             [ 8.60%]
+       498,150,560 LLC-prefetch-misses                                          [ 8.75%]
+
+      18.406358553 seconds time elapsed
+
+tile time      : 58.976830 
+
+ Performance counter stats for './build/run_rootTile 4096':
+
+     2,020,112,257 cache-references                                             [28.54%]
+       633,217,969 cache-misses              #   31.346 % of all cache refs     [42.90%]
+       331,776,435 LLC-loads                                                    [42.94%]
+       105,921,196 LLC-load-misses           #   31.93% of all LL-cache hits    [14.26%]
+     2,646,235,289 LLC-stores                                                   [14.29%]
+       535,130,899 LLC-store-misses                                             [14.25%]
+     1,193,495,970 LLC-prefetch-misses                                          [14.25%]
+
+      61.169532224 seconds time elapsed
+
+Merge Tile time: 52.266560 
+
+ Performance counter stats for './build/run_mergeTile 4096':
+
+        90,063,101 cache-references                                             [28.58%]
+        32,879,051 cache-misses              #   36.507 % of all cache refs     [42.87%]
+        31,630,653 LLC-loads                                                    [42.87%]
+         8,204,356 LLC-load-misses           #   25.94% of all LL-cache hits    [14.28%]
+       605,978,151 LLC-stores                                                   [14.29%]
+        24,323,268 LLC-store-misses                                             [14.29%]
+        99,725,223 LLC-prefetch-misses                                          [14.29%]
+
+      54.216393648 seconds time elapsed
+
+=================================================

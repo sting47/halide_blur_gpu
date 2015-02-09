@@ -1,0 +1,233 @@
+Layer m=1 
+=================================================
+Tile Size t=16
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 3.365906 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 3.541565 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 3.532349 
+Tile Size t=32
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 3.367737 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 3.523529 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 3.520142 
+Tile Size t=64
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 3.365418 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 3.715301 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 3.743072 
+Tile Size t=128
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 3.365326 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 3.707916 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 3.664703 
+Tile Size t=256
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 3.379547 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 3.718140 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 3.723724 
+Tile Size t=512
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 3.368011 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 7.802887 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 7.666596 
+Tile Size t=1024
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 3.370972 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 16.211029 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 16.308167 
+=================================================
+Layer m=2 
+=================================================
+Tile Size t=16
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 5.541320 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 5.864593 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 24.221436 
+Tile Size t=32
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 5.544433 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 5.815155 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 25.894287 
+Tile Size t=64
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 5.570282 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 6.614136 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 27.098999 
+Tile Size t=128
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 5.544434 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 7.713471 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 28.369171 
+Tile Size t=256
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 5.570862 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 10.233948 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 28.361298 
+Tile Size t=512
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 5.551026 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 12.794800 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 46.495300 
+Tile Size t=1024
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 5.560455 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 28.908722 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 93.287262 
+=================================================
+Layer m=4 
+=================================================
+Tile Size t=16
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 9.965973 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 10.679993 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 105.792084 
+Tile Size t=32
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+Tile Size t=64
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 9.990845 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 12.265869 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 107.392914 
+Tile Size t=128
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 10.461334 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 14.084381 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 108.177399 
+Tile Size t=256
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 10.795410 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 18.137756 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 107.879883 
+Tile Size t=512
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 11.361236 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 22.590759 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 169.101868 
+Tile Size t=1024
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 10.658417 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 46.370453 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 324.196686 
+=================================================
+Layer m=8 
+=================================================
+Tile Size t=16
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 19.035828 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 19.917877 
+adb shell ./data/sting_test/run_mergeTile 4096
+Merge Tile time: 447.483582 
+Tile Size t=32
+adb push build/run_root /data/sting_test
+adb push build/run_rootTile /data/sting_test
+adb push build/run_mergeTile /data/sting_test
+adb shell ./data/sting_test/run_root 4096
+root time      : 21.806702 
+adb shell ./data/sting_test/run_rootTile 4096
+tile time      : 22.423309 
+adb shell ./data/sting_test/run_mergeTile 4096
